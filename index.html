@@ -3,33 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antiche Tenute dei Conti Nicoli</title>
+    <title>L'Oro Verde | Olio Extravergine di Qualità</title>
     <style>
-        body { font-family: 'Georgia', serif; text-align: center; padding: 20px; background-color: #f4f7f1; color: #334d2d; line-height: 1.6; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #556b2f; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
-        img { width: 100%; max-width: 400px; height: auto; border-radius: 10px; margin: 20px 0; border: 2px solid #556b2f; }
-        .storia { font-style: italic; font-size: 1.1rem; margin: 20px 0; }
-        .contatti { background: #556b2f; color: white; padding: 20px; border-radius: 10px; margin-top: 30px; }
-        .contatti a { color: #d4e157; text-decoration: none; font-weight: bold; display: block; margin: 10px 0; }
-        hr { border: 0; height: 1px; background: #ccd5ae; margin: 20px 0; }
+        :root {
+            --verde-oliva: #556B2F;
+            --oro: #D4AF37;
+            --crema: #FDF5E6;
+            --scuro: #2F4F4F;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: var(--crema);
+            color: var(--scuro);
+        }
+
+        header {
+            background-color: var(--verde-oliva);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--oro);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .grid-oli {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-buy {
+            background-color: var(--verde-oliva);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .cart-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--oro);
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        footer {
+            background: var(--scuro);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Antiche Tenute dei Conti Nicoli</h1>
-        <hr>
-        
-        <img src="olio.jpg" alt="Olio dei Conti Nicoli">
 
-        <p class="storia">"Dalla terra alla tavola, la passione di una famiglia che custodisce l'oro liquido delle sue tenute da generazioni."</p>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#chi-siamo">Chi Siamo</a>
+            <a href="#linee">Le Nostre Linee</a>
+            <a href="#shop">Shop Online</a>
+        </nav>
+    </header>
 
-        <div class="contatti">
-            <p><strong>Per Informazioni e Ordini:</strong></p>
-            <a href="mailto:federicocontinicoli@gmail.com">📧 federicocontinicoli@gmail.com</a>
-            <a href="https://wa.me/393400988077">💬 Scrivimi su WhatsApp</a>
-            <a href="tel:+393400988077">📞 Chiamaci: +39 340 098 8077</a>
+    <div class="hero" id="home">
+        <div>
+            <h1>Tradizione Mediterranea</h1>
+            <p>Dalla terra alla tua tavola, l'essenza della purezza.</p>
         </div>
     </div>
+
+    <section id="chi-siamo">
+        <h2>La Nostra Storia</h2>
+        <p>Siamo custodi di un'arte antica. Nel nostro uliveto, ogni pianta è curata con amore e rispetto per i cicli naturali. Produciamo olio extravergine d'oliva non filtrato, mantenendo intatte tutte le proprietà organolettiche e i profumi della nostra terra.</p>
+    </section>
+
+    <section id="linee">
+        <h2>Le Linee di Olio</h2>
+        <div class="grid-oli">
+            <div class="card">
+                <h3>Il Delicato</h3>
+                <p>Perfetto per pesce e verdure cotte. Note di mandorla e fiori bianchi.</p>
+            </div>
+            <div class="card">
+                <h3>L'Intenso</h3>
+                <p>Corposo e piccante. Ideale per carni rosse e bruschette rustiche.</p>
+            </div>
+            <div class="card">
+                <h3>Il Bio</h3>
+                <p>Certificato biologico, estratto a freddo da olive selezionate.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop">
+        <h2>Acquista Ora</h2>
+        <div class="grid-oli">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="Bottiglia Olio">
+                <h3>Bottiglia 500ml</h3>
+                <p>€ 12.00</p>
+                <button class="btn-buy" onclick="aggiungi()">Aggiungi al Carrello</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="Latta Olio">
+                <h3>Latta 5 Litri</h3>
+                <p>€ 85.00</p>
+                <button class="btn-buy" onclick="aggiungi()">Aggiungi al Carrello</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-status" title="Il tuo carrello">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Il Tuo Progetto Olio - Passione e Qualità</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        function aggiungi() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+            alert("Ottima scelta! Prodotto aggiunto al carrello.");
+        }
+    </script>
+
 </body>
 </html>
