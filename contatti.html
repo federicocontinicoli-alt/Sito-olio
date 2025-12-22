@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dove Siamo | Conti Nicoli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1a2e1a; --oro: #c5a059; --avorio: #f9f8f4; }
+        body { font-family: 'Lato', sans-serif; background: var(--avorio); margin: 0; }
+        header { background: var(--verde); padding: 20px; text-align: center; border-bottom: 3px solid var(--oro); }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-family: 'Cinzel'; font-size: 0.8rem; }
+        .container { max-width: 1000px; margin: 50px auto; display: flex; flex-wrap: wrap; padding: 20px; gap: 40px; }
+        .info, .form { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 2px; }
+        h2 { font-family: 'Cinzel'; color: var(--verde); }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
+        button { background: var(--verde); color: var(--oro); border: none; padding: 15px 30px; cursor: pointer; font-family: 'Cinzel'; width: 100%; }
+        .podere { margin-bottom: 20px; border-left: 3px solid var(--oro); padding-left: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="prodotti.html">LE CHICCHE</a>
+            <a href="chi-siamo.html">LA STORIA</a>
+            <a href="contatti.html" style="color:var(--oro)">DOVE SIAMO</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="info">
+            <h2>I Nostri Poderi</h2>
+            <div class="podere">
+                <strong>Sede Storica & Negrar</strong><br>
+                Presso la Sengia Sbusa, Valpolicella
+            </div>
+            <div class="podere">
+                <strong>Podere Grezzana</strong><br>
+                Valpantena, Verona
+            </div>
+            <div class="podere">
+                <strong>Ufficio Commerciale</strong><br>
+                Verona Centro
+            </div>
+            <p><strong>Email:</strong> info@continicoli.it</p>
+            <p><strong>Federico:</strong> +39 XXX XXXXXXX</p>
+        </div>
+
+        <div class="form">
+            <h2>Scrivici</h2>
+            <p>Per prenotazioni di annate limitate o richieste Horeca.</p>
+            <form>
+                <input type="text" placeholder="Nome e Cognome">
+                <input type="email" placeholder="Email">
+                <textarea rows="5" placeholder="Messaggio o richiesta per una linea specifica"></textarea>
+                <button type="submit">INVIA MESSAGGIO D'ONORE</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Nostre Chicche | Conti Nicoli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde: #1a2e1a; --oro: #c5a059; --avorio: #f9f8f4; }
+        body { margin: 0; font-family: 'Lato', sans-serif; background: var(--avorio); }
+        header { background: var(--verde); padding: 25px; text-align: center; border-bottom: 3px solid var(--oro); position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-family: 'Cinzel'; font-size: 0.85rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-family: 'Cinzel'; color: var(--verde); text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .cat-box { margin-bottom: 80px; }
+        .cat-box h2 { font-family: 'Cinzel'; color: var(--oro); border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 30px; border-left: 4px solid var(--oro); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card h3 { font-family: 'Cinzel'; color: var(--verde); margin-top: 0; }
+        .card em { display: block; margin-bottom: 10px; color: #888; font-size: 0.9rem; }
+        .proverbio { margin-top: 20px; font-weight: bold; font-style: italic; color: var(--oro); font-size: 0.9rem; border-top: 1px dashed #eee; padding-top: 15px; display: block; }
+        footer { background: var(--verde); color: var(--oro); text-align: center; padding: 40px; font-family: 'Cinzel'; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="prodotti.html" style="color:var(--oro)">LE CHICCHE</a>
+        <a href="chi-siamo.html">LA STORIA</a>
+        <a href="contatti.html">DOVE SIAMO</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Il Catalogo dell'Onore</h1>
+
+    <div class="cat-box">
+        <h2>Le Selezioni Iconiche</h2>
+        <div class="grid">
+            <div class="card"><h3>Il 1673</h3><em>Grignana 90%</em><p>La bandiera del riscatto.</p><span class="proverbio">"L’onor l’è come l’ojo: el vien sempre a gala"</span></div>
+            <div class="card"><h3>Grignana 100%</h3><em>Purezza Assoluta</em><p>L'anima nuda della terra.</p><span class="proverbio">"L’ojo de Grignana lè par gente sovrana"</span></div>
+            <div class="card"><h3>Sengia Sbusa</h3><em>Olio d'Altura</em><p>Nato tra le rocce di Negrar.</p><span class="proverbio">"Ojo de scoglio, nobile orgoglio"</span></div>
+            <div class="card"><h3>L'Olio del Conte</h3><em>Riserva Privata</em><p>La migliore vasca dell'anno.</p><span class="proverbio">"Val de pì un ancor de rason..."</span></div>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <h2>Trilogia dei Poderi</h2>
+        <div class="grid">
+            <div class="card"><h3>Podere Verona</h3><em>Eleganza</em><p>Dalle colline della città.</p><span class="proverbio">"Meio l'onor che l'ojo su la frola"</span></div>
+            <div class="card"><h3>Podere Negrar</h3><em>Struttura</em><p>Nel cuore della Valpolicella.</p><span class="proverbio">"A Negrar l'aria l'è bona"</span></div>
+            <div class="card"><h3>Podere Grezzana</h3><em>Freschezza</em><p>La brezza della Valpantena.</p><span class="proverbio">"Grezzana, terra de sassi e brava gente"</span></div>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <h2>Evoluzione Temporale</h2>
+        <div class="grid">
+            <div class="card"><h3>L'Esordio</h3><em>Prima Molitura</em><p>Verde, piccante, potente.</p><span class="proverbio">"L'ojo de la matina cata la rason"</span></div>
+            <div class="card"><h3>Il Plenilunio</h3><em>Equilibrio</em><p>La perfezione di metà stagione.</p><span class="proverbio">"Aqua d'agosto, ojo e mosto"</span></div>
+            <div class="card"><h3>Il Crepuscolo</h3><em>Dolcezza</em><p>Morbido e dorato.</p><span class="proverbio">"Quando el sol cala, el saggio rasona"</span></div>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <h2>Tradizione e Specialità</h2>
+        <div class="grid">
+            <div class="card"><h3>L'Intero</h3><em>Non Filtrato</em><p>La nostra filosofia integra.</p><span class="proverbio">"Chi tase, lassa parlar la tera"</span></div>
+            <div class="card"><h3>Il Cristallino</h3><em>Filtrato</em><p>Purezza e brillantezza.</p><span class="proverbio">"La verità la vien sempre fora"</span></div>
+            <div class="card"><h3>Il Poeta della Sengia</h3><em>Conviviale</em><p>L'olio dei racconti al filò.</p><span class="proverbio">"La bona parola la costa gnente"</span></div>
+            <div class="card"><h3>Per Ardua</h3><em>Linea Famiglia</em><p>In latta per l'uso quotidiano.</p><span class="proverbio">"Saco vodo no sta in pè"</span></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Antiche Tenute dei Conti Nicoli - Per Ardua ad Honorem</p>
+</footer>
+
+</body>
+</html>
