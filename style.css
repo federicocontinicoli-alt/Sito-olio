@@ -1,0 +1,9 @@
+:root { --verde: #4B5320; --oro: #C5A059; --crema: #F9F7F2; }
+body { font-family: 'Georgia', serif; background-color: var(--crema); margin: 0; color: #333; }
+nav { background: var(--verde); padding: 15px; text-align: center; }
+nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+.hero { height: 60vh; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+.container { max-width: 900px; margin: 40px auto; padding: 20px; line-height: 1.8; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+h1, h2 { color: var(--verde); }
+.btn { background: var(--oro); color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 3px; }
+footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
