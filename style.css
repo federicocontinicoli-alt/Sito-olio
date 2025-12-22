@@ -1,86 +1,306 @@
 :root {
-    --verde-scuro: #2d3319;
-    --oro-satinato: #b58d3d;
-    --crema-pergamena: #fdfaf5;
-    --nero-etrusco: #1a1a1a;
+    --gold: #d4af37;
+    --light-gold: #f9f1d0;
+    --olive: #3b3f23;
+    --bg-white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-light-grey: #666;
 }
 
-body { 
-    font-family: 'Playfair Display', serif; 
-    background-color: var(--crema-pergamena); 
-    color: var(--nero-etrusco); 
-    margin: 0; 
-    line-height: 1.8;
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.6;
 }
 
-/* Navigazione Elegante */
-nav { 
-    background: rgba(255,255,255,0.95); 
-    padding: 20px; 
-    text-align: center; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
+h1, h2, h3, .motto, .hero-subtitle, blockquote {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* Header */
+header {
+    background: radial-gradient(circle, #fff 0%, #f4f4f4 100%);
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin: 0 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-logo {
+    max-width: 120px; /* Logo più piccolo nell'header */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.motto {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('vigneto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: var(--text-light-grey);
+    margin-bottom: 30px;
+}
+
+.btn-gold {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--bg-white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #c09a2f;
+}
+
+/* Container Prodotti */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.container h2 {
+    font-size: 2.5em;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.product-card {
+    display: inline-block; /* Per allinearli */
+    vertical-align: top; /* Per allineare in alto se hanno altezze diverse */
+    margin: 20px;
+    padding: 20px;
+    width: 280px; /* Larghezza fissa per le card */
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-label-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Bordi leggermente arrotondati per le etichette */
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.product-card .tagline {
+    font-style: italic;
+    color: var(--text-light-grey);
+    margin-bottom: 15px;
+}
+
+.product-card .description {
+    font-size: 0.95em;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.product-card .tech-detail {
+    display: block;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* Motto Section */
+.motto-section {
+    background-color: #f8f8f8;
+    padding: 80px 20px;
+    margin-top: 50px;
+}
+
+.motto-section blockquote {
+    font-size: 2.5em;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.motto-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+/* Pagina Storia (storia.html) */
+.historia-page {
+    text-align: left;
+    padding-top: 80px; /* Spazio sotto l'header */
+    padding-bottom: 80px;
+}
+
+.storia-content h2 {
+    font-size: 3em;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.storia-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.focus-sengia {
+    background-color: #fdfdfd;
+    border-left: 5px solid var(--gold);
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 900px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav a { 
-    color: var(--verde-scuro); 
-    margin: 0 20px; 
-    text-decoration: none; 
-    font-variant: all-small-caps;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s;
+.focus-sengia h3 {
+    font-size: 2em;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-nav a:hover { color: var(--oro-satinato); }
-
-/* Hero Section con Parallasse */
-.hero { 
-    height: 85vh; 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+.focus-sengia p {
+    text-align: left;
 }
 
-.hero h1 { font-size: 3.5rem; margin-bottom: 0; letter-spacing: 4px; text-transform: uppercase; }
-
-/* Contenuti */
-.container { max-width: 1100px; margin: 60px auto; padding: 40px; background: white; }
-
-.citazione { 
-    font-style: italic; 
-    font-size: 1.5rem; 
-    text-align: center; 
-    color: var(--oro-satinato); 
-    margin: 40px 0;
-    padding: 20px;
-    border-top: 1px solid var(--oro-satinato);
-    border-bottom: 1px solid var(--oro-satinato);
+.sengia-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.btn-premium {
-    background: var(--verde-scuro);
-    color: white;
-    padding: 15px 40px;
-    text-decoration: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.storia-content blockquote {
+    font-size: 2em;
+    color: var(--olive); /* Citazione con colore dell'oliva per differenziare */
+    margin: 50px auto;
+    max-width: 800px;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+
+/* Footer */
+footer {
+    padding: 40px;
     font-size: 0.8rem;
-    transition: 0.4s;
-    border: 1px solid var(--verde-scuro);
+    background: #f9f9f9;
+    color: var(--text-dark);
+    margin-top: 50px;
 }
 
-.btn-premium:hover {
-    background: transparent;
-    color: var(--verde-scuro);
+/* Media Queries per rendere il sito adattabile a schermi più piccoli */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .main-nav {
+        margin-bottom: 15px;
+    }
+    .main-nav a {
+        margin: 0 8px;
+        font-size: 0.9em;
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    .hero-subtitle {
+        font-size: 1em;
+    }
+    .container h2 {
+        font-size: 2em;
+    }
+    .product-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+    .motto-section blockquote {
+        font-size: 1.8em;
+    }
+    .storia-content h2 {
+        font-size: 2.2em;
+    }
+    .storia-content p, .focus-sengia p {
+        font-size: 1em;
+    }
+    .focus-sengia {
+        padding: 20px;
+    }
+    .focus-sengia h3 {
+        font-size: 1.5em;
+    }
 }
-
-footer { background: var(--nero-etrusco); color: white; padding: 60px 20px; text-align: center; }
