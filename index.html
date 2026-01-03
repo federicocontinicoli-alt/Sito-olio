@@ -3,136 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conti Nicoli | Azienda Agricola a Negrar di Valpolicella</title>
+    <title>Antiche Tenute dei Conti Nicoli | Negrar di Valpolicella</title>
     <style>
         :root {
-            --wine-red: #6b1111;
-            --olive-green: #556b2f;
+            --wine-red: #580c1f; /* Un rosso più profondo e regale */
+            --gold: #c5a059;     /* Colore oro ispirato al tuo logo */
             --cream: #fdfaf5;
-            --dark-text: #2c2c2c;
+            --dark-gray: #1a1a1a;
         }
 
         body {
-            font-family: 'Georgia', serif; /* Un font più elegante per un'azienda agricola */
+            font-family: 'Times New Roman', serif; /* Font classico ed elegante */
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            color: var(--dark-text);
+            color: var(--dark-gray);
             background-color: var(--cream);
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1504279589124-2f7300c3c64b?auto=format&fit=crop&q=80&w=1200'); /* Immagine segnaposto vigneto */
+            background: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .logo-img {
+            max-width: 250px; /* Regola questa dimensione se vuoi il logo più grande o piccolo */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 { 
+            margin: 10px 0; 
+            font-size: 2.5rem; 
+            color: var(--wine-red);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-banner {
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1516591001813-e69960241804?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
-            color: #ffffff;
-            padding: 100px 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-style: italic;
+            font-size: 1.5rem;
         }
 
         .container {
             max-width: 900px;
-            margin: -50px auto 50px auto;
+            margin: 40px auto;
             padding: 40px;
             background: #fff;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        h1 { margin: 0; font-size: 3rem; letter-spacing: 2px; text-transform: uppercase; }
-        h2 { color: var(--wine-red); text-align: center; border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-top: 40px; }
-        
-        .intro { text-align: center; font-style: italic; font-size: 1.2rem; color: #666; }
+        h2 { 
+            color: var(--gold); 
+            text-align: center; 
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
 
-        .products {
+        .content-section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
+            gap: 40px;
         }
 
-        .product-card {
+        .card {
             border: 1px solid #eee;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover { transform: translateY(-5px); border-color: var(--olive-green); }
-
-        .product-card h3 { color: var(--olive-green); }
-
-        .contact-box {
-            background-color: #f9f9f9;
             padding: 30px;
-            margin-top: 50px;
-            text-align: center;
-            border-left: 5px solid var(--wine-red);
+            background: #f9f9f9;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            background: #222;
-            color: #ccc;
-        }
+        .card h3 { color: var(--wine-red); margin-top: 0; }
 
         .btn {
             display: inline-block;
             background: var(--wine-red);
             color: #fff;
-            padding: 12px 30px;
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 2px;
-            margin-top: 20px;
-            transition: background 0.3s;
+            margin-top: 30px;
+            border-radius: 0; /* Angoli squadrati per più eleganza */
+            transition: 0.3s;
         }
 
-        .btn:hover { background: var(--olive-green); }
+        .btn:hover { background: var(--gold); }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: var(--dark-gray);
+            color: #fff;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 600px) {
-            .products { grid-template-columns: 1fr; }
-            h1 { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Conti Nicoli</h1>
-    <p>Tradizione e Passione a Negrar di Valpolicella</p>
+    <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
+    <h1>Antiche Tenute dei Conti Nicoli</h1>
+    <p style="letter-spacing: 5px; color: var(--gold);">NEGRAR DI VALPOLICELLA</p>
 </header>
 
+<div class="hero-banner">
+    <p>"La nobiltà della terra, l'eccellenza nel calice"</p>
+</div>
+
 <div class="container">
-    <section>
-        <p class="intro">Nel cuore della Valpolicella classica, coltiviamo con cura i nostri terreni per offrirvi l'eccellenza della terra veronese.</p>
-        
-        <h2>Le Nostre Eccellenze</h2>
-        <div class="products">
-            <div class="product-card">
-                <h3>I Grandi Rossi</h3>
-                <p>Dal Valpolicella all'Amarone, produciamo vini che raccontano la storia di Negrar, fatti di tempo, dedizione e uve selezionate a mano.</p>
-            </div>
-            <div class="product-card">
-                <h3>Olio Extra Vergine</h3>
-                <p>Il nostro olio d'oliva è estratto a freddo, mantenendo intatti i profumi e le proprietà organolettiche delle nostre colline.</p>
-            </div>
-        </div>
+    <section class="content-section">
+        <h2>Benvenuti in Tenuta</h2>
+        <p>Nel cuore pulsante della Valpolicella Classica, le <strong>Antiche Tenute dei Conti Nicoli</strong> portano avanti una tradizione secolare. Tra le colline di Negrar, coltiviamo con dedizione i frutti che danno vita ai nostri vini pregiati e al nostro olio extravergine d'oliva di altissima qualità.</p>
     </section>
 
-    <section class="contact-box">
-        <h2>Vieni a trovarci</h2>
-        <p>I nostri terreni si trovano a <strong>Negrar di Valpolicella (VR)</strong>.</p>
-        <p>Per degustazioni o ordini, contattaci direttamente:</p>
-        <a href="mailto:info@continicoli.it" class="btn">Richiedi Informazioni</a>
+    <div class="grid">
+        <div class="card">
+            <h3>Vini Pregiati</h3>
+            <p>Dall'eleganza del Valpolicella alla maestosità dell'Amarone, ogni bottiglia è un racconto del nostro territorio veronese.</p>
+        </div>
+        <div class="card">
+            <h3>Olio di Qualità</h3>
+            <p>Le nostre olive, baciate dal sole di Negrar, producono un olio extravergine dal sapore equilibrato e fruttato.</p>
+        </div>
+    </div>
+
+    <section class="content-section" style="margin-top: 60px;">
+        <p>Siamo a disposizione per ordini diretti e degustazioni private.</p>
+        <a href="mailto:info@continicoli.it" class="btn">CONTATTACI</a>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 Azienda Agricola Conti Nicoli - Verona<br>
-    Negrar di Valpolicella | P.IVA: Inserisci la tua P.IVA</p>
+    <p>&copy; 2026 Antiche Tenute dei Conti Nicoli<br>
+    Verona - Italia | P.IVA: Inserisci la tua P.IVA</p>
 </footer>
 
 </body>
