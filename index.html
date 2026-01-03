@@ -6,114 +6,106 @@
     <title>Antiche Tenute dei Conti Nicoli | Negrar di Valpolicella</title>
     <style>
         :root {
-            --wine-red: #580c1f; /* Un rosso più profondo e regale */
-            --gold: #c5a059;     /* Colore oro ispirato al tuo logo */
+            --wine-red: #580c1f;
+            --gold: #c5a059;
             --cream: #fdfaf5;
-            --dark-gray: #1a1a1a;
+            --dark: #1a1a1a;
         }
 
         body {
-            font-family: 'Times New Roman', serif; /* Font classico ed elegante */
+            font-family: 'Georgia', serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            color: var(--dark-gray);
+            color: var(--dark);
             background-color: var(--cream);
         }
 
-        header {
-            background: #ffffff;
-            padding: 60px 20px;
+        /* Navigazione semplice */
+        nav {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
             text-align: center;
-            border-bottom: 3px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--gold);
         }
 
-        .logo-img {
-            max-width: 250px; /* Regola questa dimensione se vuoi il logo più grande o piccolo */
-            height: auto;
-            margin-bottom: 20px;
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        h1 { 
-            margin: 10px 0; 
-            font-size: 2.5rem; 
-            color: var(--wine-red);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+        .logo-img { max-width: 220px; height: auto; }
 
-        .hero-banner {
-            height: 300px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1516591001813-e69960241804?auto=format&fit=crop&q=80&w=1200');
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504279589124-2f7300c3c64b?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-style: italic;
-            font-size: 1.5rem;
+            text-align: center;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
-            background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        h2 { 
-            color: var(--gold); 
-            text-align: center; 
+        .motto {
             font-size: 2rem;
-            margin-bottom: 30px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding: 20px;
         }
 
-        .content-section {
-            margin-bottom: 50px;
-            text-align: center;
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+
+        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; }
+        
+        .story-img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 20px auto;
+            border: 10px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .grid {
+        .section-highlight {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid var(--gold);
+        }
+
+        .product-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .card {
-            border: 1px solid #eee;
-            padding: 30px;
-            background: #f9f9f9;
-        }
-
-        .card h3 { color: var(--wine-red); margin-top: 0; }
-
-        .btn {
-            display: inline-block;
-            background: var(--wine-red);
-            color: #fff;
-            padding: 15px 40px;
-            text-decoration: none;
-            margin-top: 30px;
-            border-radius: 0; /* Angoli squadrati per più eleganza */
-            transition: 0.3s;
-        }
-
-        .btn:hover { background: var(--gold); }
-
-        footer {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             text-align: center;
-            padding: 50px;
-            background: var(--dark-gray);
-            color: #fff;
-            font-size: 0.9rem;
         }
 
+        .product-card {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+
+        /* Mobile Optimization */
         @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
+            .motto { font-size: 1.2rem; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -122,40 +114,29 @@
 <header>
     <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
     <h1>Antiche Tenute dei Conti Nicoli</h1>
-    <p style="letter-spacing: 5px; color: var(--gold);">NEGRAR DI VALPOLICELLA</p>
 </header>
 
-<div class="hero-banner">
-    <p>"La nobiltà della terra, l'eccellenza nel calice"</p>
+<div class="hero">
+    <div class="motto">Per Ardua Ad Honorem</div>
 </div>
 
 <div class="container">
-    <section class="content-section">
-        <h2>Benvenuti in Tenuta</h2>
-        <p>Nel cuore pulsante della Valpolicella Classica, le <strong>Antiche Tenute dei Conti Nicoli</strong> portano avanti una tradizione secolare. Tra le colline di Negrar, coltiviamo con dedizione i frutti che danno vita ai nostri vini pregiati e al nostro olio extravergine d'oliva di altissima qualità.</p>
+    
+    <section id="storia">
+        <h2>La Leggenda e il Riscatto</h2>
+        <p>Si narra che nel <strong>1673</strong>, l'ultimo Conte Nicoli, tra i fumi del vino e il vizio del gioco, perse in una sola notte ogni possedimento, titolo e onore. Da allora, per secoli, il nome dei Conti fu sepolto nel silenzio, mentre le generazioni successive continuarono a curare la terra come mezzadri e operai, lavorando con umiltà ma con la sapienza di chi ha il vino nel sangue.</p>
+        
+        <img src="quadro.png" alt="Il Conte Nicoli al gioco" class="story-img">
+        
+        <p>Oggi, quel nome torna a vivere. Le <strong>Antiche Tenute dei Conti Nicoli</strong> nascono dal desiderio di riscattare quell'onore perduto attraverso il lavoro duro. Il nostro motto, <em>"Per Ardua Ad Honorem"</em>, è la nostra promessa: l'eccellenza ottenuta con la fatica.</p>
     </section>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Vini Pregiati</h3>
-            <p>Dall'eleganza del Valpolicella alla maestosità dell'Amarone, ogni bottiglia è un racconto del nostro territorio veronese.</p>
-        </div>
-        <div class="card">
-            <h3>Olio di Qualità</h3>
-            <p>Le nostre olive, baciate dal sole di Negrar, producono un olio extravergine dal sapore equilibrato e fruttato.</p>
-        </div>
-    </div>
-
-    <section class="content-section" style="margin-top: 60px;">
-        <p>Siamo a disposizione per ordini diretti e degustazioni private.</p>
-        <a href="mailto:info@continicoli.it" class="btn">CONTATTACI</a>
+    <section class="section-highlight">
+        <h2>Il Territorio: All'ombra della Sengia Sbusa</h2>
+        <p>I nostri vigneti sorgono a <strong>Negrar di Valpolicella</strong>, tra i 400 e i 700 metri d’altitudine, proprio ai piedi della <strong>Sengia Sbusa</strong>. Questo monolite carsico, con il suo inspiegabile foro che domina la valle, è il simbolo della nostra terra: una roccia unica da cui, narra la leggenda, nascono i figli di Negrar.</p>
+        <p>Coltiviamo su <em>marogne</em> (muretti a secco) con esposizione totale a sud. Qui il lavoro è quasi esclusivamente manuale, un rito che si ripete ogni stagione per garantire la massima qualità.</p>
     </section>
-</div>
 
-<footer>
-    <p>&copy; 2026 Antiche Tenute dei Conti Nicoli<br>
-    Verona - Italia | P.IVA: Inserisci la tua P.IVA</p>
-</footer>
-
-</body>
-</html>
+    <section id="prodotti">
+        <h2>Le Nostre Uve</h2>
+        <p style="text-align: center;">Seguiamo rigorosamente i disciplinari per produrre le
