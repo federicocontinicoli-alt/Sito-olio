@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antiche Tenute dei Conti Nicoli | Negrar di Valpolicella</title>
+    <title>Antiche Tenute dei Conti Nicoli | I Poeti della Valpolicella</title>
     <style>
         :root {
             --wine-red: #4a0404;
             --gold: #b8860b;
             --cream: #fdfaf5;
             --dark: #121212;
+            --olive: #556b2f;
         }
 
         body {
-            font-family: 'Garamond', 'Georgia', serif;
+            font-family: 'Georgia', serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
@@ -23,15 +24,15 @@
 
         header {
             background: white;
-            padding: 40px 20px;
+            padding: 30px 10px;
             text-align: center;
             border-bottom: 2px solid var(--gold);
         }
 
-        .logo-img { max-width: 200px; height: auto; }
+        .logo-img { max-width: 220px; height: auto; }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1510853675132-58241c941e4f?auto=format&fit=crop&q=80&w=1200');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1510853675132-58241c941e4f?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
             height: 40vh;
@@ -43,17 +44,19 @@
         }
 
         .motto {
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: 5px;
             text-transform: uppercase;
-            padding: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            padding: 15px;
+            border: 1px solid white;
         }
 
-        .container { max-width: 850px; margin: auto; padding: 40px 20px; }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
 
-        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 50px; }
-        .subtitle { text-align: center; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 30px; }
+        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 60px; }
+        .subtitle { text-align: center; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
+        
+        .story-block { margin-bottom: 50px; text-align: justify; }
 
         .story-img {
             width: 100%;
@@ -65,17 +68,196 @@
             background: white;
         }
 
-        .unesco-badge {
+        .highlight-box {
             background: #fff;
-            border: 1px solid var(--gold);
-            padding: 25px;
-            text-align: center;
+            border-left: 5px solid var(--wine-red);
+            padding: 30px;
             margin: 40px 0;
             font-style: italic;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Sezione Mappa */
-        .map-container {
-            width: 100%;
-            height: 400px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            padding: 30px;
+            background: white;
+            border-top: 4px solid var(--wine-red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card h3 { color: var(--gold); margin-top: 15px; font-size: 1.3rem; }
+        .card img { width: 100%; max-width: 180px; height: auto; }
+
+        .unesco-badge {
+            background: #f1ede4;
+            padding: 30px;
+            text-align: center;
+            border: 1px dashed var(--gold);
+            margin: 60px 0;
+        }
+
+        .map-box {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-section {
+            background: var(--wine-red);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 60px;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-nav {
+            background: var(--gold);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #000;
+            color: #777;
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .motto { font-size: 1.3rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
+    <h1>Antiche Tenute dei Conti Nicoli</h1>
+</header>
+
+<div class="hero">
+    <div class="motto">Per Ardua Ad Honorem</div>
+</div>
+
+<div class="container">
+    
+    <article class="story-block">
+        <h2>La Stirpe dei Conti Nicoli</h2>
+        <p class="subtitle">Tra Nobiltà e Riscatto</p>
+        <p>
+            Si narra che nel <strong>1673</strong>, l’ultimo dei Conti Nicoli perse l'intero patrimonio in una sola notte di gioco. Titolo, terre e onore svanirono tra i fumi del tabacco e del vino. Per secoli, il nome dei Nicoli è rimasto sepolto nel silenzio: siamo diventati mezzadri e operai, curando con umiltà le terre che un tempo portavano il nostro nome. 
+        </p>
+        <p>
+            Oggi torniamo a testa alta. Non escludiamo che le nostre radici affondino nei fasti della <strong>Villa Romana di Negrar</strong>, ma la nostra certezza è il sudore che versiamo tra le "marogne", i muretti a secco Patrimonio UNESCO, per riscattare quell'onore perduto.
+        </p>
+        
+        <img src="quadro.png" alt="Il Conte Nicoli al gioco" class="story-img">
+
+        <div class="highlight-box">
+            "A Negrar siamo conosciuti come <strong>I Poeti</strong>, in onore di un prozio che nei filò portava messaggi di speranza e raccontava storie che incantavano le valli."
+        </div>
+    </article>
+
+    <section id="vini">
+        <h2>La Cantina del Riscatto</h2>
+        <p class="subtitle">Eccellenze DOC & DOCG</p>
+        <div class="grid">
+            <div class="card">
+                <img src="amarone.png" alt="Amarone La Riserva del Poeta">
+                <h3>Amarone Classico</h3>
+                <p style="color:var(--gold); font-style:italic;">"La Riserva del Poeta"</p>
+                <p>Un vino monumentale. Note di amarena sotto spirito e tabacco. Avvolgente come le storie dei nostri avi.</p>
+            </div>
+            <div class="card">
+                <img src="ripasso.png" alt="Ripasso La Riserva del Conte">
+                <h3>Valpolicella Ripasso</h3>
+                <p style="color:var(--gold); font-style:italic;">"La Riserva del Conte"</p>
+                <p>Struttura e nobiltà ritrovata. Frutti rossi maturi e una persistenza vellutata ed elegante.</p>
+            </div>
+            <div class="card">
+                <img src="valpolicella.png" alt="Valpolicella Sengia Sbusa">
+                <h3>Valpolicella Superiore</h3>
+                <p style="color:var(--gold); font-style:italic;">"Sengia Sbusa"</p>
+                <p>Fresco e minerale. Porta nel calice la purezza della roccia forata che domina i nostri vigneti.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="olio">
+        <h2>L'Oro dei Poeti</h2>
+        <p class="subtitle">Monocultivar Grignano</p>
+        <div style="text-align: center;">
+            <p>Il nostro Olio EVO monocultivar Grignano esprime profumi unici in tre linee distinte.</p>
+            <img src="linee-olio.png" alt="Olio Conti Nicoli" class="story-img">
+        </div>
+        <div class="grid">
+            <div class="card" style="border-top-color: var(--olive);">
+                <h3>Linea Invaiatura</h3>
+                <p>Olive raccolte verdi. Fruttato intenso, note di erba tagliata e carciofo. Deciso e piccante.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--olive);">
+                <h3>Linea Maturità</h3>
+                <p>Olive mature. Note dolci di mandorla e fiori bianchi. Un equilibrio armonioso e delicato.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--olive);">
+                <h3>Linea Famiglia</h3>
+                <p>La qualità quotidiana in latte. Freschezza e genuinità per il consumo di ogni giorno.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="unesco-badge">
+        <h3>Poderi e Territorio</h3>
+        <p>Dal podere centrale di <strong>Negrar</strong> ai piedi della <strong>Sengia Sbusa</strong>, fino ai terreni di <strong>Grezzana</strong> e <strong>Verona</strong>. Coltiviamo tra i 400 e i 700 metri s.l.m., con esposizione totale a sud.</p>
+    </section>
+
+    <h2>Vieni a trovarci</h2>
+    <div class="map-box">
+        <p><strong>Antiche Tenute dei Conti Nicoli</strong></p>
+        <p>Via Cà Berna, 2 - Negrar di Valpolicella (VR)</p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Ca+Berna+2+Negrar" target="_blank" class="btn-nav">APRI NAVIGATORE</a>
+    </div>
+
+</div>
+
+<section class="cta-section">
+    <h2>Ordini e Degustazioni</h2>
+    <p>Vuoi ricevere i nostri prodotti o visitare le tenute? <br> Contattaci direttamente su WhatsApp.</p>
+    <a href="https://wa.me/39XXXXXXXXXX" class="whatsapp-btn">ORDINA SU WHATSAPP</a>
+    <p style="margin-top:20px; font-size:0.9rem;">Email: info@continicoli.it</p>
+</section>
+
+<footer>
+    <p>© 2026 Antiche Tenute dei Conti Nicoli | Verona - Italia<br>
+    P.IVA: Inserisci qui la tua Partita IVA</p>
+</footer>
+
+</body>
+</html>
