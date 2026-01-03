@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antiche Tenute dei Conti Nicoli | I Poeti della Valpolicella</title>
+    <title>Antiche Tenute dei Conti Nicoli | Il Riscatto e la Poesia</title>
     <style>
         :root {
             --wine-red: #4a0404;
@@ -22,20 +22,46 @@
             background-color: var(--cream);
         }
 
+        /* Selettore Lingua */
+        .lang-switch {
+            background: var(--dark);
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            color: white;
+            background: none;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
         header {
             background: white;
-            padding: 30px 10px;
+            padding: 40px 10px;
             text-align: center;
             border-bottom: 2px solid var(--gold);
         }
 
-        .logo-img { max-width: 220px; height: auto; }
+        .logo-img { max-width: 200px; height: auto; }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1510853675132-58241c941e4f?auto=format&fit=crop&q=80&w=1200');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('olio.jpg');
             background-size: cover;
-            background-position: center;
-            height: 40vh;
+            background-position: top center;
+            height: 45vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,16 +70,16 @@
         }
 
         .motto {
-            font-size: 1.8rem;
+            font-size: 2rem;
             letter-spacing: 5px;
             text-transform: uppercase;
             padding: 15px;
             border: 1px solid white;
         }
 
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        .container { max-width: 850px; margin: auto; padding: 40px 20px; }
 
-        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 60px; }
+        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 50px; }
         .subtitle { text-align: center; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
         
         .story-block { margin-bottom: 50px; text-align: justify; }
@@ -93,45 +119,25 @@
         }
 
         .card h3 { color: var(--gold); margin-top: 15px; font-size: 1.3rem; }
-        .card img { width: 100%; max-width: 180px; height: auto; }
+        .card img { width: 100%; max-width: 180px; height: auto; margin-bottom: 10px; }
 
         .unesco-badge {
             background: #f1ede4;
             padding: 30px;
             text-align: center;
             border: 1px dashed var(--gold);
-            margin: 60px 0;
+            margin: 40px 0;
         }
 
         .map-box {
             background: white;
-            padding: 30px;
+            padding: 20px;
             border: 1px solid #ddd;
             text-align: center;
             margin-top: 30px;
         }
 
-        .cta-section {
-            background: var(--wine-red);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            margin-top: 60px;
-        }
-
-        .whatsapp-btn {
-            background: #25d366;
-            color: white;
-            padding: 20px 40px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-
-        .btn-nav {
+        .btn {
             background: var(--gold);
             color: white;
             padding: 15px 30px;
@@ -139,6 +145,19 @@
             display: inline-block;
             margin-top: 20px;
             font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-size: 1.1rem;
         }
 
         footer {
@@ -149,6 +168,8 @@
             font-size: 0.8rem;
         }
 
+        [data-lang]:not(.active-lang) { display: none; }
+
         @media (max-width: 600px) {
             .motto { font-size: 1.3rem; }
             h2 { font-size: 1.8rem; }
@@ -156,6 +177,12 @@
     </style>
 </head>
 <body>
+
+<div class="lang-switch">
+    <button class="lang-btn active" onclick="setLang('it')">IT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+</div>
 
 <header>
     <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
@@ -169,95 +196,162 @@
 <div class="container">
     
     <article class="story-block">
-        <h2>La Stirpe dei Conti Nicoli</h2>
-        <p class="subtitle">Tra Nobiltà e Riscatto</p>
-        <p>
-            Si narra che nel <strong>1673</strong>, l’ultimo dei Conti Nicoli perse l'intero patrimonio in una sola notte di gioco. Titolo, terre e onore svanirono tra i fumi del tabacco e del vino. Per secoli, il nome dei Nicoli è rimasto sepolto nel silenzio: siamo diventati mezzadri e operai, curando con umiltà le terre che un tempo portavano il nostro nome. 
-        </p>
-        <p>
-            Oggi torniamo a testa alta. Non escludiamo che le nostre radici affondino nei fasti della <strong>Villa Romana di Negrar</strong>, ma la nostra certezza è il sudore che versiamo tra le "marogne", i muretti a secco Patrimonio UNESCO, per riscattare quell'onore perduto.
-        </p>
+        <div data-lang="it" class="active-lang">
+            <h2>La Storia: Una Stirpe tra Gloria e Oblio</h2>
+            <p class="subtitle">Il Segreto del 1673</p>
+            <p>Esistono leggende che si tramandano sottovoce, tra realtà e fantasia. Si narra che nel <strong>1673</strong>, l’ultimo dei <strong>Conti Nicoli</strong> — un uomo dai grandi possedimenti ma dai vizi altrettanto smisurati — si giocò l'intero patrimonio in una sola notte. Titolo, palazzi e onore svanirono tra le carte, il tabacco e il vino.</p>
+            <p>Da allora, le tracce del Conte si persero, ma la nostra stirpe non abbandonò mai questa terra. Per secoli, i Nicoli hanno continuato a curare i vigneti di Negrar, ma non più come signori: siamo diventati mezzadri e operai, lavorando con umiltà le terre che un tempo portavano il nostro nome. Il silenzio è calato sulla nostra origine, un silenzio imposto per coprire la vergogna di quell'onore perduto.</p>
+        </div>
+        <div data-lang="en">
+            <h2>History: A Lineage between Glory and Oblivion</h2>
+            <p class="subtitle">The Secret of 1673</p>
+            <p>There are legends whispered between reality and fantasy. It is said that in <strong>1673</strong>, the last of the <strong>Counts Nicoli</strong> gambled away his entire estate in a single night. Title, palaces, and honor vanished amidst cards, tobacco, and wine.</p>
+            <p>Since then, the Count's tracks were lost, but our lineage never abandoned this land. For centuries, the Nicoli continued to tend the vineyards of Negrar, no longer as lords but as sharecroppers and workers. Silence fell over our origins, a silence imposed to cover the shame of that lost honor.</p>
+        </div>
+        <div data-lang="de">
+            <h2>Geschichte: Ein Geschlecht zwischen Ruhm und Vergessenheit</h2>
+            <p class="subtitle">Das Geheimnis von 1673</p>
+            <p>Es gibt Legenden, die leise zwischen Realität und Fantasie überliefert werden. Es heißt, dass im Jahr <strong>1673</strong> der letzte der <strong>Grafen Nicoli</strong> seinen gesamten Besitz in einer einzigen Nacht verspielte. Titel, Paläste und Ehre verschwanden zwischen Karten, Tabak und Wein.</p>
+            <p>Seitdem verloren sich die Spuren des Grafen, doch unser Geschlecht verließ dieses Land nie. Über Jahrhunderte pflegten die Nicoli weiterhin die Weinberge von Negrar, nicht mehr als Herren, sondern als Pächter und Arbeiter. Stille legte sich über unsere Herkunft, um die Schande jener verlorenen Ehre zu decken.</p>
+        </div>
         
-        <img src="quadro.png" alt="Il Conte Nicoli al gioco" class="story-img">
+        <img src="quadro.png" alt="Il Conte Nicoli al tavolo da gioco" class="story-img">
 
-        <div class="highlight-box">
-            "A Negrar siamo conosciuti come <strong>I Poeti</strong>, in onore di un prozio che nei filò portava messaggi di speranza e raccontava storie che incantavano le valli."
+        <div data-lang="it" class="active-lang">
+            <p>Ma il legame con la storia è profondo. Non si esclude che le radici della nostra famiglia possano risalire ancora più lontano, fino ai tempi della <strong>Villa Romana di Negrar</strong> che oggi riaffiora dalla terra: sebbene non vi siano tracce scritte, il nostro sangue batte al ritmo di quei mosaici millenari.</p>
+        </div>
+        <div data-lang="en">
+            <p>But the connection to history is deep. It is not excluded that our family's roots may go back even further, to the times of the <strong>Roman Villa of Negrar</strong>: although there are no written records, our blood beats to the rhythm of those ancient mosaics.</p>
+        </div>
+        <div data-lang="de">
+            <p>Doch die Verbindung zur Geschichte ist tief. Es ist nicht ausgeschlossen, dass die Wurzeln unserer Familie noch weiter zurückreichen, bis in die Zeit der <strong>Römischen Villa von Negrar</strong>: Obwohl es keine schriftlichen Aufzeichnungen gibt, schlägt unser Blut im Rhythmus jener jahrtausendealten Mosaike.</p>
         </div>
     </article>
 
-    <section id="vini">
-        <h2>La Cantina del Riscatto</h2>
-        <p class="subtitle">Eccellenze DOC & DOCG</p>
+    <article class="story-block">
+        <h2 data-lang="it" class="active-lang">I Poeti della Sengia Sbusa</h2>
+        <h2 data-lang="en">The Poets of Sengia Sbusa</h2>
+        <h2 data-lang="de">Die Poeten der Sengia Sbusa</h2>
+        <div class="highlight-box">
+            <span data-lang="it" class="active-lang">"A Negrar siamo conosciuti come <strong>I Poeti</strong>."</span>
+            <span data-lang="en">"In Negrar we are known as <strong>The Poets</strong>."</span>
+            <span data-lang="de">"In Negrar sind wir als <strong>Die Poeten</strong> bekannt."</span>
+        </div>
+        <div data-lang="it" class="active-lang">
+            <p>Questo soprannome nasce da un prozio che, durante le guerre e nei lunghi <em>filò</em> nelle stalle, portava messaggi di speranza e raccontava storie cariche di magia. Era il <strong>Poeta della Sengia Sbusa</strong>, il cantastorie richiesto da tutti. Oggi, il nostro vino è l'erede di quel racconto: un ponte tra il passato contadino e la nobiltà ritrovata.</p>
+        </div>
+        <div data-lang="en">
+            <p>This nickname comes from a great-uncle who brought messages of hope and magic stories during the wars. He was the <strong>Poet of Sengia Sbusa</strong>. Today, our wine is the heir to that tale: a bridge between the peasant past and rediscovered nobility.</p>
+        </div>
+        <div data-lang="de">
+            <p>Dieser Spitzname stammt von einem Ur-Onkel, der während der Kriege Botschaften der Hoffnung und magische Geschichten brachte. Er war der <strong>Poet der Sengia Sbusa</strong>. Heute ist unser Wein der Erbe dieser Erzählung.</p>
+        </div>
+    </article>
+
+    <section>
+        <h2 data-lang="it" class="active-lang">Eccellenze in Bottiglia</h2>
+        <h2 data-lang="en">Excellence in a Bottle</h2>
+        <h2 data-lang="de">Exzellenz in Flaschen</h2>
         <div class="grid">
             <div class="card">
-                <img src="amarone.png" alt="Amarone La Riserva del Poeta">
+                <img src="amarone.png" alt="Amarone">
                 <h3>Amarone Classico</h3>
-                <p style="color:var(--gold); font-style:italic;">"La Riserva del Poeta"</p>
-                <p>Un vino monumentale. Note di amarena sotto spirito e tabacco. Avvolgente come le storie dei nostri avi.</p>
+                <p data-lang="it" class="active-lang">"La Riserva del Poeta". Monumentale, note di amarena e tabacco. Il vertice della nostra produzione.</p>
+                <p data-lang="en">"The Poet's Reserve". Monumental, notes of black cherry and tobacco. The peak of our production.</p>
+                <p data-lang="de">"Die Reserve des Poeten". Monumental, Noten von Schwarzkirsche und Tabak.</p>
             </div>
             <div class="card">
-                <img src="ripasso.png" alt="Ripasso La Riserva del Conte">
+                <img src="ripasso.png" alt="Ripasso">
                 <h3>Valpolicella Ripasso</h3>
-                <p style="color:var(--gold); font-style:italic;">"La Riserva del Conte"</p>
-                <p>Struttura e nobiltà ritrovata. Frutti rossi maturi e una persistenza vellutata ed elegante.</p>
+                <p data-lang="it" class="active-lang">"La Riserva del Conte". Vellutato ed elegante, racconta la nobiltà ritrovata.</p>
+                <p data-lang="en">"The Count's Reserve". Velvety and elegant, telling of rediscovered nobility.</p>
+                <p data-lang="de">"Die Reserve des Grafen". Samtig und elegant.</p>
             </div>
             <div class="card">
-                <img src="valpolicella.png" alt="Valpolicella Sengia Sbusa">
+                <img src="valpolicella.png" alt="Valpolicella">
                 <h3>Valpolicella Superiore</h3>
-                <p style="color:var(--gold); font-style:italic;">"Sengia Sbusa"</p>
-                <p>Fresco e minerale. Porta nel calice la purezza della roccia forata che domina i nostri vigneti.</p>
+                <p data-lang="it" class="active-lang">"Sengia Sbusa". Fresco e minerale, porta nel calice la purezza della nostra roccia.</p>
+                <p data-lang="en">"Sengia Sbusa". Fresh and mineral, bringing the purity of our rock to the glass.</p>
+                <p data-lang="de">"Sengia Sbusa". Frisch und mineralisch.</p>
             </div>
         </div>
     </section>
 
-    <section id="olio">
-        <h2>L'Oro dei Poeti</h2>
-        <p class="subtitle">Monocultivar Grignano</p>
-        <div style="text-align: center;">
-            <p>Il nostro Olio EVO monocultivar Grignano esprime profumi unici in tre linee distinte.</p>
-            <img src="linee-olio.png" alt="Olio Conti Nicoli" class="story-img">
-        </div>
+    <section style="margin-top: 40px;">
+        <h2 data-lang="it" class="active-lang">L'Oro dei Poeti: Grignano</h2>
+        <h2 data-lang="en">The Poets' Gold: Grignano</h2>
+        <h2 data-lang="de">Das Gold der Poeten: Grignano</h2>
+        <img src="linee-olio.png" alt="Linee Olio Nicoli" class="story-img">
         <div class="grid">
             <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Invaiatura</h3>
-                <p>Olive raccolte verdi. Fruttato intenso, note di erba tagliata e carciofo. Deciso e piccante.</p>
+                <h3 data-lang="it" class="active-lang">Invaiatura</h3>
+                <h3 data-lang="en">Early Harvest</h3>
+                <h3 data-lang="de">Frühe Ernte</h3>
+                <p data-lang="it" class="active-lang">Fruttato intenso, note di erba tagliata. Deciso e piccante.</p>
+                <p data-lang="en">Intense fruitiness, notes of cut grass. Bold and spicy.</p>
+                <p data-lang="de">Intensive Fruchtigkeit, Noten von frisch geschnittenem Gras.</p>
             </div>
             <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Maturità</h3>
-                <p>Olive mature. Note dolci di mandorla e fiori bianchi. Un equilibrio armonioso e delicato.</p>
+                <h3 data-lang="it" class="active-lang">Maturità</h3>
+                <h3 data-lang="en">Ripe Harvest</h3>
+                <h3 data-lang="de">Reife Ernte</h3>
+                <p data-lang="it" class="active-lang">Note dolci di mandorla e fiori bianchi. Armonioso.</p>
+                <p data-lang="en">Sweet almond and white flower notes. Harmonious.</p>
+                <p data-lang="de">Süße Mandelnoten. Harmonisch.</p>
             </div>
             <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Famiglia</h3>
-                <p>La qualità quotidiana in latte. Freschezza e genuinità per il consumo di ogni giorno.</p>
+                <h3 data-lang="it" class="active-lang">Famiglia</h3>
+                <h3 data-lang="en">Family Line</h3>
+                <h3 data-lang="de">Familienlinie</h3>
+                <p data-lang="it" class="active-lang">La genuinità quotidiana in latte, per la tavola di ogni giorno.</p>
+                <p data-lang="en">Everyday authenticity in tins, for your daily table.</p>
+                <p data-lang="de">Tägliche Echtheit in Kanistern.</p>
             </div>
         </div>
     </section>
 
     <section class="unesco-badge">
-        <h3>Poderi e Territorio</h3>
-        <p>Dal podere centrale di <strong>Negrar</strong> ai piedi della <strong>Sengia Sbusa</strong>, fino ai terreni di <strong>Grezzana</strong> e <strong>Verona</strong>. Coltiviamo tra i 400 e i 700 metri s.l.m., con esposizione totale a sud.</p>
+        <h3 data-lang="it" class="active-lang">L'Eroicità delle Marogne UNESCO</h3>
+        <h3 data-lang="en">The Heroism of UNESCO Marogne</h3>
+        <h3 data-lang="de">Die Heroik der UNESCO-Marogne</h3>
+        <p data-lang="it" class="active-lang">Terreni tra Negrar, Grezzana e Verona (400-700m s.l.m.). Tutto è frutto di duro lavoro manuale: <em>Per Ardua Ad Honorem</em>.</p>
+        <p data-lang="en">Lands between Negrar, Grezzana, and Verona. Everything is the result of hard manual labor: <em>Per Ardua Ad Honorem</em>.</p>
+        <p data-lang="de">Ländereien zwischen Negrar, Grezzana und Verona. Alles ist das Ergebnis harter Handarbeit.</p>
     </section>
 
-    <h2>Vieni a trovarci</h2>
     <div class="map-box">
-        <p><strong>Antiche Tenute dei Conti Nicoli</strong></p>
-        <p>Via Cà Berna, 2 - Negrar di Valpolicella (VR)</p>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Ca+Berna+2+Negrar" target="_blank" class="btn-nav">APRI NAVIGATORE</a>
+        <p><strong>Via Cà Berna, 2 - Negrar di Valpolicella (VR)</strong></p>
+        <a href="http://googleusercontent.com/maps.google.com/9" target="_blank" class="btn">Apri Navigatore</a>
     </div>
 
 </div>
 
-<section class="cta-section">
-    <h2>Ordini e Degustazioni</h2>
-    <p>Vuoi ricevere i nostri prodotti o visitare le tenute? <br> Contattaci direttamente su WhatsApp.</p>
-    <a href="https://wa.me/39XXXXXXXXXX" class="whatsapp-btn">ORDINA SU WHATSAPP</a>
-    <p style="margin-top:20px; font-size:0.9rem;">Email: info@continicoli.it</p>
+<section style="background: var(--wine-red); color: white; text-align: center; padding: 60px 20px;">
+    <h2 data-lang="it" class="active-lang">Contatti & Shop</h2>
+    <h2 data-lang="en">Contact & Shop</h2>
+    <h2 data-lang="de">Kontakt & Shop</h2>
+    <p data-lang="it" class="active-lang">Vi aspettiamo per raccontarvi una storia di riscatto.</p>
+    <p data-lang="en">We await you to tell a story of redemption.</p>
+    <p data-lang="de">Wir erwarten Sie, um eine Geschichte der Wiedergutmachung zu erzählen.</p>
+    <a href="https://wa.me/393400988077" target="_blank" class="whatsapp-btn">WHATSAPP SHOP</a>
 </section>
 
 <footer>
-    <p>© 2026 Antiche Tenute dei Conti Nicoli | Verona - Italia<br>
-    P.IVA: Inserisci qui la tua Partita IVA</p>
+    <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA: 04467000234</p>
 </footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.classList.remove('active-lang');
+            if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+        });
+    }
+</script>
 
 </body>
 </html>
