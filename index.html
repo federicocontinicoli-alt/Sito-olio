@@ -102,9 +102,18 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: 25px;
             margin-top: 40px;
+        }
+
+        @media (min-width: 600px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1100px) {
+            .grid { grid-template-columns: repeat(4, 1fr); }
+            .grid.olive-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         .card {
@@ -118,10 +127,9 @@
             flex-direction: column;
         }
 
-        .card h3 { text-align: center; color: var(--wine-red); margin-bottom: 15px; }
+        .card h3 { text-align: center; color: var(--wine-red); margin-bottom: 15px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
         .card .prod-img { width: 100%; max-width: 150px; height: auto; margin: 0 auto 15px auto; display: block; }
 
-        /* NUOVI STILI PER IL LEGGI TUTTO */
         .card-content {
             max-height: 160px;
             overflow: hidden;
@@ -199,7 +207,6 @@
         [data-lang]:not(.active-lang) { display: none; }
 
         @media (max-width: 900px) {
-            .grid { grid-template-columns: 1fr; }
             .motto { font-size: 1.3rem; }
         }
     </style>
@@ -250,32 +257,41 @@
             <div class="card">
                 <img src="amarone.jpg" alt="Amarone" class="prod-img">
                 <h3>Amarone della Valpolicella DOCG Classico</h3>
-                <p data-lang="it" class="active-lang"><strong>"La Riserva del Poeta"</strong>. Un vino monumentale che nasce dal lungo appassimento delle migliori uve. Al naso esplode con un bouquet complesso di amarena sotto spirito, prugna secca e fini note di tabacco. In bocca è avvolgente e maestoso, con tannini vellutati che accompagnano un finale infinito. Rappresenta il vertice del nostro riscatto, una poesia liquida che sfida il tempo.<br> L'eleganza del tempo:<br>
- * Il Profilo: Il vertice della produzione Conti Nicoli. Un vino da meditazione che nasce da un appassimento lento e da un affinamento in botti grandi di rovere che non coprono, ma esaltano.<br>
- * Al naso: Ampio e profondo. Note di prugna secca, tabacco dolce, cacao amaro e quel tocco di erbe officinali che solo la collina di Negrar sa regalare. Il legno è un sussurro, non un grido.<br>
- * In bocca: Maestoso, secco, austero. Una potenza contenuta da una grande acidità che lo rende incredibilmente longevo. Il finale è infinito, con un ritorno di ciliegia sotto spirito.<br>
- * L'abbinamento: Brasati all'Amarone, selvaggina o, più semplicemente, un pezzo di Parmigiano Reggiano 36 mesi davanti al camino.<br>
- "Non un vino, ma un racconto. L'essenza dell'appassimento interpretata con la finezza di chi sa aspettare. La poesia nel calice." </p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang"><strong>"La Riserva del Poeta"</strong>. Un vino monumentale che nasce dal lungo appassimento delle migliori uve. Al naso esplode con un bouquet complesso di amarena sotto spirito, prugna secca e fini note di tabacco. In bocca è avvolgente e maestoso, con tannini vellutati e una grande acidità che lo rende incredibilmente longevo. Rappresenta il vertice del nostro riscatto, una poesia liquida che sfida il tempo.<br><br>
+                    <strong>L'abbinamento:</strong> Brasati all'Amarone, selvaggina o Parmigiano Reggiano 36 mesi.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
+
             <div class="card">
                 <img src="ripasso.jpg" alt="Ripasso" class="prod-img">
                 <h3>Valpolicella Ripasso DOC Classico Superiore</h3>
-                <p data-lang="it" class="active-lang"><strong>"La Riserva del Conte"</strong>. Ottenuto secondo l'antica tecnica del ripasso sulle vinacce dell'Amarone, unisce freschezza e struttura nobile. Il profumo richiama i frutti di bosco maturi e la confettura di ciliegia. Al palato è armonico e persistente, dotato di una morbidezza che ricorda i velluti dei palazzi perduti nel 1673. <br>L'equilibrio tra forza e grazia:<br>
- * Il Profilo: Ottenuto secondo l'antica tecnica del ripasso, ma gestito con mano leggera per evitare pesantezze. Un vino che sa di nobiltà rurale.<br>
- * Al naso: Frutti di bosco in confettura, una punta di viola appassita e un leggerissimo accenno speziato derivante dal breve passaggio in legno grande.<br>
- * In bocca: Avvolgente e vellutato, con tannini setosi. La struttura è importante ma resta "bevibile", evitando quella sensazione di eccessiva dolcezza che stanca il palato.<br>
- * L'abbinamento: Carni alla brace, arrosti della domenica o formaggi di media stagionatura.<br>
- "Un Ripasso moderno: ha il carattere dell'Amarone ma mantiene la vivacità del Valpolicella. La complessità che non stanca mai." </p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang"><strong>"La Riserva del Conte"</strong>. Ottenuto secondo l'antica tecnica del ripasso sulle vinacce dell'Amarone, unisce freschezza e struttura nobile. Il profumo richiama i frutti di bosco maturi e la confettura di ciliegia con un leggero accenno speziato. Al palato è avvolgente e vellutato, dotato di una morbidezza che evita eccessive dolcezze.<br><br>
+                    <strong>L'abbinamento:</strong> Carni alla brace, arrosti della domenica o formaggi di media stagionatura.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
+
             <div class="card">
                 <img src="valpolicella.jpg" alt="Valpolicella" class="prod-img">
                 <h3>Valpolicella DOC Classico</h3>
-                <p data-lang="it" class="active-lang"><strong>"Sengia Sbusa"</strong>. Espressione purissima del territorio di Negrar. Un vino che parla di roccia e altitudine, caratterizzato da freschezza vibrante e spiccata mineralità. Con sentori di viola e pepe nero, porta nel calice la luce del sole che bacia i nostri muretti a secco dalla mattina alla sera. <br>L'anima minerale di Negrar:
- <br>* Il Profilo: È il vino della sincerità. Prodotto solo in acciaio per preservare l'integrità del frutto.
- <br>* Al naso: Esplosione di ciliegia croccante, marasca e una nota sottile di pepe nero tipica della Corvina coltivata sulla roccia.
- <br>* In bocca: Agile, fresco, con una sapidità minerale che invita immediatamente al secondo sorso. Non cerca la potenza, ma la verticalità.
- <br>* L'abbinamento: Il compagno quotidiano dei salumi veronesi, dei primi piatti al ragù o di un formaggio Monte Veronese giovane.
- <br>"La freschezza della pietra, il profumo della tradizione. Il Valpolicella come si beveva una volta, ma con la pulizia di oggi."</p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang"><strong>"Sengia Sbusa"</strong>. Espressione purissima del territorio di Negrar, prodotta solo in acciaio per preservare l'integrità del frutto. Caratterizzato da una spiccata mineralità e sentori di ciliegia croccante e pepe nero. In bocca è agile e fresco, un vino di sincerità e verticalità.<br><br>
+                    <strong>L'abbinamento:</strong> Salumi veronesi, primi piatti al ragù o formaggio Monte Veronese giovane.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
+            </div>
+
+            <div class="card">
+                <img src="recioto.jpg" alt="Recioto" class="prod-img">
+                <h3>Recioto della Valpolicella DOCG Classico</h3>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang"><strong>"Quarotto della Castagnara"</strong>. Il vino più antico del territorio e l'antenato dell’Amarone. Ottenuto dai grappoli più zuccherini lasciati riposare nei fruttai di Negrar. Al naso incanta con note di ciliegia sotto spirito, confettura di mora e liquirizia. In bocca è dolce ma mai stucchevole, bilanciato dalla freschezza del terreno collinare per un sorso vellutato e cremoso.<br><br>
+                    <strong>L'abbinamento:</strong> Sbrisolona, dolci al cioccolato o formaggi erborinati stagionati. Perfetto anche da solo come vino da meditazione.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
         </div>
     </section>
@@ -283,12 +299,12 @@
     <section style="margin-top: 60px;">
         <h2 data-lang="it" class="active-lang">L'Oro dei Poeti: Grignano</h2>
         <img src="linee-olio.png" alt="Linee Olio Nicoli" class="story-img">
-        <div class="grid">
+        <div class="grid olive-grid">
             
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Invaiatura</h3>
                 <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">Ottenuto da olive raccolte precocemente. Un olio dal fruttato intenso, con note nette di erba appena tagliata e carciofo. Al palato è deciso e piccante, testimone dell'altissima presenza di polifenoli. È il condimento ideale per chi cerca carattere e la massima espressione della varietà Grignano. Qui siamo di fronte a un vero nutraceutico. La raccolta precoce garantisce il picco massimo di polifenoli (antiossidanti naturali). Dal punto di vista biologico, questo olio è una 'bomba' contro lo stress ossidativo e l'invecchiamento cellulare. L'alta concentrazione di oleocantale è testimoniata dal pizzicore in gola: ha un'azione antinfiammatoria simile a quella dell'ibuprofene. È un protettore formidabile per l'apparato cardiovascolare. Al naso è un'esplosione di freschezza: senti l'erba appena tagliata, il carciofo crudo e la foglia di pomodoro. In bocca è deciso, quasi arrogante nella sua giovinezza. L'amaro e il piccante sono intensi ma equilibrati, con una chiusura che ricorda la mandorla verde. È un olio 'muscolare', perfetto per esaltare una tagliata di manzo, una zuppa di legumi o semplicemente un pane bruscato che sappia reggere il confronto.</p>
+                    <p data-lang="it" class="active-lang">Ottenuto da olive raccolte precocemente. Un olio dal fruttato intenso, con note nette di erba appena tagliata e carciofo. Al palato è deciso e piccante, testimone dell'altissima presenza di polifenoli. È il condimento ideale per chi cerca carattere e la massima espressione della varietà Grignano. La raccolta precoce garantisce il picco massimo di antiossidanti naturali, offrendo un'azione protettiva per l'apparato cardiovascolare. Al naso è un'esplosione di freschezza, mentre in bocca l'amaro e il piccante sono intensi ma equilibrati. Perfetto per esaltare una tagliata di manzo o una zuppa di legumi.</p>
                 </div>
                 <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
@@ -296,7 +312,7 @@
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Maturità</h3>
                 <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">Olive raccolte a piena maturazione per un olio di straordinaria eleganza. Il profumo è delicato, con richiami di fiori bianchi e mela. In bocca è fluido, morbido e armonioso, perfetto per piatti delicati o pesce, accompagnando il cibo senza mai sovrastarne il sapore originale. In questa fase, la composizione chimica cambia. Sebbene i polifenoli siano leggermente diminuiti rispetto all'invaiatura, l'olio diventa estremamente digeribile e ricco di acidi grassi monoinsaturi di alta qualità. È un grasso 'buono' che aiuta a regolare il colesterolo senza irritare le mucose gastriche più sensibili. Lo definirei un olio 'gentile', ideale per la dieta quotidiana, anche per i bambini o gli anziani, perché nutre il sistema nervoso con estrema delicatezza. Dimenticate l'irruenza del precedente. Qui cerchiamo la seta. I profumi virano verso la mela Golden matura, la camomilla e i fiori bianchi. La sensazione tattile in bocca è avvolgente, quasi burrosa. L'amaro è appena accennato e il piccante è un sussurro finale, molto elegante. È l'olio della discrezione: non copre i sapori, li accompagna. Splendido su un pesce al forno, su una maionese fatta in casa o addirittura su un dolce leggero.</p>
+                    <p data-lang="it" class="active-lang">Olive raccolte a piena maturazione per un olio di straordinaria eleganza. Il profumo è delicato, con richiami di fiori bianchi e mela. In bocca è fluido, morbido e armonioso, perfetto per piatti delicati o pesce, accompagnando il cibo senza mai sovrastarne il sapore originale. Estremamente digeribile e ricco di grassi buoni, è l'olio ideale per la dieta quotidiana. Lo definiamo un olio "gentile", che nutre con estrema delicatezza. Splendido su un pesce al forno o su una maionese fatta in casa.</p>
                 </div>
                 <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
@@ -304,7 +320,7 @@
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Famiglia</h3>
                 <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">La nostra selezione multicultivar pensata per l'uso quotidiano. Un olio genuino che porta l'anima dei nostri oliveti eroici sulla tavola di ogni giorno. Equilibrato e versatile, racconta la nostra quotidianità fatta di terra, sudore e rispetto per la natura. Dal punto di vista medico, il Grignano è un caso di studio straordinario per la sua stabilità ossidativa. Rispetto ad altre varietà, ha una resistenza incredibile al tempo, il che significa che mantiene intatte le sue proprietà organolettiche e salutistiche più a lungo. È un concentrato di vitamina E (tocoferoli) e fitosteroli, alleati essenziali per la protezione delle membrane cellulari. La sua struttura lipidica è perfettamente bilanciata: è un grasso che 'pulisce' le arterie. Inoltre, il Grignano ha una genetica rustica, tipica delle piante che crescono sulle 'marogne' (i muretti a secco); questo la porta a sviluppare difese naturali che si traducono in un profilo molecolare molto robusto. Consumarla regolarmente non è solo un piacere, è una vera e propria terapia preventiva per il metabolismo. Degustare un olio di Grignano è come fare una passeggiata in un giardino di collina all'alba. Se dovessi definirlo con una sola parola, sceglierei: Pulizia. A differenza di oli più pesanti o eccessivamente carichi, il Grignano si distingue per una nota aromatica dominante di agrumi e fiori bianchi, un tratto distintivo che la rende immediatamente riconoscibile a un naso esperto. In bocca non è mai invadente; ha un corpo fluido, quasi acquoso nella sua leggerezza, ma dotato di una persistenza aromatica incredibile. È un olio di 'luce': brillante nel colore e limpido nei sapori. Nonostante la sua delicatezza, possiede un'anima vibrante che pulisce il palato in modo impeccabile, lasciando una sensazione di freschezza che invita subito a un altro assaggio.</p>
+                    <p data-lang="it" class="active-lang">La nostra selezione multicultivar pensata per l'uso quotidiano. Un olio genuino che porta l'anima dei nostri oliveti eroici sulla tavola di ogni giorno. Equilibrato e versatile, racconta la nostra quotidianità fatta di terra e rispetto per la natura. Il Grignano si distingue per la sua incredibile stabilità nel tempo e per un profilo molecolare robusto. Degustarlo è come fare una passeggiata in un giardino di collina all'alba: brillante nel colore e limpido nei sapori, lascia una sensazione di freschezza impeccabile.</p>
                 </div>
                 <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
@@ -386,7 +402,6 @@
         });
     }
 
-    // NUOVA FUNZIONE PER IL TASTO LEGGI TUTTO
     function toggleReadMore(btn) {
         const content = btn.previousElementSibling;
         
