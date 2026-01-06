@@ -114,10 +114,44 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: justify;
             font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .card h3 { text-align: center; color: var(--wine-red); margin-bottom: 15px; }
         .card .prod-img { width: 100%; max-width: 150px; height: auto; margin: 0 auto 15px auto; display: block; }
+
+        /* NUOVI STILI PER IL LEGGI TUTTO */
+        .card-content {
+            max-height: 160px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.6s ease;
+        }
+
+        .card-content.collapsed::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(transparent, white);
+        }
+
+        .read-more-btn {
+            color: var(--wine-red);
+            background: none;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 15px 0 0 0;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-top: auto;
+            align-self: center;
+        }
 
         .unesco-badge {
             background: #f1ede4;
@@ -127,7 +161,6 @@
             margin: 60px 0;
         }
 
-        /* Nuova Sezione Dove Siamo Centrata */
         .where-we-are {
             max-width: 600px;
             margin: 60px auto;
@@ -236,18 +269,31 @@
         <h2 data-lang="it" class="active-lang">L'Oro dei Poeti: Grignano</h2>
         <img src="linee-olio.png" alt="Linee Olio Nicoli" class="story-img">
         <div class="grid">
+            
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Invaiatura</h3>
-                <p data-lang="it" class="active-lang">Ottenuto da olive raccolte precocemente. Un olio dal fruttato intenso, con note nette di erba appena tagliata e carciofo. Al palato è deciso e piccante, testimone dell'altissima presenza di polifenoli. È il condimento ideale per chi cerca carattere e la massima espressione della varietà Grignano. Qui siamo di fronte a un vero nutraceutico. La raccolta precoce garantisce il picco massimo di polifenoli (antiossidanti naturali). Dal punto di vista biologico, questo olio è una 'bomba' contro lo stress ossidativo e l'invecchiamento cellulare. L'alta concentrazione di oleocantale è testimoniata dal pizzicore in gola: ha un'azione antinfiammatoria simile a quella dell'ibuprofene. È un protettore formidabile per l'apparato cardiovascolare. Al naso è un'esplosione di freschezza: senti l'erba appena tagliata, il carciofo crudo e la foglia di pomodoro. In bocca è deciso, quasi arrogante nella sua giovinezza. L'amaro e il piccante sono intensi ma equilibrati, con una chiusura che ricorda la mandorla verde. È un olio 'muscolare', perfetto per esaltare una tagliata di manzo, una zuppa di legumi o semplicemente un pane bruscato che sappia reggere il confronto.</p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang">Ottenuto da olive raccolte precocemente. Un olio dal fruttato intenso, con note nette di erba appena tagliata e carciofo. Al palato è deciso e piccante, testimone dell'altissima presenza di polifenoli. È il condimento ideale per chi cerca carattere e la massima espressione della varietà Grignano. Qui siamo di fronte a un vero nutraceutico. La raccolta precoce garantisce il picco massimo di polifenoli (antiossidanti naturali). Dal punto di vista biologico, questo olio è una 'bomba' contro lo stress ossidativo e l'invecchiamento cellulare. L'alta concentrazione di oleocantale è testimoniata dal pizzicore in gola: ha un'azione antinfiammatoria simile a quella dell'ibuprofene. È un protettore formidabile per l'apparato cardiovascolare. Al naso è un'esplosione di freschezza: senti l'erba appena tagliata, il carciofo crudo e la foglia di pomodoro. In bocca è deciso, quasi arrogante nella sua giovinezza. L'amaro e il piccante sono intensi ma equilibrati, con una chiusura che ricorda la mandorla verde. È un olio 'muscolare', perfetto per esaltare una tagliata di manzo, una zuppa di legumi o semplicemente un pane bruscato che sappia reggere il confronto.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
+
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Maturità</h3>
-                <p data-lang="it" class="active-lang">Olive raccolte a piena maturazione per un olio di straordinaria eleganza. Il profumo è delicato, con richiami di fiori bianchi e mela. In bocca è fluido, morbido e armonioso, perfetto per piatti delicati o pesce, accompagnando il cibo senza mai sovrastarne il sapore originale. In questa fase, la composizione chimica cambia. Sebbene i polifenoli siano leggermente diminuiti rispetto all'invaiatura, l'olio diventa estremamente digeribile e ricco di acidi grassi monoinsaturi di alta qualità. È un grasso 'buono' che aiuta a regolare il colesterolo senza irritare le mucose gastriche più sensibili. Lo definirei un olio 'gentile', ideale per la dieta quotidiana, anche per i bambini o gli anziani, perché nutre il sistema nervoso con estrema delicatezza. Dimenticate l'irruenza del precedente. Qui cerchiamo la seta. I profumi virano verso la mela Golden matura, la camomilla e i fiori bianchi. La sensazione tattile in bocca è avvolgente, quasi burrosa. L'amaro è appena accennato e il piccante è un sussurro finale, molto elegante. È l'olio della discrezione: non copre i sapori, li accompagna. Splendido su un pesce al forno, su una maionese fatta in casa o addirittura su un dolce leggero.</p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang">Olive raccolte a piena maturazione per un olio di straordinaria eleganza. Il profumo è delicato, con richiami di fiori bianchi e mela. In bocca è fluido, morbido e armonioso, perfetto per piatti delicati o pesce, accompagnando il cibo senza mai sovrastarne il sapore originale. In questa fase, la composizione chimica cambia. Sebbene i polifenoli siano leggermente diminuiti rispetto all'invaiatura, l'olio diventa estremamente digeribile e ricco di acidi grassi monoinsaturi di alta qualità. È un grasso 'buono' che aiuta a regolare il colesterolo senza irritare le mucose gastriche più sensibili. Lo definirei un olio 'gentile', ideale per la dieta quotidiana, anche per i bambini o gli anziani, perché nutre il sistema nervoso con estrema delicatezza. Dimenticate l'irruenza del precedente. Qui cerchiamo la seta. I profumi virano verso la mela Golden matura, la camomilla e i fiori bianchi. La sensazione tattile in bocca è avvolgente, quasi burrosa. L'amaro è appena accennato e il piccante è un sussurro finale, molto elegante. È l'olio della discrezione: non copre i sapori, li accompagna. Splendido su un pesce al forno, su una maionese fatta in casa o addirittura su un dolce leggero.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
+
             <div class="card" style="border-top-color: var(--olive);">
                 <h3>Linea Famiglia</h3>
-                <p data-lang="it" class="active-lang">La nostra selezione multicultivar pensata per l'uso quotidiano. Un olio genuino che porta l'anima dei nostri oliveti eroici sulla tavola di ogni giorno. Equilibrato e versatile, racconta la nostra quotidianità fatta di terra, sudore e rispetto per la natura. Dal punto di vista medico, il Grignano è un caso di studio straordinario per la sua stabilità ossidativa. Rispetto ad altre varietà, ha una resistenza incredibile al tempo, il che significa che mantiene intatte le sue proprietà organolettiche e salutistiche più a lungo. È un concentrato di vitamina E (tocoferoli) e fitosteroli, alleati essenziali per la protezione delle membrane cellulari. La sua struttura lipidica è perfettamente bilanciata: è un grasso che 'pulisce' le arterie. Inoltre, il Grignano ha una genetica rustica, tipica delle piante che crescono sulle 'marogne' (i muretti a secco); questo la porta a sviluppare difese naturali che si traducono in un profilo molecolare molto robusto. Consumarla regolarmente non è solo un piacere, è una vera e propria terapia preventiva per il metabolismo. Degustare un olio di Grignano è come fare una passeggiata in un giardino di collina all'alba. Se dovessi definirlo con una sola parola, sceglierei: Pulizia. A differenza di oli più pesanti o eccessivamente carichi, il Grignano si distingue per una nota aromatica dominante di agrumi e fiori bianchi, un tratto distintivo che la rende immediatamente riconoscibile a un naso esperto. In bocca non è mai invadente; ha un corpo fluido, quasi acquoso nella sua leggerezza, ma dotato di una persistenza aromatica incredibile. È un olio di 'luce': brillante nel colore e limpido nei sapori. Nonostante la sua delicatezza, possiede un'anima vibrante che pulisce il palato in modo impeccabile, lasciando una sensazione di freschezza che invita subito a un altro assaggio.</p>
+                <div class="card-content collapsed">
+                    <p data-lang="it" class="active-lang">La nostra selezione multicultivar pensata per l'uso quotidiano. Un olio genuino che porta l'anima dei nostri oliveti eroici sulla tavola di ogni giorno. Equilibrato e versatile, racconta la nostra quotidianità fatta di terra, sudore e rispetto per la natura. Dal punto di vista medico, il Grignano è un caso di studio straordinario per la sua stabilità ossidativa. Rispetto ad altre varietà, ha una resistenza incredibile al tempo, il che significa che mantiene intatte le sue proprietà organolettiche e salutistiche più a lungo. È un concentrato di vitamina E (tocoferoli) e fitosteroli, alleati essenziali per la protezione delle membrane cellulari. La sua struttura lipidica è perfettamente bilanciata: è un grasso che 'pulisce' le arterie. Inoltre, il Grignano ha una genetica rustica, tipica delle piante che crescono sulle 'marogne' (i muretti a secco); questo la porta a sviluppare difese naturali che si traducono in un profilo molecolare molto robusto. Consumarla regolarmente non è solo un piacere, è una vera e propria terapia preventiva per il metabolismo. Degustare un olio di Grignano è come fare una passeggiata in un giardino di collina all'alba. Se dovessi definirlo con una sola parola, sceglierei: Pulizia. A differenza di oli più pesanti o eccessivamente carichi, il Grignano si distingue per una nota aromatica dominante di agrumi e fiori bianchi, un tratto distintivo che la rende immediatamente riconoscibile a un naso esperto. In bocca non è mai invadente; ha un corpo fluido, quasi acquoso nella sua leggerezza, ma dotato di una persistenza aromatica incredibile. È un olio di 'luce': brillante nel colore e limpido nei sapori. Nonostante la sua delicatezza, possiede un'anima vibrante che pulisce il palato in modo impeccabile, lasciando una sensazione di freschezza che invita subito a un altro assaggio.</p>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
             </div>
+
         </div>
     </section>
 
@@ -279,7 +325,9 @@
     <div style="max-width: 800px; margin: auto;">
         <h2 style="color: white; margin-top: 0;">Porta la Poesia sulla tua Tavola</h2>
         <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);">
-            "Ogni bottiglia è una storia, ogni assaggio un verso. <br> Scriviamo insieme il prossimo capitolo."
+            "Ogni bottiglia è una storia,<br>
+            ogni assaggio un verso.<br>
+            Scriviamo insieme il prossimo capitolo."
         </p>
         
         <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 40px; gap: 20px;">
@@ -308,7 +356,7 @@
 </section>
 
 <footer>
-    <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA 04467000234</p>
+    <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA 03585990231</p>
 </footer>
 
 <script>
@@ -321,6 +369,21 @@
             btn.classList.remove('active');
             if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
         });
+    }
+
+    // NUOVA FUNZIONE PER IL TASTO LEGGI TUTTO
+    function toggleReadMore(btn) {
+        const content = btn.previousElementSibling;
+        
+        if (content.classList.contains('collapsed')) {
+            content.classList.remove('collapsed');
+            content.style.maxHeight = content.scrollHeight + "px";
+            btn.innerText = "Leggi meno";
+        } else {
+            content.classList.add('collapsed');
+            content.style.maxHeight = "160px";
+            btn.innerText = "Leggi tutto...";
+        }
     }
 </script>
 
