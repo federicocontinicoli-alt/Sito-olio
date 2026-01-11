@@ -649,5 +649,93 @@
     }
 </script>
 
+<!-- Pulsante WhatsApp flottante multilingua -->
+<a id="wa-float-btn" 
+   href="https://wa.me/393400988077?text=Ciao!%20Vorrei%20info%20su%20prenotazione%20vini%20e%20olio%202026/2027" 
+   class="wa-float" 
+   target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover {
+    transform: scale(1.1);
+  }
+  .wa-float img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+</style>
+
+<script>
+function updateWhatsAppMessage(lang) {
+    const btn = document.getElementById('wa-float-btn');
+    if (!btn) return;
+
+    let message = '';
+    switch(lang) {
+        case 'it':
+            message = 'Ciao! Vorrei info su prenotazione vini e olio 2026/2027';
+            break;
+        case 'en':
+            message = 'Hello! Interested in pre-ordering wines and Grignano oil for 2026/2027';
+            break;
+        case 'de':
+            message = 'Hallo! Interessiert an Vorbestellung von Weinen und Grignano-Öl für 2026/2027';
+            break;
+        case 'ru':
+            message = 'Привет! Интересуюсь предзаказом вин и масла Гриньяно на 2026/2027';
+            break;
+        default:
+            message = 'Ciao! Vorrei info su prenotazione vini e olio 2026/2027';
+    }
+
+    const encoded = encodeURIComponent(message);
+    btn.href = 'https://wa.me/393400988077?text=' + encoded;
+}
+
+// MODIFICA la tua funzione setLang esistente aggiungendo questa riga alla FINE:
+function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active-lang');
+        if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+    });
+    
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        const currentTxt = btn.innerText;
+        const isClosing = (currentTxt === "Leggi meno" || currentTxt === "Read less" || currentTxt === "Weniger lesen" || currentTxt === "Свернуть");
+        
+        if (!isClosing) {
+            if (lang === 'it') btn.innerText = "Leggi tutto...";
+            else if (lang === 'en') btn.innerText = "Read more...";
+            else if (lang === 'de') btn.innerText = "Weiterlesen...";
+            else if (lang === 'ru') btn.innerText = "Читать далее...";
+        }
+    });
+
+    updateWhatsAppMessage(lang);  // ← AGGIUNGI QUESTA RIGA QUI
+}
+
+// Inizializza con la lingua di default (italiano)
+updateWhatsAppMessage('it');
+</script>
+
 </body>
 </html>
