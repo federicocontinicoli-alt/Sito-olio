@@ -229,12 +229,36 @@
 </head>
 <body>
 
-<div class="lang-switch">
-    <button class="lang-btn active" onclick="setLang('it')">IT</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('de')">DE</button>
-    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+<div class="lang-switch" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    
+    <div id="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+    </div>
+
+    <div>
+        <button class="lang-btn active" onclick="setLang('it')">IT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+
+    <div id="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+        <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
+        
+        <a href="index.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
+        
+        <a href="galleria.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+            <span data-lang="it" class="active-lang">GALLERIA</span>
+            <span data-lang="en">GALLERY</span>
+            <span data-lang="de">GALERIE</span>
+            <span data-lang="ru">ГАЛЕРЕЯ</span>
+        </a>
+
+        </div>
 </div>
+
 
 <header>
     <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
@@ -736,6 +760,21 @@ function setLang(lang) {
 // Inizializza con la lingua di default (italiano)
 updateWhatsAppMessage('it');
 </script>
+
+<script>
+    // Funzione per aprire e chiudere il menù laterale
+    function toggleMenu() {
+        const menu = document.getElementById('side-menu');
+        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
+        if (menu.style.left === '0px') {
+            menu.style.left = '-250px';
+        } else {
+            // Altrimenti lo porta a 0px per farlo vedere
+            menu.style.left = '0px';
+        }
+    }
+</script>
+
 
 </body>
 </html>

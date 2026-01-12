@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<!-- copia e incolla alla riga 175 questo dopo aver cambiato nome foto e 4 descrizioni 
+
+<div class="gallery-item" onclick="openLightbox(this)">
+            <img src="olive-mano.png" alt="conte">
+            <div class="caption">
+                <span data-lang="it" class="active-lang"> testo italiano</span>
+                <span data-lang="en">testo inglese</span>
+                <span data-lang="de">testo tedesco</span>
+                <span data-lang="ru">testo russo</span>
+            </div>
+        </div>
+
+
+-->
+
+
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria | Antiche Tenute dei Conti Nicoli</title>
+    <style>
+        :root {
+            --wine-red: #4a0404;
+            --gold: #b8860b;
+            --cream: #fdfaf5;
+            --dark: #121212;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--cream);
+        }
+
+        /* Navigazione Lingue */
+        .lang-switch {
+            background: var(--dark);
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            color: white;
+            background: none;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .lang-btn.active { background: var(--gold); color: var(--dark); }
+
+        header {
+            background: white;
+            padding: 40px 10px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo-img { max-width: 150px; height: auto; }
+
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+
+        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 20px; }
+        .subtitle { text-align: center; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
+
+        /* Griglia Galleria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: white;
+            border: 1px solid var(--gold);
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover { transform: scale(1.02); }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            padding: 15px 5px 5px 5px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-style: italic;
+            color: var(--wine-red);
+        }
+
+        /* Lightbox (Effetto Zoom) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 3px solid var(--gold);
+        }
+
+        .back-home { text-align: center; margin-top: 50px; }
+        .nav-btn {
+            background: var(--gold);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        [data-lang]:not(.active-lang) { display: none; }
+        
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    
+    <div id="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+    </div>
+
+    <div>
+        <button class="lang-btn active" onclick="setLang('it')">IT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+
+    <div id="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+        <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
+        
+        <a href="index.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
+        
+        <a href="galleria.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+            <span data-lang="it" class="active-lang">GALLERIA</span>
+            <span data-lang="en">GALLERY</span>
+            <span data-lang="de">GALERIE</span>
+            <span data-lang="ru">ГАЛЕРЕЯ</span>
+        </a>
+
+        </div>
+</div>
+
+
+<header>
+    <a href="index.html">
+        <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
+    </a>
+</header>
+
+<div class="container">
+    <h2 data-lang="it" class="active-lang">Galleria Fotografica</h2>
+    <h2 data-lang="en">Photo Gallery</h2>
+    <h2 data-lang="de">Fotogalerie</h2>
+    <h2 data-lang="ru">Фотогалерея</h2>
+    
+    <p class="subtitle" data-lang="it" class="active-lang">Scatti dalle nostre Tenute</p>
+    <p class="subtitle" data-lang="en">Shots from our Estates</p>
+    <p class="subtitle" data-lang="de">Bilder von unseren Gütern</p>
+    <p class="subtitle" data-lang="ru">Снимки из наших поместий</p>
+
+    <div class="gallery-grid">
+
+
+<div class="gallery-item" onclick="openLightbox(this)">
+            <img src="olive-mano.png" alt="conte">
+            <div class="caption">
+                <span data-lang="it" class="active-lang"> Grignano all'invaiatura</span>
+                <span data-lang="en">Grignano at veraison</span>
+                <span data-lang="de">Grignano bei Veraison</span>
+                <span data-lang="ru">Гриньяно в сезон созревания</span>
+            </div>
+        </div>
+
+
+<div class="gallery-item" onclick="openLightbox(this)">
+            <img src="quadro4.png" alt="conte">
+            <div class="caption">
+                <span data-lang="it" class="active-lang">il conte con gli amici</span>
+                <span data-lang="en">the count with his friends</span>
+                <span data-lang="de">der Graf mit seinen Freunden</span>
+                <span data-lang="ru">граф со своими друзьями</span>
+            </div>
+        </div>
+
+
+        <div class="gallery-item" onclick="openLightbox(this)">
+            <img src="vigneto-sfocato.jpg" alt="Vigneti">
+            <div class="caption">
+                <span data-lang="it" class="active-lang">I nostri vigneti al sole</span>
+                <span data-lang="en">Our vineyards in the sun</span>
+                <span data-lang="de">Unsere Weinberge in der Sonne</span>
+                <span data-lang="ru">Наши виноградники на солнце</span>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+            <img src="olio.jpg" alt="Olio">
+            <div class="caption">
+                <span data-lang="it" class="active-lang">L'Oro dei Poeti: Olio Grignano</span>
+                <span data-lang="en">The Gold of Poets: Grignano Oil</span>
+                <span data-lang="de">Das Gold der Poeten: Grignano-Öl</span>
+                <span data-lang="ru">Золото поэтов: масло Гриньяно</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back-home">
+        <a href="index.html" class="nav-btn" data-lang="it" class="active-lang">Torna alla Home</a>
+        <a href="index.html" class="nav-btn" data-lang="en">Back to Home</a>
+        <a href="index.html" class="nav-btn" data-lang="de">Zurück zur Startseite</a>
+        <a href="index.html" class="nav-btn" data-lang="ru">Вернуться домой</a>
+    </div>
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Zoom">
+</div>
+
+<footer>
+    <p>© 2026 Antiche Tenute dei Conti Nicoli</p>
+</footer>
+
+<script>
+    // Funzione Cambio Lingua
+    function setLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.classList.remove('active-lang');
+            if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+        });
+    }
+
+    // Funzione Lightbox
+    function openLightbox(element) {
+        const imgSrc = element.querySelector('img').src;
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+</script>
+
+<script>
+    // Funzione per aprire e chiudere il menù laterale
+    function toggleMenu() {
+        const menu = document.getElementById('side-menu');
+        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
+        if (menu.style.left === '0px') {
+            menu.style.left = '-250px';
+        } else {
+            // Altrimenti lo porta a 0px per farlo vedere
+            menu.style.left = '0px';
+        }
+    }
+</script>
+
+
+</body>
+</html>
