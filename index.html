@@ -244,19 +244,19 @@
         <button class="lang-btn" onclick="setLang('ru')">RU</button>
     </div>
 
-    <div id="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+    <div id="side-menu" **onclick="toggleMenu()"** style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
         <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
         
-        <a href="index.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
+        <a href="index.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
         
-        <a href="galleria.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+        <a href="galleria.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
             <span data-lang="it" class="active-lang">GALLERIA</span>
             <span data-lang="en">GALLERY</span>
             <span data-lang="de">GALERIE</span>
             <span data-lang="ru">ГАЛЕРЕЯ</span>
         </a>
 
-<a href="https://www.instagram.com/continicoli/" target="_blank" rel="noopener noreferrer" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">INSTAGRAM</a>
+<a href="https://www.instagram.com/continicoli/" target="_blank" onclick="toggleMenu()" rel="noopener noreferrer" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">INSTAGRAM</a>
 
 
 
@@ -779,6 +779,18 @@ updateWhatsAppMessage('it');
             menu.style.left = '0px';
         }
     }
+	
+	// --- NUOVO PEZZO DA AGGIUNGERE ---
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('side-menu');
+        const icon = document.getElementById('menu-icon');
+        // Se il menù è aperto E il clic è avvenuto fuori dal menù E fuori dall'icona delle tre lineette
+        if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
+            toggleMenu();
+        }
+    });
+    // --- FINE NUOVO PEZZO ---
+	
 </script>
 
 
