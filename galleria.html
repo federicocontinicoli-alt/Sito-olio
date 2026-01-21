@@ -92,6 +92,7 @@
         }
 
         .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item:hover img { cursor: zoom-in; opacity: 0.9; }
 
         .gallery-item img {
             width: 100%;
@@ -193,8 +194,24 @@
     <p class="subtitle" data-lang="de">Bilder von unseren Gütern</p>
     <p class="subtitle" data-lang="ru">Снимки из наших поместий</p>
 
+<p style="text-align: center; font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 20px;">
+        <span data-lang="it" class="active-lang">(Clicca su un'immagine per ingrandirla)</span>
+        <span data-lang="en">(Click on an image to enlarge)</span>
+        <span data-lang="de">(Klicken Sie auf un Bild zum Vergrößern)</span>
+        <span data-lang="ru">(Нажмите на изображение, чтобы увеличить)</span>
+    </p>
+
     <div class="gallery-grid">
 
+<div class="gallery-item" onclick="openLightbox(this)">
+            <img src="olive-spremute.png" alt="conte">
+            <div class="caption">
+                <span data-lang="it" class="active-lang"> dalla pianta alla tavola</span>
+                <span data-lang="en">from plant to table</span>
+                <span data-lang="de">Von der Pflanze bis zum Tisch</span>
+                <span data-lang="ru">от растения к столу</span>
+            </div>
+        </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
             <img src="olive-mano.png" alt="conte">
@@ -247,7 +264,8 @@
     </div>
 </div>
 
-<div id="lightbox" onclick="this.style.display='none'">
+<div id="lightbox" onclick="this.style.display='none'" title="Clicca per chiudere">
+    <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer;">&times;</div>
     <img id="lightbox-img" src="" alt="Zoom">
 </div>
 
@@ -287,11 +305,9 @@
     // Funzione per aprire e chiudere il menù laterale
     function toggleMenu() {
         const menu = document.getElementById('side-menu');
-        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
         if (menu.style.left === '0px') {
             menu.style.left = '-250px';
         } else {
-            // Altrimenti lo porta a 0px per farlo vedere
             menu.style.left = '0px';
         }
     }
@@ -299,14 +315,16 @@
 	// Chiudi il menu se si clicca fuori
     document.addEventListener('click', function(event) {
         const menu = document.getElementById('side-menu');
-        const icon = document.querySelector('.menu-icon'); // Nota: nella galleria è una classe
+        const icon = document.getElementById('menu-icon'); // Usiamo l'ID corretto
         
-        // Se il menu è aperto e il clic non è sul menu o sull'icona, chiudilo
-        if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
-            menu.style.left = '-250px';
+        // Verifica se il menu è aperto
+        if (menu.style.left === '0px') {
+            // Se il clic NON è avvenuto dentro il menu e NON è avvenuto sull'icona che lo apre
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.style.left = '-250px';
+            }
         }
     });
-	
 </script>
 
 
