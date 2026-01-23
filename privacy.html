@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Antiche Tenute dei Conti Nicoli</title>
+    <style>
+        :root {
+            --wine-red: #4a0404;
+            --gold: #b8860b;
+            --cream: #fdfaf5;
+            --dark: #121212;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--cream);
+        }
+
+        /* Navigazione Lingue */
+        .lang-switch {
+            background: var(--dark);
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+       .lang-btn {
+            color: white;
+            background: none;
+            border: 1px solid var(--gold);
+            padding: 5px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .lang-btn.active { background: var(--gold); color: var(--dark); }
+
+        /* Header */
+        header {
+            background: var(--wine-red);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Contenuto */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    /* Aggiungi queste due righe qui sotto */
+    text-align: justify;
+    hyphens: auto; /* Aiuta a spezzare le parole lunghe per un risultato migliore */
+}
+
+/* Opzionale: assicura che anche le liste siano allineate bene */
+.container ul {
+    padding-left: 20px;
+}
+
+        h2 { color: var(--wine-red); border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
+
+        footer { background: #000; color: #777; text-align: center; padding: 40px; font-size: 0.8rem; }
+
+        [data-lang] { display: none; }
+        .active-lang { display: block !important; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--wine-red);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+ 
+<div class="lang-switch" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    
+    <div id="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+        <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
+    </div>
+
+    <div>
+        <button class="lang-btn active" onclick="setLang('it')">IT</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+    </div>
+
+    <div id="side-menu" **onclick="toggleMenu()"** style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+        <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
+        
+        <a href="index.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
+        
+        <a href="galleria.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+            <span data-lang="it" class="active-lang">GALLERIA</span>
+            <span data-lang="en">GALLERY</span>
+            <span data-lang="de">GALERIE</span>
+            <span data-lang="ru">ГАЛЕРЕЯ</span>
+        </a>
+		<a href="privacy.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+            <span data-lang="it" class="active-lang">PRIVACY</span>
+            <span data-lang="en">PRIVACY</span>
+            <span data-lang="de">DATENSCHUTZ</span>
+            <span data-lang="ru">КОНФИДЕНЦИАЛЬНОСТЬ</span>
+        </a>
+
+        </div>
+</div>
+
+    <header>
+        <h1 data-lang="it" class="active-lang">Privacy Policy</h1>
+        <h1 data-lang="en">Privacy Policy</h1>
+        <h1 data-lang="de">Datenschutz</h1>
+        <h1 data-lang="ru">Политика конфиденциальности</h1>
+    </header>
+
+    <div class="container">
+    <div data-lang="it" class="active-lang">
+        <h2>Informativa sulla Privacy</h2>
+        <p>Gentile Visitatore, ai sensi del Regolamento UE 2016/679 (GDPR), ti informiamo che le Antiche Tenute dei Conti Nicoli gestiscono questo sito nel massimo rispetto della tua privacy.</p>
+        
+        <p><strong>Titolare del Trattamento:</strong><br>
+        Antiche Tenute dei Conti Nicoli, Negrar di Valpolicella (VR). P.IVA 03585990231.</p>
+
+        <p><strong>Tipologia di dati raccolti:</strong><br>
+        • <strong>Dati di navigazione:</strong> Il sito raccoglie dati tecnici anonimi necessari al funzionamento.<br>
+        • <strong>Dati forniti volontariamente:</strong> Se ci contatti via WhatsApp o email, i tuoi dati saranno usati solo per risponderti.</p>
+
+        <p><strong>Cookie:</strong><br>
+        Non utilizziamo cookie di profilazione o tracciamento. Utilizziamo solo <strong>cookie tecnici</strong> necessari per la gestione della lingua e il corretto funzionamento del sito.</p>
+
+        <p><strong>I tuoi diritti:</strong><br>
+        Puoi richiedere in qualsiasi momento la consultazione o la cancellazione dei tuoi dati contattandoci direttamente.</p>
+        
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <div data-lang="en">
+    <h2>Privacy Policy</h2>
+    <p>Dear Visitor, in accordance with EU Regulation 2016/679 (GDPR), we inform you that Antiche Tenute dei Conti Nicoli manages this site with the utmost respect for your privacy.</p>
+    
+    <p><strong>Data Controller:</strong><br>
+    Antiche Tenute dei Conti Nicoli, Negrar di Valpolicella (VR). VAT: 03585990231.</p>
+
+    <p><strong>Type of data collected:</strong><br>
+    • <strong>Navigation data:</strong> The site collects anonymous technical data necessary for its operation.<br>
+    • <strong>Data provided voluntarily:</strong> If you contact us via WhatsApp or email, your data will only be used to respond to your request.</p>
+
+    <p><strong>Cookies:</strong><br>
+    We do not use profiling or tracking cookies. We only use <strong>technical cookies</strong> necessary for language management and the correct functioning of the site.</p>
+
+    <p><strong>Your rights:</strong><br>
+    You may request to consult or delete your data at any time by contacting us directly.</p>
+    
+    <a href="index.html" class="back-link">← Back to Home</a>
+</div>
+
+    <div data-lang="de">
+    <h2>Datenschutzerklärung</h2>
+    <p>Sehr geehrter Besucher, gemäß der EU-Verordnung 2016/679 (DSGVO) informieren wir Sie, dass Antiche Tenute dei Conti Nicoli diese Website mit größtem Respekt für Ihre Privatsphäre verwaltet.</p>
+    
+    <p><strong>Verantwortlicher per die Datenverarbeitung:</strong><br>
+    Antiche Tenute dei Conti Nicoli, Negrar di Valpolicella (VR). USt-IdNr.: 03585990231.</p>
+
+    <p><strong>Art der erhobenen Daten:</strong><br>
+    • <strong>Navigationsdaten:</strong> Die Website erhebt anonyme technische Daten, die für den Betrieb erforderlich sind.<br>
+    • <strong>Freiwillig bereitgestellte Daten:</strong> Wenn Sie uns per WhatsApp oder E-Mail kontaktieren, werden Ihre Daten nur zur Beantwortung Ihrer Anfrage verwendet.</p>
+
+    <p><strong>Cookies:</strong><br>
+    Wir verwenden keine Profiling- oder Tracking-Cookies. Wir verwenden nur <strong>technische Cookies</strong>, die für die Sprachauswahl und das ordnungsgemäße Funktionieren der Website erforderlich sind.</p>
+
+    <p><strong>Ihre Rechte:</strong><br>
+    Sie können jederzeit die Einsicht oder Löschung Ihrer Daten verlangen, indem Sie uns direkt kontaktieren.</p>
+    
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+</div>
+
+    <div data-lang="ru">
+    <h2>Политика конфиденциальности</h2>
+    <p>Уважаемый посетитель, в соответствии с Регламентом ЕС 2016/679 (GDPR), мы сообщаем вам, что Antiche Tenute dei Conti Nicoli управляет этим сайтом с максимальным уважением к вашей конфиденциальности.</p>
+    
+    <p><strong>Контролер данных:</strong><br>
+    Antiche Tenute dei Conti Nicoli, Negrar di Valpolicella (VR). ИНН: 03585990231.</p>
+
+    <p><strong>Типы собираемых данных:</strong><br>
+    • <strong>Навигационные данные:</strong> Сайт собирает анонимные технические данные, необходимые для его работы.<br>
+    • <strong>Данные, предоставляемые добровольно:</strong> Если вы свяжетесь с нами через WhatsApp или по электронной почте, ваши данные будут использованы только для ответа вам.</p>
+
+    <p><strong>Файлы cookie:</strong><br>
+    Мы не используем файлы cookie для профилирования или отслеживания. Мы используем только <strong>технические файлы cookie</strong>, необходимые для выбора языка и правильной работы сайта.</p>
+
+    <p><strong>Ваши права:</strong><br>
+    Вы можете в любое время запросить ознакомление с вашими данными или их удаление, связавшись с нами напрямую.</p>
+    
+    <a href="index.html" class="back-link">← Вернуться на главную</a>
+</div>
+</div>
+
+    <footer>
+   
+<div style="margin-bottom: 20px;">
+        <a href="https://www.instagram.com/continicoli/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#777" viewBox="0 0 16 16" style="transition: 0.3s;" onmouseover="this.style.fill='#b8860b'" onmouseout="this.style.fill='#777'">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg>
+        </a>
+    </div>
+    <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA 03585990231</p>
+	<div style="border-top: 1px solid var(--gold); margin-top: 20px; padding-top: 15px; font-size: 0.85em; opacity: 0.9;">
+    <p data-lang="it" class="active-lang">
+        Rispettiamo la tua privacy: questo sito <strong>non utilizza cookie di tracciamento</strong> e non effettua profilazione. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Leggi l'informativa completa</a>.
+    </p>
+    <p data-lang="en">
+        We respect your privacy: this website <strong>does not use tracking cookies</strong> and does not profile visitors. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Read the full policy</a>.
+    </p>
+    <p data-lang="de">
+        Wir respektieren Ihre Privatsphäre: Diese Website <strong>verwendet keine Tracking-Cookies</strong> e erstellt keine Nutzerprofile. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Vollständige Informationen lesen</a>.
+    </p>
+    <p data-lang="ru">
+        Мы уважаем вашу конфиденциальность: этот сайт <strong>не использует файлы cookie для отслеживания</strong> и не осуществляет профилирование. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Читать полную информацию</a>.
+    </p>
+</div>
+</footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active-lang');
+                if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+            });
+        }
+    </script>
+
+
+<script>
+    // Funzione per aprire e chiudere il menù laterale
+    function toggleMenu() {
+        const menu = document.getElementById('side-menu');
+        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
+        if (menu.style.left === '0px') {
+            menu.style.left = '-250px';
+        } else {
+            // Altrimenti lo porta a 0px per farlo vedere
+            menu.style.left = '0px';
+        }
+    }
+	
+	// --- NUOVO PEZZO DA AGGIUNGERE ---
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('side-menu');
+        const icon = document.getElementById('menu-icon');
+        // Se il menù è aperto E il clic è avvenuto fuori dal menù E fuori dall'icona delle tre lineette
+        if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
+            toggleMenu();
+        }
+    });
+    // --- FINE NUOVO PEZZO ---
+	
+</script>
+
+</body>
+</html>
