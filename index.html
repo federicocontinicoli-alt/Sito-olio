@@ -225,6 +225,16 @@
         @media (max-width: 900px) {
             .motto { font-size: 1.3rem; }
         }
+        
+        /* Correzione per parole lunghe nel menu laterale (es. Russo) */
+#side-menu a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto; /* Opzionale: aggiunge il trattino se il browser lo supporta */
+    line-height: 1.4; /* Migliora la leggibilità se la parola va a capo */
+}
+
+        
     </style>
 </head>
 <body>

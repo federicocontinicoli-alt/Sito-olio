@@ -3,7 +3,7 @@
 <!-- copia e incolla alla riga 175 questo dopo aver cambiato nome foto e 4 descrizioni 
 
 <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="olive-mano.png" alt="conte">
+            <img src="olive-mano.png" alt="mettere una descrizione">
             <div class="caption">
                 <span data-lang="it" class="active-lang"> testo italiano</span>
                 <span data-lang="en">testo inglese</span>
@@ -20,11 +20,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galleria | Antiche Tenute dei Conti Nicoli. IPoeti della Sengia Sbusa. Segia sbusa. Quarotto della castagnara.</title>
+   
+   
+   <title>Galleria | Antiche Tenute dei Conti Nicoli. IPoeti della Sengia Sbusa. Segia sbusa. Quarotto della castagnara.</title>
     
     <meta name="description" content="Miglior vino Amarone, Ripasso e Olio Extravergine Grignano monocultivar a Negrar. Scopri la storia del Poeta della Sengia Sbusa. Sengia sbusa. Quarotto della castagnara">
     <meta name="keywords" content="immagini del poeta della sengia sbusa, sengia sbusa, amarone, grignano, olio buono, Quarotto della castagnara, valpolicella, negrar, antica tenuta nicoli, poetic wine, verona olive oil, garganega, corvina">
     <meta name="author" content="Antiche Tenute dei Conti Nicoli">
+    
+    
     
     <style>
         :root {
@@ -97,6 +101,7 @@
         }
 
         .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item:hover img { cursor: zoom-in; opacity: 0.9; }
 
         .gallery-item img {
             width: 100%;
@@ -146,6 +151,16 @@
         [data-lang]:not(.active-lang) { display: none; }
         
         footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; }
+        
+        /* Correzione per la parola russa nel menu laterale */
+#side-menu a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3; /* Riduce leggermente lo spazio tra le righe se la parola va a capo */
+}
+
+        
     </style>
 </head>
 <body>
@@ -176,14 +191,19 @@
             <span data-lang="de">GALERIE</span>
             <span data-lang="ru">ГАЛЕРЕЯ</span>
         </a>
-
+<a href="privacy.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
+            <span data-lang="it" class="active-lang">PRIVACY</span>
+            <span data-lang="en">PRIVACY</span>
+            <span data-lang="de">DATENSCHUTZ</span>
+            <span data-lang="ru">КОНФИДЕНЦИАЛЬНОСТЬ</span>
+        </a>
         </div>
 </div>
 
 
 <header>
     <a href="index.html">
-        <img src="logo-azienda.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
+        <img src="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
     </a>
 </header>
 
@@ -198,11 +218,27 @@
     <p class="subtitle" data-lang="de">Bilder von unseren Gütern</p>
     <p class="subtitle" data-lang="ru">Снимки из наших поместий</p>
 
+<p style="text-align: center; font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 20px;">
+        <span data-lang="it" class="active-lang">(Clicca su un'immagine per ingrandirla)</span>
+        <span data-lang="en">(Click on an image to enlarge)</span>
+        <span data-lang="de">(Klicken Sie auf un Bild zum Vergrößern)</span>
+        <span data-lang="ru">(Нажмите на изображение, чтобы увеличить)</span>
+    </p>
+
     <div class="gallery-grid">
 
+<div class="gallery-item" onclick="openLightbox(this)">
+            <img src="produzione-olio-extravergine-oliva-negrar.png" alt="Fasi di spremitura delle olive per l'Olio dei Poeti">
+            <div class="caption">
+                <span data-lang="it" class="active-lang"> dalla pianta alla tavola</span>
+                <span data-lang="en">from plant to table</span>
+                <span data-lang="de">Von der Pflanze bis zum Tisch</span>
+                <span data-lang="ru">от растения к столу</span>
+            </div>
+        </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="olive-mano.png" alt="conte">
+            <img src="raccolta-olive-grignano-valpolicella-mano.png" alt="Dettaglio della varietà di olive Grignano all'invaiatura">
             <div class="caption">
                 <span data-lang="it" class="active-lang"> Grignano all'invaiatura</span>
                 <span data-lang="en">Grignano at veraison</span>
@@ -213,7 +249,7 @@
 
 
 <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="quadro4.png" alt="conte">
+            <img src="ritratto-storico-conte-nicoli-amici-negrar.png" alt="Dipinto storico del Conte Nicoli con i suoi amici">
             <div class="caption">
                 <span data-lang="it" class="active-lang">il conte con gli amici</span>
                 <span data-lang="en">the count with his friends</span>
@@ -224,7 +260,7 @@
 
 
         <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="vigneto-sfocato.jpg" alt="Vigneti">
+            <img src="vigneti-valpolicella-classica-tenute-conti-nicoli.jpg" alt="Vigneti valpolicella classica poeta della sengia sbusa">
             <div class="caption">
                 <span data-lang="it" class="active-lang">I nostri vigneti al sole</span>
                 <span data-lang="en">Our vineyards in the sun</span>
@@ -233,7 +269,7 @@
             </div>
         </div>
         <div class="gallery-item" onclick="openLightbox(this)">
-            <img src="olio.jpg" alt="Olio">
+            <img src="bottiglia-olio-oro-dei-poeti-grignano.jpg" alt="Olio grignano poeta della sengia sbusa">
             <div class="caption">
                 <span data-lang="it" class="active-lang">L'Oro dei Poeti: Olio Grignano</span>
                 <span data-lang="en">The Gold of Poets: Grignano Oil</span>
@@ -252,7 +288,8 @@
     </div>
 </div>
 
-<div id="lightbox" onclick="this.style.display='none'">
+<div id="lightbox" onclick="this.style.display='none'" title="Clicca per chiudere">
+    <div style="position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer;">&times;</div>
     <img id="lightbox-img" src="" alt="Zoom">
 </div>
 
@@ -265,6 +302,24 @@
         </a>
     </div>
     <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA 03585990231</p>
+	<div style="border-top: 1px solid var(--gold); margin-top: 20px; padding-top: 15px; font-size: 0.85em; opacity: 0.9;">
+    <p data-lang="it" class="active-lang">
+        Rispettiamo la tua privacy: questo sito <strong>non utilizza cookie di tracciamento</strong> e non effettua profilazione. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Leggi l'informativa completa</a>.
+    </p>
+    <p data-lang="en">
+        We respect your privacy: this website <strong>does not use tracking cookies</strong> and does not profile visitors. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Read the full policy</a>.
+    </p>
+    <p data-lang="de">
+        Wir respektieren Ihre Privatsphäre: Diese Website <strong>verwendet keine Tracking-Cookies</strong> e erstellt keine Nutzerprofile. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Vollständige Informationen lesen</a>.
+    </p>
+    <p data-lang="ru">
+        Мы уважаем вашу конфиденциальность: этот сайт <strong>не использует файлы cookie для отслеживания</strong> и не осуществляет профилирование. 
+        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Читать полную информацию</a>.
+    </p>
+</div>
 </footer>
 
 <script>
@@ -292,11 +347,9 @@
     // Funzione per aprire e chiudere il menù laterale
     function toggleMenu() {
         const menu = document.getElementById('side-menu');
-        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
         if (menu.style.left === '0px') {
             menu.style.left = '-250px';
         } else {
-            // Altrimenti lo porta a 0px per farlo vedere
             menu.style.left = '0px';
         }
     }
@@ -304,14 +357,16 @@
 	// Chiudi il menu se si clicca fuori
     document.addEventListener('click', function(event) {
         const menu = document.getElementById('side-menu');
-        const icon = document.querySelector('.menu-icon'); // Nota: nella galleria è una classe
+        const icon = document.getElementById('menu-icon'); // Usiamo l'ID corretto
         
-        // Se il menu è aperto e il clic non è sul menu o sull'icona, chiudilo
-        if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
-            menu.style.left = '-250px';
+        // Verifica se il menu è aperto
+        if (menu.style.left === '0px') {
+            // Se il clic NON è avvenuto dentro il menu e NON è avvenuto sull'icona che lo apre
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.style.left = '-250px';
+            }
         }
     });
-	
 </script>
 
 
