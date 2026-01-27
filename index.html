@@ -460,7 +460,7 @@
         <h2 data-lang="it" class="active-lang">L'Oro dei Poeti: Grignano</h2>
         <h2 data-lang="en">The Gold of Poets: Grignano</h2>
         <h2 data-lang="de">Das Gold der Poeten: Grignano</h2>
-        <h2 data-lang="ru">Золото поэтов: Гриньяно</h2>
+        <h2 data-lang="ru">Золото поэтов: Гриньяно</h
         <img src="linee-olio.png" alt="Linee Olio Nicoli" class="story-img">
         <div class="grid olive-grid">
             
@@ -807,7 +807,7 @@ function setLang(lang) {
 }
 
 // Inizializza con la lingua di default (italiano)
-updateWhatsAppMessage('it');
+updateWhatsAppMessage(localStorage.getItem('selectedLang') || 'it');
 </script>
 
 <script>
