@@ -183,16 +183,17 @@
     <div id="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
         <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
         
-        <a href="index.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
-        
-        <a href="galleria.html" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
-            <span data-lang="it" class="active-lang">GALLERIA</span>
-            <span data-lang="en">GALLERY</span>
-            <span data-lang="de">GALERIE</span>
-            <span data-lang="ru">ГАЛЕРЕЯ</span>
-        </a>
+        <a href="index.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">HOME</a>
+
+<a href="galleria.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">
+    <span data-lang="it">GALLERIA</span>
+    <span data-lang="en">GALLERY</span>
+    <span data-lang="de">GALERIE</span>
+    <span data-lang="ru">ГАЛЕРЕЯ</span>
+</a>
+
 <a href="privacy.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
-            <span data-lang="it" class="active-lang">PRIVACY</span>
+    <span data-lang="it">PRIVACY</span>
             <span data-lang="en">PRIVACY</span>
             <span data-lang="de">DATENSCHUTZ</span>
             <span data-lang="ru">КОНФИДЕНЦИАЛЬНОСТЬ</span>
@@ -323,37 +324,41 @@
 </footer>
 
 <script>
-  function setLang(lang) {
-    localStorage.setItem('selectedLang', lang); // Salva la lingua nel browser
+function setLang(lang) {
+    // 1. Salva la lingua nel browser "per sempre"
+    localStorage.setItem('selectedLang', lang);
 
+    // 2. Mostra/Nascondi i testi
     document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.remove('active-lang');
-        if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+        if (el.getAttribute('data-lang') === lang) {
+            el.style.display = 'block';
+            el.classList.add('active-lang');
+        } else {
+            el.style.display = 'none';
+            el.classList.remove('active-lang');
+        }
     });
 
+    // 3. Aggiorna i bottoni (IT, EN, DE, RU)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+        if (btn.innerText.toLowerCase() === lang) {
+            btn.classList.add('active');
+        }
     });
 
-    // Aggiorna WhatsApp se la funzione esiste (solo in index.html)
-    if (typeof updateWhatsAppMessage === "function") {
+    // 4. Se esiste la funzione WhatsApp, aggiornala
+    if (typeof updateWhatsAppMessage === 'function') {
         updateWhatsAppMessage(lang);
     }
 }
 
-// Avvio automatico: legge la memoria o mette italiano
+// All'avvio della pagina:
 window.addEventListener('DOMContentLoaded', () => {
+    // Controlla se l'utente ha già scelto una lingua, altrimenti usa 'it'
     const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
     setLang(linguaSalvata);
 });
-
-    // Funzione Lightbox
-    function openLightbox(element) {
-        const imgSrc = element.querySelector('img').src;
-        document.getElementById('lightbox-img').src = imgSrc;
-        document.getElementById('lightbox').style.display = 'flex';
-    }
 </script>
 
 <script>
