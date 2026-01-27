@@ -254,16 +254,34 @@
 </footer>
 
     <script>
-        function setLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.classList.remove('active-lang');
-                if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
-            });
-        }
+       function setLang(lang) {
+    // Questa riga dice al browser di ricordare la lingua
+    localStorage.setItem('selectedLang', lang);
+
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active-lang');
+        if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+    });
+
+    // Se esiste la funzione WhatsApp (presente in index.html), la aggiorna
+    if (typeof updateWhatsAppMessage === "function") {
+        updateWhatsAppMessage(lang);
+    }
+}
+// Forza il recupero della lingua salvata all'apertura di ogni pagina
+window.addEventListener('load', () => {
+    const linguaSalvata = localStorage.getItem('selectedLang');
+    if (linguaSalvata) {
+        setLang(linguaSalvata);
+    } else {
+        setLang('it'); // Se non c'è nulla, metti italiano di default
+    }
+});
     </script>
 
 
