@@ -326,11 +326,9 @@
 </footer>
 
 <script>
+// 1. FUNZIONE PER LE LINGUE (Salva la scelta e cambia i testi)
 function setLang(lang) {
-    // 1. Salva la lingua nel browser "per sempre"
     localStorage.setItem('selectedLang', lang);
-
-    // 2. Mostra/Nascondi i testi
     document.querySelectorAll('[data-lang]').forEach(el => {
         if (el.getAttribute('data-lang') === lang) {
             el.style.display = 'block';
@@ -341,26 +339,51 @@ function setLang(lang) {
         }
     });
 
-    // 3. Aggiorna i bottoni (IT, EN, DE, RU)
     document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.remove('active');
-    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
-    if (btn.innerText.toLowerCase() === lang) {
-        btn.classList.add('active');
-    }
-});
+        btn.classList.remove('active');
+        if (btn.innerText.toLowerCase() === lang) {
+            btn.classList.add('active');
+        }
+    });
+}
 
-    // 4. Se esiste la funzione WhatsApp, aggiornala
-    if (typeof updateWhatsAppMessage === 'function') {
-        updateWhatsAppMessage(lang);
+// 2. FUNZIONE PER LA GALLERIA (Apre le foto grandi)
+function openLightbox(element) {
+    const imgSrc = element.querySelector('img').src;
+    document.getElementById('lightbox-img').src = imgSrc;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+// 3. FUNZIONE PER CHIUDERE LA FOTO GRANDE
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+// 4. FUNZIONE PER IL MENU LATERALE
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu.style.left === '0px') {
+        menu.style.left = '-250px';
+    } else {
+        menu.style.left = '0px';
     }
 }
 
-// All'avvio della pagina:
+// All'avvio: imposta la lingua corretta
 window.addEventListener('DOMContentLoaded', () => {
-    // Controlla se l'utente ha già scelto una lingua, altrimenti usa 'it'
     const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
     setLang(linguaSalvata);
+});
+
+// Chiude il menu se clicchi fuori
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('side-menu');
+    const icon = document.getElementById('menu-icon');
+    if (menu && menu.style.left === '0px') {
+        if (!menu.contains(event.target) && !icon.contains(event.target)) {
+            menu.style.left = '-250px';
+        }
+    }
 });
 </script>
 
