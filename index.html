@@ -248,10 +248,10 @@
     </div>
 
     <div>
-        <button class="lang-btn" onclick="setLang('it')">IT</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('de')">DE</button>
-        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('it')">it</button>
+        <button class="lang-btn" onclick="setLang('en')">en</button>
+        <button class="lang-btn" onclick="setLang('de')">de</button>
+        <button class="lang-btn" onclick="setLang('ru')">ru</button>
     </div>
 
     <div id="side-menu" **onclick="toggleMenu()"** style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
@@ -670,10 +670,10 @@
 
 <script>
 function setLang(lang) {
-    // 1. Salva la lingua nel browser "per sempre"
+    // 1. Salva la lingua nel browser
     localStorage.setItem('selectedLang', lang);
 
-    // 2. Mostra/Nascondi i testi
+    // 2. Mostra i testi corretti e nascondi gli altri
     document.querySelectorAll('[data-lang]').forEach(el => {
         if (el.getAttribute('data-lang') === lang) {
             el.style.display = 'block';
@@ -684,23 +684,23 @@ function setLang(lang) {
         }
     });
 
-    // 3. Aggiorna i bottoni (IT, EN, DE, RU)
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === lang) {
-            btn.classList.add('active');
-        }
+    // 3. Gestione specifica per i bottoni "Leggi tutto" (solo se esistono)
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        const lang = localStorage.getItem('selectedLang') || 'it';
+        if (lang === 'it') btn.innerText = "Leggi tutto...";
+        else if (lang === 'en') btn.innerText = "Read more...";
+        else if (lang === 'de') btn.innerText = "Weiterlesen...";
+        else if (lang === 'ru') btn.innerText = "Читать далее...";
     });
 
-    // 4. Se esiste la funzione WhatsApp, aggiornala
+    // 4. Aggiorna il link di WhatsApp
     if (typeof updateWhatsAppMessage === 'function') {
         updateWhatsAppMessage(lang);
     }
 }
 
-// All'avvio della pagina:
+// Questa parte fa partire il sito SEMPRE con la lingua giusta
 window.addEventListener('DOMContentLoaded', () => {
-    // Controlla se l'utente ha già scelto una lingua, altrimenti usa 'it'
     const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
     setLang(linguaSalvata);
 });
@@ -771,9 +771,12 @@ function setLang(lang) {
         if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
     });
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
-    });
+    btn.classList.remove('active');
+    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
+    if (btn.innerText.toLowerCase() === lang) {
+        btn.classList.add('active');
+    }
+});
     
     document.querySelectorAll('.read-more-btn').forEach(btn => {
         const currentTxt = btn.innerText;

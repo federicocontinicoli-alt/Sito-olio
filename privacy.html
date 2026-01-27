@@ -107,10 +107,10 @@
     </div>
 
     <div>
-        <button class="lang-btn active" onclick="setLang('it')">IT</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('de')">DE</button>
-        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('it')">it</button>
+        <button class="lang-btn" onclick="setLang('en')">en</button>
+        <button class="lang-btn" onclick="setLang('de')">de</button>
+        <button class="lang-btn" onclick="setLang('ru')">ru</button>
     </div>
 
     <div id="side-menu" **onclick="toggleMenu()"** style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
@@ -271,11 +271,12 @@ function setLang(lang) {
 
     // 3. Aggiorna i bottoni (IT, EN, DE, RU)
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.toLowerCase() === lang) {
-            btn.classList.add('active');
-        }
-    });
+    btn.classList.remove('active');
+    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
+    if (btn.innerText.toLowerCase() === lang) {
+        btn.classList.add('active');
+    }
+});
 
     // 4. Se esiste la funzione WhatsApp, aggiornala
     if (typeof updateWhatsAppMessage === 'function') {
