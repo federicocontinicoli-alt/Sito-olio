@@ -271,10 +271,10 @@
 
     <script>
 function setLang(lang) {
-    // 1. Salva la lingua nel browser "per sempre"
+    // 1. Salva la scelta nel browser
     localStorage.setItem('selectedLang', lang);
 
-    // 2. Mostra/Nascondi i testi
+    // 2. Mostra il testo della Privacy nella lingua scelta
     document.querySelectorAll('[data-lang]').forEach(el => {
         if (el.getAttribute('data-lang') === lang) {
             el.style.display = 'block';
@@ -285,24 +285,17 @@ function setLang(lang) {
         }
     });
 
-    // 3. Aggiorna i bottoni (IT, EN, DE, RU)
+    // 3. Colora il pulsante della lingua selezionata
     document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.remove('active');
-    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
-    if (btn.innerText.toLowerCase() === lang) {
-        btn.classList.add('active');
-    }
-});
-
-    // 4. Se esiste la funzione WhatsApp, aggiornala
-    if (typeof updateWhatsAppMessage === 'function') {
-        updateWhatsAppMessage(lang);
-    }
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${lang}'`)) {
+            btn.classList.add('active');
+        }
+    });
 }
 
-// All'avvio della pagina:
+// 4. Carica la lingua salvata all'apertura
 window.addEventListener('DOMContentLoaded', () => {
-    // Controlla se l'utente ha già scelto una lingua, altrimenti usa 'it'
     const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
     setLang(linguaSalvata);
 });

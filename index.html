@@ -766,11 +766,12 @@ footer</section>
 
 
 <script>
+
 function setLang(lang) {
-    // 1. Salva la lingua scelta
+    // 1. Salva la scelta dell'utente
     localStorage.setItem('selectedLang', lang);
 
-    // 2. Mostra solo i testi della lingua scelta
+    // 2. Mostra i testi della lingua scelta
     document.querySelectorAll('[data-lang]').forEach(el => {
         if (el.getAttribute('data-lang') === lang) {
             el.style.display = 'block';
@@ -781,22 +782,33 @@ function setLang(lang) {
         }
     });
 
-    // 3. Gestisce i bottoni della lingua (it, en, de, ru)
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
-    });
-
-    // 4. Ripristina i testi dei bottoni "Leggi tutto" nella lingua corretta
+    // 3. Gestisce i testi dei pulsanti "Leggi tutto"
     document.querySelectorAll('.read-more-btn').forEach(btn => {
-        const content = btn.previousElementSibling;
-        if (content && content.classList.contains('collapsed')) {
+        const currentTxt = btn.innerText;
+        // Cambia il testo solo se il bottone non è già in modalità "Chiudi"
+        const isClosing = (currentTxt === "Chiudi" || currentTxt === "Read less" || currentTxt === "Weniger lesen" || currentTxt === "Свернуть");
+        
+        if (!isClosing) {
             if (lang === 'it') btn.innerText = "Leggi tutto...";
             else if (lang === 'en') btn.innerText = "Read more...";
             else if (lang === 'de') btn.innerText = "Weiterlesen...";
             else if (lang === 'ru') btn.innerText = "Читать далее...";
         }
     });
+
+    // 4. Aggiorna WhatsApp
+    if (typeof updateWhatsAppMessage === 'function') {
+        updateWhatsAppMessage(lang);
+    }
 }
+
+// 5. QUESTO È IL PEZZO CHE MANCAVA: Fa partire tutto all'avvio
+window.addEventListener('DOMContentLoaded', () => {
+    const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
+    setLang(linguaSalvata);
+});
+
+</script>
 
 function toggleReadMore(btn) {
     const content = btn.previousElementSibling;
@@ -912,13 +924,19 @@ function setLang(lang) {
             else if (lang === 'de') btn.innerText = "Weiterlesen...";
             else if (lang === 'ru') btn.innerText = "Читать далее...";
         }
-    });
+ });
 
-    updateWhatsAppMessage(lang);  // ← AGGIUNGI QUESTA RIGA QUI
+    // 4. Aggiorna WhatsApp
+    if (typeof updateWhatsAppMessage === 'function') {
+        updateWhatsAppMessage(lang);
+    }
 }
 
-// Inizializza con la lingua di default (italiano)
-updateWhatsAppMessage(localStorage.getItem('selectedLang') || 'it');
+// 5. QUESTO È FONDAMENTALE: Fa partire la lingua corretta all'avvio
+window.addEventListener('DOMContentLoaded', () => {
+    const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
+    setLang(linguaSalvata);
+});
 </script>
 
 <script>
