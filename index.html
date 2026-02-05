@@ -764,11 +764,13 @@ footer</section>
 </div>
 </footer>
 
+
 <script>
-// 1. Funzione per cambiare lingua e salvarla
 function setLang(lang) {
+    // 1. Salva la lingua scelta
     localStorage.setItem('selectedLang', lang);
 
+    // 2. Mostra solo i testi della lingua scelta
     document.querySelectorAll('[data-lang]').forEach(el => {
         if (el.getAttribute('data-lang') === lang) {
             el.style.display = 'block';
@@ -779,59 +781,22 @@ function setLang(lang) {
         }
     });
 
+    // 3. Gestisce i bottoni della lingua (it, en, de, ru)
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+    });
+
+    // 4. Ripristina i testi dei bottoni "Leggi tutto" nella lingua corretta
     document.querySelectorAll('.read-more-btn').forEach(btn => {
-        const extraText = btn.previousElementSibling;
-        if (extraText.style.display === "none" || extraText.style.display === "") {
+        const content = btn.previousElementSibling;
+        if (content && content.classList.contains('collapsed')) {
             if (lang === 'it') btn.innerText = "Leggi tutto...";
             else if (lang === 'en') btn.innerText = "Read more...";
             else if (lang === 'de') btn.innerText = "Weiterlesen...";
             else if (lang === 'ru') btn.innerText = "Читать далее...";
         }
     });
-
-    if (typeof updateWhatsAppMessage === 'function') {
-        updateWhatsAppMessage(lang);
-    }
 }
-
-// 2. Funzione per aprire/chiudere i testi (Leggi tutto)
-function toggleText(btn) {
-    const extraText = btn.previousElementSibling;
-    const lang = localStorage.getItem('selectedLang') || 'it';
-
-    if (extraText.style.display === "none" || extraText.style.display === "") {
-        extraText.style.display = "block";
-        if (lang === 'it') btn.innerText = "Chiudi";
-        else if (lang === 'en') btn.innerText = "Read less";
-        else if (lang === 'de') btn.innerText = "Weniger lesen";
-        else if (lang === 'ru') btn.innerText = "Свернуть";
-    } else {
-        extraText.style.display = "none";
-        if (lang === 'it') btn.innerText = "Leggi tutto...";
-        else if (lang === 'en') btn.innerText = "Read more...";
-        else if (lang === 'de') btn.innerText = "Weiterlesen...";
-        else if (lang === 'ru') btn.innerText = "Читать далее...";
-    }
-}
-
-// 3. Funzione WhatsApp
-function updateWhatsAppMessage(lang) {
-    const btn = document.getElementById('whatsapp-btn');
-    if (!btn) return;
-    let message = "";
-    if (lang === 'it') message = "Buongiorno, vorrei informazioni sui vostri prodotti.";
-    else if (lang === 'en') message = "Hello, I would like information about your products.";
-    else if (lang === 'de') message = "Guten Tag, ich hätte gerne Informationen zu Ihren Produkten.";
-    else if (lang === 'ru') message = "Здравствуйте, я хотел бы получить информацию о вашей продукции.";
-    btn.href = 'https://wa.me/393400988077?text=' + encodeURIComponent(message);
-}
-
-// 4. Avvio automatico all'apertura
-window.addEventListener('DOMContentLoaded', () => {
-    const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
-    setLang(linguaSalvata);
-});
-</script>
 
 function toggleReadMore(btn) {
     const content = btn.previousElementSibling;
@@ -923,18 +888,37 @@ function updateWhatsAppMessage(lang) {
     btn.href = 'https://wa.me/393400988077?text=' + encoded;
 }
 
-
-    // 4. Aggiorna WhatsApp
-    if (typeof updateWhatsAppMessage === 'function') {
-        updateWhatsAppMessage(lang);
+// MODIFICA la tua funzione setLang esistente aggiungendo questa riga alla FINE:
+function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active-lang');
+        if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
+    if (btn.innerText.toLowerCase() === lang) {
+        btn.classList.add('active');
     }
+});
+    
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        const currentTxt = btn.innerText;
+        const isClosing = (currentTxt === "Leggi meno" || currentTxt === "Read less" || currentTxt === "Weniger lesen" || currentTxt === "Свернуть");
+        
+        if (!isClosing) {
+            if (lang === 'it') btn.innerText = "Leggi tutto...";
+            else if (lang === 'en') btn.innerText = "Read more...";
+            else if (lang === 'de') btn.innerText = "Weiterlesen...";
+            else if (lang === 'ru') btn.innerText = "Читать далее...";
+        }
+    });
+
+    updateWhatsAppMessage(lang);  // ← AGGIUNGI QUESTA RIGA QUI
 }
 
-// 5. QUESTO È FONDAMENTALE: Fa partire la lingua corretta all'avvio
-window.addEventListener('DOMContentLoaded', () => {
-    const linguaSalvata = localStorage.getItem('selectedLang') || 'it';
-    setLang(linguaSalvata);
-});
+// Inizializza con la lingua di default (italiano)
+updateWhatsAppMessage(localStorage.getItem('selectedLang') || 'it');
 </script>
 
 <script>
