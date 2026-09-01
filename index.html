@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Antiche Tenute dei Conti Nicoli | I Poeti della Sengia Sbusa. Segia sbusa. Quarotto della castagnara.</title>
-    <meta name="description" content="Produzione artigianale di Amarone, Ripasso e Olio Extravergine Grignano a Negrar. Scopri la storia del Poeta della Sengia Sbusa. Sengia sbusa. Quarotto della castagnara">
-    <meta name="keywords" content="il poeta della sengia sbusa, sengia sbusa, amarone, grignano, olio buono, Quarotto della castagnara, valpolicella, negrar, antica tenuta nicoli, poetic wine, verona olive oil, garganega, corvina">
+    <title>Antiche Tenute dei Conti Nicoli | Passata di Pomodoro Artigianale e I Poeti della Sengia Sbusa</title>
+    <meta name="description" content="Produzione artigianale di Passata di Pomodoro 100% italiana a Salizzole e Negrar. Scopri la storia dei Conti Nicoli e del Poeta della Sengia Sbusa.">
+    <meta name="keywords" content="passata di pomodoro artigianale, il poeta della sengia sbusa, sengia sbusa, pomodoro salizzole, antica tenuta nicoli, verona, negrar">
     <meta name="author" content="Antiche Tenute dei Conti Nicoli">
     <link rel="canonical" href="https://www.continicoli.it/">
 
     <meta property="og:locale" content="it_IT">
-    <meta property="og:locale:alternate" content="en_GB">
-    <meta property="og:locale:alternate" content="de_DE">
-    <meta property="og:locale:alternate" content="ru_RU">
-
-    <meta property="og:title" content="Conti Nicoli | Amarone, Olio Grignano e i Poeti della Sengia Sbusa">
-    <meta property="og:description" content="Vini e oli d'eccellenza tra le marogne UNESCO di Negrar. Tradizione e poesia in ogni bottiglia.">
+    <meta property="og:title" content="Conti Nicoli | Passata di Pomodoro Artigianale e i Poeti della Sengia Sbusa">
+    <meta property="og:description" content="Passata di pomodoro pura e artigianale tra le marogne UNESCO e i campi di Salizzole. Tradizione e poesia in ogni bottiglia.">
     <meta property="og:url" content="https://www.continicoli.it/">
     <meta property="og:type" content="website">
 
-<link rel="icon" type="image/png" href="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png">
-<link rel="apple-touch-icon" href="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png">
+    <link rel="icon" type="image/png" href="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png">
+    <link rel="apple-touch-icon" href="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png">
 
     <style>
         :root {
-            --wine-red: #4a0404;
+            --tomato-red: #c0392b;
             --gold: #b8860b;
             --cream: #fdfaf5;
             --dark: #121212;
-            --olive: #556b2f;
+            --leaf-green: #27ae60;
         }
 
         body {
@@ -41,28 +37,6 @@
             background-color: var(--cream);
         }
 
-        .lang-switch {
-            background: var(--dark);
-            padding: 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .lang-btn {
-            color: white;
-            background: none;
-            border: 1px solid var(--gold);
-            padding: 5px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        .lang-btn.active { background: var(--gold); color: var(--dark); }
-
         header {
             background: white;
             padding: 40px 10px;
@@ -73,9 +47,9 @@
         .logo-img { max-width: 200px; height: auto; }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('olio-extravergine-oliva-grignano-veneto.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('campo-pomodori-salizzole.jpg');
             background-size: cover;
-            background-position: top center;
+            background-position: center;
             height: 45vh;
             display: flex;
             align-items: center;
@@ -94,7 +68,7 @@
 
         .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
 
-        h2 { color: var(--wine-red); text-align: center; font-size: 2.2rem; margin-top: 50px; }
+        h2 { color: var(--tomato-red); text-align: center; font-size: 2.2rem; margin-top: 50px; }
         .subtitle { text-align: center; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 30px; }
         
         .story-block { margin-bottom: 50px; text-align: justify; max-width: 850px; margin: auto; }
@@ -111,7 +85,7 @@
 
         .highlight-box {
             background: #fff;
-            border-left: 5px solid var(--wine-red);
+            border-left: 5px solid var(--tomato-red);
             padding: 30px;
             margin: 40px 0;
             font-style: italic;
@@ -119,38 +93,22 @@
             text-align: center;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        @media (min-width: 600px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (min-width: 1100px) {
-            .grid { grid-template-columns: repeat(4, 1fr); }
-            .grid.olive-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
         .card {
-            padding: 25px;
+            padding: 30px;
             background: white;
-            border-top: 4px solid var(--wine-red);
+            border-top: 4px solid var(--tomato-red);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: justify;
-            font-size: 0.95rem;
-            display: flex;
-            flex-direction: column;
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 40px auto;
         }
 
-        .card h3 { text-align: center; color: var(--wine-red); margin-bottom: 15px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
-        .card .prod-img { width: 100%; max-width: 150px; height: auto; margin: 0 auto 15px auto; display: block; }
+        .card h3 { text-align: center; color: var(--tomato-red); margin-bottom: 15px; font-size: 1.5rem; }
+        .card .prod-img { width: 100%; max-width: 200px; height: auto; margin: 0 auto 20px auto; display: block; }
 
         .card-content {
-            max-height: 160px;
+            max-height: 180px;
             overflow: hidden;
             position: relative;
             transition: max-height 0.6s ease;
@@ -167,17 +125,17 @@
         }
 
         .read-more-btn {
-            color: var(--wine-red);
+            color: var(--tomato-red);
             background: none;
             border: none;
             font-weight: bold;
             cursor: pointer;
             padding: 15px 0 0 0;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
-            margin-top: auto;
-            align-self: center;
+            display: block;
+            margin: 20px auto 0 auto;
         }
 
         .unesco-badge {
@@ -223,61 +181,35 @@
 
         footer { background: #000; color: #777; text-align: center; padding: 40px; font-size: 0.8rem; }
 
-        [data-lang]:not(.active-lang) { display: none; }
-
         @media (max-width: 900px) {
             .motto { font-size: 1.3rem; }
         }
-        
-        /* Correzione per parole lunghe nel menu laterale (es. Russo) */
-#side-menu a {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto; /* Opzionale: aggiunge il trattino se il browser lo supporta */
-    line-height: 1.3; white-space: normal; /* Migliora la leggibilità se la parola va a capo */
-}
 
-        
+        #side-menu a {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            line-height: 1.3;
+            white-space: normal;
+        }
     </style>
 </head>
 <body>
 
-<div class="lang-switch" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-    
+<div style="background: var(--dark); padding: 10px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000;">
     <div id="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
         <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
         <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
         <div style="width: 25px; height: 3px; background-color: white; margin: 5px 0;"></div>
     </div>
 
-    <div>
-        <button class="lang-btn" onclick="setLang('it')">it</button>
-        <button class="lang-btn" onclick="setLang('en')">en</button>
-        <button class="lang-btn" onclick="setLang('de')">de</button>
-        <button class="lang-btn" onclick="setLang('ru')">ru</button>
-    </div>
-
-    <div id="side-menu" **onclick="toggleMenu()"** style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+    <div id="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: var(--dark); z-index: 2000; transition: 0.3s; padding-top: 60px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
         <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 30px; text-decoration: none;">&times;</a>
-        
         <a href="index.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: var(--gold); display: block; border-bottom: 1px solid #333;">HOME</a>
-
-<a href="galleria.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
-    <span data-lang="it">GALLERIA</span>
-            <span data-lang="en">GALLERY</span>
-            <span data-lang="de">GALERIE</span>
-            <span data-lang="ru">ГАЛЕРЕЯ</span>
-        </a>
-		<a href="privacy.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">
-            <span data-lang="it" class="active-lang">PRIVACY</span>
-            <span data-lang="en">PRIVACY</span>
-            <span data-lang="de">DATENSCHUTZ</span>
-            <span data-lang="ru">КОНФИДЕНЦИАЛЬНОСТЬ</span>
-        </a>
-
-        </div>
+        <a href="galleria.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">GALLERIA</a>
+        <a href="privacy.html" onclick="toggleMenu()" style="padding: 15px 25px; text-decoration: none; font-size: 1.1rem; color: white; display: block; border-bottom: 1px solid #333;">PRIVACY</a>
+    </div>
 </div>
-
 
 <header>
     <img src="logo-conti-nicoli-il-poeta-della-sengia-sbusa-negrar-valpolicella.png" alt="Antiche Tenute dei Conti Nicoli" class="logo-img">
@@ -291,452 +223,112 @@
 <div class="container">
     
     <article class="story-block">
-        <div data-lang="it" class="active-lang">
-            <h2>La Storia: Una Stirpe tra Gloria e Oblio</h2>
-            <p class="subtitle">Il Segreto del 1673</p>
-            <p>Esistono leggende che si tramandano sottovoce, tra realtà e fantasia. Si narra che nel <strong>1673</strong>, l’ultimo dei <strong>Conti Nicoli</strong> — un uomo dai grandi possedimenti ma dai vizi altrettanto smisurati — si giocò l'intero patrimonio in una sola notte. Titolo, palazzi e onore svanirono tra le carte, il tabacco e il vino.</p>
-            <p>Da allora, le tracce del Conte si persero, ma la nostra stirpe non abbandonò mai questa terra. Per secoli, i Nicoli hanno continuato a curare i vigneti di Negrar, ma non più come signori: siamo diventati mezzadri e operai, lavorando con umiltà le terre che un tempo portavano il nostro nome. Il silenzio è calato sulla nostra origine, un silenzio imposto per coprire la vergogna di quell'onore perduto.</p>
-            <img src="ritratto-conte-nicoli-storia-negrar.png" alt="Il Conte Nicoli" class="story-img">
-            <p>Ma il legame con la storia è profondo. Non si esclude che le radici della nostra famiglia possano risalire ancora più lontano, fino ai tempi della <strong>Villa Romana di Negrar</strong> che oggi riaffiora dalla terra: sebbene non vi siano tracce scritte, il nostro sangue batte al ritmo di quei mosaici millenari.</p>
-        </div>
-        <div data-lang="en">
-            <h2>The History: A Lineage Between Glory and Oblivion</h2>
-            <p class="subtitle">The Secret of 1673</p>
-            <p>There are legends whispered softly, between reality and fantasy. It is said that in <strong>1673</strong>, the last of the <strong>Counts Nicoli</strong> — a man of great possessions but equally immense vices — gambled away his entire fortune in a single night. Title, palaces, and honor vanished amidst cards, tobacco, and wine.</p>
-            <p>Since then, the Count's tracks were lost, but our lineage never abandoned this land. For centuries, the Nicoli family continued to tend the vineyards of Negrar, but no longer as lords: we became sharecroppers and laborers, humbly working the lands that once bore our name. Silence fell over our origins, a silence imposed to cover the shame of that lost honor.</p>
-            <img src="ritratto-conte-nicoli-storia-negrar.png" alt="Count Nicoli" class="story-img">
-            <p>But the bond with history is deep. It is possible that our family's roots go back even further, to the times of the <strong>Roman Villa of Negrar</strong> that is resurfacing from the earth today: although there are no written records, our blood beats to the rhythm of those millennial mosaics.</p>
-        </div>
-        <div data-lang="de">
-            <h2>Die Geschichte: Ein Geschlecht zwischen Ruhm und Vergessenheit</h2>
-            <p class="subtitle">Das Geheimnis von 1673</p>
-            <p>Es gibt Legenden, die leise geflüstert werden, zwischen Realität und Fantasie. Man erzählt sich, dass im Jahr <strong>1673</strong> der letzte der <strong>Grafen Nicoli</strong> – ein Mann von großem Besitz, aber ebenso maßlosen Lastern – sein gesamtes Erbe in einer einzigen Nacht verspielte. Titel, Paläste und Ehre verschwanden zwischen Karten, Tabak und Wein.</p>
-            <p>Seitdem verlor sich die Spur des Grafen, doch unser Geschlecht verließ dieses Land nie. Über Jahrhunderte pflegten die Nicoli weiterhin die Weinberge von Negrar, jedoch nicht mehr als Herren: Wir wurden zu Pächtern und Arbeitern und bewirtschafteten demütig das Land, das einst unseren Namen trug. Über unsere Herkunft legte sich Schweigen – ein Schweigen, das auferlegt wurde, um die Scham der verlorenen Ehre zu decken.</p>
-            <img src="ritratto-conte-nicoli-storia-negrar.png" alt="Graf Nicoli" class="story-img">
-            <p>Doch die Verbindung zur Geschichte ist tief. Es ist nicht auszuschließen, dass die Wurzeln unserer Familie noch weiter zurückreichen, bis in die Zeit der <strong>Römischen Villa von Negrar</strong>, die heute wieder aus der Erde auftaucht: Auch wenn es keine schriftlichen Belege gibt, schlägt unser Blut im Rhythmus dieser jahrtausendealten Mosaike.</p>
-        </div>
-        <div data-lang="ru">
-            <h2>История: Род между славой и забвением</h2>
-            <p class="subtitle">Тайна 1673 года</p>
-            <p>Существуют легенды, передающиеся вполголоса, на грани реальности и фантазии. Говорят, что в <strong>1673</strong> году последний из <strong>графов Николи</strong> — человек огромных владений, но столь же безмерных пороков — проиграл все состояние за одну ночь. Титул, дворцы и честь исчезли среди карт, табака и вина.</p>
-            <p>С тех пор следы графа затерялись, но наш род никогда не покидал эту землю. На протяжении веков семья Николи продолжала ухаживать за виноградниками Неграра, но уже не как господа: мы стали издольщиками и рабочими, смиренно возделывая земли, которые когда-то носили наше имя. Над нашим происхождением воцарилось молчание — молчание, наложенное, чтобы скрыть позор утраченной чести.</p>
-            <img src="ritratto-conte-nicoli-storia-negrar.png" alt="Граф Николи" class="story-img">
-            <p>Но связь с историей глубока. Не исключено, что корни нашей семьи уходят еще дальше, во времена <strong>Римской виллы Неграра</strong>, которая сегодня вновь проступает из земли: хотя письменных свидетельств нет, наша кровь бьется в ритме этой тысячелетней мозаики.</p>
-        </div>
+        <h2>La Storia: Una Stirpe tra Gloria e Oblio</h2>
+        <p class="subtitle">Il Segreto del 1673</p>
+        <p>Esistono leggende che si tramandano sottovoce, tra realtà e fantasia. Si narra che nel <strong>1673</strong>, l’ultimo dei <strong>Conti Nicoli</strong> — un uomo dai grandi possedimenti ma dai vizi altrettanto smisurati — si giocò l'intero patrimonio in una sola notte. Titolo, palazzi e onore svanirono tra le carte, il tabacco e il vino.</p>
+        <p>Da allora, le tracce del Conte si persero, ma la nostra stirpe non abbandonò mai questa terra. Per secoli, i Nicoli hanno continuato a curare i terreni di Negrar e della pianura veronese, lavorando con umiltà le terre che un tempo portavano il nostro nome. Il silenzio è calato sulla nostra origine, un silenzio imposto per coprire la vergogna di quell'onore perduto.</p>
+        <img src="ritratto-conte-nicoli-storia-negrar.png" alt="Il Conte Nicoli" class="story-img">
+        <p>Ma il legame con la storia è profondo. Non si esclude che le radici della nostra famiglia possano risalire ancora più lontano, fino ai tempi della <strong>Villa Romana di Negrar</strong> che oggi riaffiora dalla terra: sebbene non vi siano tracce scritte, il nostro sangue batte al ritmo di quei mosaici millenari.</p>
     </article>
 
     <article class="story-block">
-        <div data-lang="it" class="active-lang">
-            <h2>I Poeti della Sengia Sbusa</h2>
-            <div class="highlight-box">
-                "A Negrar siamo conosciuti come <strong>I Poeti</strong>."
-            </div>
-            <p>Questo soprannome nasce da un prozio che, durante le guerre e nei lunghi <em>filò</em> nelle stalle, portava messaggi di speranza e raccontava storie cariche di magia. Era il <strong>Poeta della Sengia Sbusa</strong>, il cantastorie richiesto da tutti per la sua capacità di incantare l'anima. Oggi, il nostro vino è l'erede di quel racconto: un ponte tra il passato contadino e la nobiltà ritrovata.</p>
+        <h2>I Poeti della Sengia Sbusa</h2>
+        <div class="highlight-box">
+            "A Negrar siamo conosciuti come <strong>I Poeti</strong>."
         </div>
-        <div data-lang="en">
-            <h2>The Poets of Sengia Sbusa</h2>
-            <div class="highlight-box">
-                "In Negrar, we are known as <strong>The Poets</strong>."
-            </div>
-            <p>This nickname comes from a great-uncle who, during wars and long <em>filò</em> (social gatherings) in the stables, brought messages of hope and told stories filled with magic. He was the <strong>Poet of Sengia Sbusa</strong>, the storyteller sought after by everyone for his ability to enchant the soul. Today, our wine is the heir to that story: a bridge between the peasant past and rediscovered nobility.</p>
-        </div>
-        <div data-lang="de">
-            <h2>Die Poeten von Sengia Sbusa</h2>
-            <div class="highlight-box">
-                "In Negrar kennt man uns als <strong>I Poeti</strong> (Die Poeten)."
-            </div>
-            <p>Dieser Beiname stammt von einem Großonkel, der während der Kriege und bei den langen <em>Filò</em> (Abendgesellschaften) in den Ställen Botschaften der Hoffnung brachte und Geschichten voller Magie erzählte. Er war der <strong>Dichter von Sengia Sbusa</strong>, der Geschichtenerzähler, der von allen für seine Fähigkeit, die Seele zu verzaubern, geschätzt wurde. Heute ist unser Wein der Erbe dieser Erzählung: eine Brücke zwischen der bäuerlichen Vergangenheit und dem wiedergefundenen Adel.</p>
-        </div>
-        <div data-lang="ru">
-            <h2>Поэты Сенджа Сбуза</h2>
-            <div class="highlight-box">
-                "В Неграре нас знают как <strong>I Poeti</strong> (Поэты)."
-            </div>
-            <p>Это прозвище пошло от двоюродного деда, который во время войн и долгих <em>filò</em> (посиделок) в конюшнях приносил вести надежды и рассказывал истории, полные магии. Он был <strong>Поэтом Сенджа Сбуза</strong>, сказителем, которого звали все за его дар очаровывать душу. Сегодня наше вино — наследник того повествования: мост между крестьянским прошлым и обретенным благородством.</p>
-        </div>
+        <p>Questo soprannome nasce da un prozio che, durante le guerre e nei lunghi <em>filò</em> nelle stalle, portava messaggi di speranza e raccontava storie cariche di magia. Era il <strong>Poeta della Sengia Sbusa</strong>, il cantastorie richiesto da tutti per la sua capacità di incantare l'anima. Oggi, la nostra produzione agricola è l'erede di quel racconto: un ponte tra il passato contadino e la nobiltà ritrovata.</p>
     </article>
 
-<article class="story-block">
-        <div data-lang="it" class="active-lang">
-            <h2>Alla Scoperta della Sengia Sbusa</h2>
-            <p class="subtitle">Un tesoro naturale nel cuore di Negrar</p>
-            <p>Il territorio che circonda le nostre Tenute regala scorci naturali unici, tra cui la celebre <strong>Sengia Sbusa</strong>. Questa caratteristica conformazione rocciosa, letteralmente "pietra bucata", rappresenta una delle tappe più suggestive per chi ama il trekking e le passeggiate tra le marogne.</p>
-<p>È un monolite carsico che si erge verticalmente, alto 52 metri con un misterioso foro del diametro di 1,80 metri e profondo 3,50 metri con accesso dalla parte esterna e raggiungibile solo da scalatori esperti. Un "buso" (buco) che come un occhio porge lo sguardo all'infinito. A Negrar di Valpolicella si dice che tutti i bambini sono nati dalla <strong>Sengia Sbusa</strong>. </p>
-            <p>Raggiungere la <strong>Sengia Sbusa</strong> permette di immergersi nella storia geologica della Valpolicella, godendo di un panorama mozzafiato che domina la vallata. È un punto di interesse imperdibile per chi desidera scoprire le bellezze naturalistiche più autentiche del nostro paesaggio.</p>
-        </div>
-        <div data-lang="en">
-            <h2>Discovering Sengia Sbusa</h2>
-            <p class="subtitle">A natural treasure in the heart of Negrar</p>
-            <p>The territory surrounding our Estates offers unique natural views, including the famous <strong>Sengia Sbusa</strong>. This characteristic rock formation, locally known as "pierced stone", is one of the most suggestive stops for those who love trekking and walking among the dry-stone walls.</p>
-<p>It's a karst monolith rising vertically, 52 meters high, with a mysterious hole 1.8 meters in diameter and 3.5 meters deep, accessible from the outside and accessible only by expert climbers. A "buso" (hole) that, like an eye, gazes into infinity. In Negrar di Valpolicella, it's said that all children are born from the <strong>Sengia Sbusa</strong>.</p>
-<p>Reaching <strong>Sengia Sbusa</strong> allows you to immerse yourself in the geological history of our area, enjoying a breathtaking view overlooking the valley. It's an unmissable point of interest for those wishing to discover the most authentic natural beauty of the local landscape.</p>
-        </div>
-        <div data-lang="de">
-            <h2>Entdeckung der Sengia Sbusa</h2>
-            <p class="subtitle">Ein Naturschatz im Herzen von Negrar</p>
-            <p>Das Gebiet um unser Weingut bietet einzigartige Natureinblicke, darunter die berühmte <strong>Sengia Sbusa</strong>. Diese charakteristische Felsformation, lokal als "durchbohrter Stein" bekannt, ist einer der reizvollsten Stopps für Wanderer.</p>
-<p>Es ist ein senkrecht aufragender Karstmonolith von 52 Metern Höhe mit einem geheimnisvollen Loch von 1,8 Metern Durchmesser und 3,5 Metern Tiefe, das von außen zugänglich ist und nur erfahrenen Kletterern zur Verfügung steht. Ein „Buso“ (Loch), das wie ein Auge in die Unendlichkeit blickt. In Negrar di Valpolicella sagt man, dass alle Kinder aus der <strong>Sengia Sbusa</strong> geboren werden. </p>
-<p>Die Ankunft in <strong>Sengia Sbusa</strong> ermöglicht es Ihnen, in die geologische Geschichte unserer Region einzutauchen und einen atemberaubenden Blick über das Tal zu genießen. Ein absolutes Muss für alle, die die authentische Naturschönheit der Gegend entdecken möchten.</p>
-        </div>
-        <div data-lang="ru">
-            <h2>Открытие Сенджа Сбуза</h2>
-            <p class="subtitle">Природное сокровище в сердце Неграра</p>
-            <p>Территория, окружающая наше поместье, дарит уникальные природные виды, среди которых знаменитая <strong>Сенджа Сбуза</strong>. Эта характерная скальная формация, известная как «дырявый камень», является одной из самых впечатляющих остановок для любителей треккинга.</p>
-<p>Это карстовый монолит, возвышающийся вертикально на 52 метра, с таинственным отверстием диаметром 1,8 метра и глубиной 3,5 метра, доступ к которому возможен только опытным альпинистам. «Бусо» (отверстие), которое, подобно глазу, смотрит в бесконечность. В Неграр-ди-Вальполичелла говорят, что все дети рождаются из <strong>Сенгиа Сбуса</strong>.</p>
-<p>Поднявшись на вершину <strong>Сенгиа Сбуса</strong>, вы сможете погрузиться в геологическую историю нашего региона и насладиться захватывающим видом на долину. Это место обязательно стоит посетить тем, кто хочет открыть для себя подлинную природную красоту местного ландшафта.</p>
-        </div>
+    <article class="story-block">
+        <h2>Alla Scoperta della Sengia Sbusa</h2>
+        <p class="subtitle">Un tesoro naturale nel cuore di Negrar</p>
+        <p>Il territorio che circonda le nostre Tenute regala scorci naturali unici, tra cui la celebre <strong>Sengia Sbusa</strong>. Questa caratteristica conformazione rocciosa, letteralmente "pietra bucata", rappresenta una delle tappe più suggestive per chi ama il trekking e le passeggiate tra le marogne.</p>
+        <p>È un monolite carsico che si erge verticalmente, alto 52 metri con un misterioso foro del diametro di 1,80 metri e profondo 3,50 metri con accesso dalla parte esterna e raggiungibile solo da scalatori esperti. Un "buso" (buco) che come un occhio porge lo sguardo all'infinito. A Negrar di Valpolicella si dice che tutti i bambini sono nati dalla <strong>Sengia Sbusa</strong>.</p>
+        <p>Raggiungere la <strong>Sengia Sbusa</strong> permette di immergersi nella storia geologica del nostro territorio, godendo di un panorama mozzafiato che domina la vallata.</p>
     </article>
-    </article>
-    
-    <section id="olio" class="story-section">
-        <h2 data-lang="it" class="active-lang">Le Nostre Riserve Enologiche</h2>
-        <h2 data-lang="en">Our Oenological Reserves</h2>
-        <h2 data-lang="de">Unsere önologischen Reserven</h2>
-        <h2 data-lang="ru">Наши энологические резервы</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="amarone-della-valpolicella-classico-riserva-del-poeta.jpg" alt="Amarone" class="prod-img">
-                <h3>Amarone della Valpolicella DOCG Classico</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang"><strong>"La Riserva del Poeta"</strong>. Un vino monumentale che nasce dal lungo appassimento delle migliori uve. Al naso esplode con un bouquet complesso di amarena sotto spirito, prugna secca e fini note di tabacco. In bocca è avvolgente e maestoso, con tannini vellutati e una grande acidità che lo rende incredibilmente longevo. Rappresenta il vertice del nostro riscatto, una poesia liquida che sfida il tempo.<br> <br>
-                    <strong>L'abbinamento:</strong> Brasati all'Amarone, selvaggina o Parmigiano Reggiano 36 mesi.  <br><br>"Non un vino, ma un racconto. L'essenza dell'appassimento interpretata con la finezza di chi sa aspettare. La poesia nel calice." <br></p>
-                    <p data-lang="en"><strong>"The Poet's Reserve"</strong>. A monumental wine born from the long drying process of the finest grapes. The nose explodes with a complex bouquet of black cherry in spirits, dried plum, and fine notes of tobacco. On the palate, it is enveloping and majestic, with velvety tannins and great acidity that makes it incredibly long-lived. It represents the pinnacle of our redemption, a liquid poetry that defies time.<br> <br>
-                    <strong>Pairing:</strong> Amarone-braised meats, game, or 36-month aged Parmigiano Reggiano. <br><br>"Not just a wine, but a story. The essence of the 'appassimento' technique interpreted with the finesse of those who know how to wait. Poetry in a glass." <br></p>
-                    <p data-lang="de"><strong>"Die Reserve des Dichters"</strong>. Ein monumentaler Wein, der aus der langen Trocknung der besten Trauben entsteht. In der Nase explodiert ein komplexes Bouquet von in Alkohol eingelegten Herzkirschen, getrockneten Pflaumen und feinen Tabaknoten. Im Mund ist er einhüllend und majestätisch, mit samtigen Tanninen und einer großartigen Säure, die ihn unglaublich langlebig macht. Er stellt den Gipfel unserer Wiedergutmachung dar, eine flüssige Poesie, die der Zeit trotzt.<br> <br>
-                    <strong>Serviervorschlag:</strong> In Amarone geschmortes Fleisch, Wild oden 36 Monate gereifter Parmigiano Reggiano. <br><br>"Kein Wein, sondern eine Erzählung. Die Essenz der Antrocknung, interpretiert mit der Finesse derer, die zu warten wissen. Poesie im Kelch." <br></p>
-                    <p data-lang="ru"><strong>"Резерв Поэта"</strong>. Монументальное вино, рожденное в результате длительного подвяливания лучших сортов винограда. В аромате раскрывается сложный букет из вишни в спирту, чернослива и тонких нот табака. Во вкусе оно обволакивающее и величественное, с бархатистыми танинами и великолепной кислотностью, что делает его невероятно долговечным. Оно представляет собой вершину нашего возрождения, жидкую поэзию, бросающую вызов времени.<br> <br>
-                    <strong>Сочетание:</strong> Мясо, тушенное в Амароне, дичь или сыр Пармиджано Реджано 36-месячной выдержки. <br><br>"Не просто вино, а история. Суть процесса 'аппассименто', интерпретированная с изяществом тех, кто умеет ждать. Поэзия в бокале." <br></p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-            </div>
 
-            <div class="card">
-                <img src="valpolicella-ripasso-classico-superiore-conti-nicoli.jpg" alt="Ripasso" class="prod-img">
-                <h3>Valpolicella Ripasso DOC Classico Superiore</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang"><strong>"La Riserva del Conte"</strong>. Ottenuto secondo l'antica tecnica del ripasso sulle vinacce dell'Amarone, unisce freschezza e struttura nobile. Il profumo richiama i frutti di bosco maturi e la confettura di ciliegia con un leggero accenno speziato. Al palato è avvolgente e vellutato, dotato di una morbidezza che evita eccessive dolcezze.<br> <br>
-                    <strong>L'abbinamento:</strong> Carni alla brace, arrosti della domenica o formaggi di media stagionatura.  <br><br>"Un Ripasso moderno: ha il carattere dell'Amarone ma mantiene la vivacità del Valpolicella. La complessità che non stanca mai." <br></p>
-                    <p data-lang="en"><strong>"The Count's Reserve"</strong>. Obtained according to the ancient 'ripasso' technique on Amarone pomace, it combines freshness and noble structure. The scent recalls ripe wild berries and cherry jam with a light spicy hint. On the palate, it is enveloping and velvety, endowed with a softness that avoids excessive sweetness.<br> <br>
-                    <strong>Pairing:</strong> Grilled meats, Sunday roasts, or medium-aged cheeses. <br><br>"A modern Ripasso: it has the character of Amarone but maintains the vivacity of Valpolicella. Complexity that never grows tired." <br></p>
-                    <p data-lang="de"><strong>"Die Reserve des Grafen"</strong>. Nach der alten Ripasso-Technik auf dem Trester des Amarone gewonnen, vereint er Frische und edle Struktur. Der Duft erinnert an reife Waldbeeren und Kirschmarmelade mit einem leichten würzigen Akzent. Am Gaumen ist er einhüllend und samtig, mit einer Weichheit, die übermäßige Süße vermeidet.<br> <br>
-                    <strong>Serviervorschlag:</strong> Gegrilltes Fleisch, Sonntagsbraten oder mittelalter Käse. <br><br>"Ein moderner Ripasso: Er besitzt den Charakter des Amarone, bewahrt aber die Lebendigkeit des Valpolicella. Komplexität, die niemals ermüdet." <br></p>
-                    <p data-lang="ru"><strong>"Резерв Графа"</strong>. Полученное по старинной технологии 'рипассо' на мезге Амароне, оно сочетает в себе свежесть и благородную структуру. Аромат напоминает спелые лесные ягоды и вишневый джем с легким пряным оттенком. На вкус оно обволакивающее и бархатистое, обладающее мягкостью, лишенной излишней сладости.<br> <br>
-                    <strong>Сочетание:</strong> Мясо на гриле, воскресное жаркое или сыры средней выдержки. <br><br>"Современное Рипассо: в нем чувствуется характер Амароне, но сохраняется живость Вальполичеллы. Сложность, которая никогда не надоедает." <br></p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
+    <section id="passata" style="margin-top: 80px; background: #fff; padding: 40px 20px; border: 1px solid var(--gold);">
+        <article class="story-block">
+            <h2>La Passata di Pomodoro: Tradizione di Famiglia</h2>
+            <p class="subtitle">Come la facevano le nostre mamme, nonne e bisnonne</p>
+            <div class="highlight-box">
+                "Una bottiglia che profuma di agosto, di sole veronese e di mani che hanno sempre saputo aspettare il momento giusto."
             </div>
-
-            <div class="card">
-                <img src="valpolicella-classico-doc-sengia-sbusa.jpg" alt="Valpolicella" class="prod-img">
-                <h3>Valpolicella DOC Classico</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang"><strong>"Sengia Sbusa"</strong>. Espressione purissima del territorio di Negrar, prodotta solo in acciaio per preservare l'integrità del frutto. Caratterizzato da una spiccata mineralità e sentori di ciliegia croccante e pepe nero. In bocca è agile e fresco, un vino di sincerità e verticalità.<br> <br>
-                    <strong>L'abbinamento:</strong> Salumi veronesi, primi piatti al ragù o formaggio Monte Veronese giovane.  <br><br>"La freschezza della pietra, il profumo della tradizione. Il Valpolicella come si beveva una volta, ma con la pulizia di oggi." <br></p>
-                    <p data-lang="en"><strong>"Sengia Sbusa"</strong>. Pure expression of the Negrar territory, produced only in steel to preserve the integrity of the fruit. Characterized by a marked minerality and scents of crunchy cherry and black pepper. In the mouth, it is agile and fresh, a wine of sincerity and verticality.<br> <br>
-                    <strong>Pairing:</strong> Veronese cured meats, pasta with meat sauce, or young Monte Veronese cheese. <br><br>"The freshness of the stone, the scent of tradition. Valpolicella as it used to be drunk, but with today's cleanliness." <br></p>
-                    <p data-lang="de"><strong>"Sengia Sbusa"</strong>. Reinster Ausdruck des Territoriums von Negrar, nur im Stahltank ausgebaut, um die Integrität der Frucht zu bewahren. Geprägt durch eine ausgeprägte Mineralität und Noten von knackiger Kirsche und schwarzem Pfeffer. Im Mund ist er agil und frisch, ein Wein von Aufrichtigkeit und Vertikalität.<br> <br>
-                    <strong>Serviervorschlag:</strong> Veroneser Aufschnitt, erste Gänge mit Ragù oder junger Monte Veronese Käse. <br><br>"Die Frische des Steins, der Duft der Tradition. Der Valpolicella, wie man ihn früher trank, aber mit der Reinheit von heute." <br></p>
-                    <p data-lang="ru"><strong>"Сенджа Сбуза"</strong>. Чистейшее выражение территории Неграра, произведенное только в стальных чанах для сохранения целостности плода. Характеризуется выраженной минеральностью и нотками хрустящей вишни и черного перца. Во вкусе оно легкое и свежее, вино искренности и вертикальности.<br> <br>
-                    <strong>Сочетание:</strong> Веронские колбасы, паста с мясным соусом или молодой сыр Монте Веронезе. <br><br>"Свежесть камня, аромат традиций. Вальполичелла, какой ее пили раньше, но с сегодняшней чистотой." <br></p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-            </div>
-
-            <div class="card">
-                <img src="recioto-della-valpolicella-quarotto-della-castagnara.jpg" alt="Recioto" class="prod-img">
-                <h3>Recioto della Valpolicella DOCG Classico</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang"><strong>"Quarotto della Castagnara"</strong>. Il vino più antico del territorio e l'antenato dell’Amarone. Ottenuto dai grappoli più zuccherini lasciati riposare nei fruttai di Negrar. Al naso incanta con note di ciliegia sotto spirito, confettura di mora e liquirizia. In bocca è dolce ma mai stucchevole, bilanciato dalla freschezza del terreno collinare per un sorso vellutato e cremoso.<br> <br>
-                    <strong>L'abbinamento:</strong> Sbrisolona, dolci al cioccolato o formaggi erborinati stagionati. Perfetto anche da solo come vino da meditazione. <br><br>"Un vino che sa di casa e di festa. È l’essenza zuccherina della nostra terra, raccolta e custodita con la pazienza che solo le cose preziose richiedono." <br></p>
-                    <p data-lang="en"><strong>"Quarotto della Castagnara"</strong>. The oldest wine of the territory and the ancestor of Amarone. Obtained from the most sugary clusters left to rest in the drying lofts of Negrar. The nose enchants with notes of cherry in spirits, blackberry jam, and licorice. In the mouth, it is sweet but never cloying, balanced by the freshness of the hilly soil for a velvety and creamy sip.<br> <br>
-                    <strong>Pairing:</strong> Sbrisolona cake, chocolate desserts, or aged blue cheeses. Perfect also on its own as a meditation wine. <br><br>"A wine that tastes of home and celebration. It is the sugary essence of our land, collected and guarded with the patience that only precious things require." <br></p>
-                    <p data-lang="de"><strong>"Quarotto della Castagnara"</strong>. Der älteste Wein des Gebiets und der Vorfahre des Amarone. Gewonnen aus den zuckerreichsten Trauben, die in den Trockenböden von Negrar ruhen durften. In der Nase verzaubert er mit Noten von in Alkohol eingelegten Kirschen, Brombeermarmelade und Lakritze. Im Mund ist er süß, aber niemals klebrig, balanciert durch die Frische der Hügellandschaft für einen samtigen und cremigen Schluck.<br> <br>
-                    <strong>Serviervorschlag:</strong> Sbrisolona, Schokoladendesserts oder gereifter Blauschimmelkäse. Perfekt auch pur als Meditationswein. <br><br>"Ein Wein, der nach Zuhause und Festtagen schmeckt. Es ist die zuckrige Essenz unseres Landes, geerntet und gehütet mit der Geduld, die nur kostbare Dinge erfordern." <br></p>
-                    <p data-lang="ru"><strong>"Куаротто делла Кастаньяра"</strong>. Старейшее вино региона и предок Амароне. Получено из самых сахаристых гроздей, оставленных для подвяливания в сушилках Неграра. Аромат очаровывает нотами вишни в спирту, ежевичного джема и солодки. Во вкусе оно сладкое, но не приторное, сбалансированное свежестью холмистой почвы для бархатистого и кремового глотка.<br> <br>
-                    <strong>Сочетание:</strong> Торт Сбризолона, шоколадные десерты или выдержанные сыры с плесенью. Идеально также само по себе как вино для медитации. <br><br>"Вино, которое пахнет домом и праздником. Это сахарная эссенция нашей земли, собранная и сохраненная с терпением, которого требуют только драгоценные вещи." <br></p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-            </div>
-        </div>
-   </section> 
-
-    <section style="margin-top: 60px;">
-        <h2 data-lang="it" class="active-lang">L'Oro dei Poeti: Grignano</h2>
-        <h2 data-lang="en">The Gold of Poets: Grignano</h2>
-        <h2 data-lang="de">Das Gold der Poeten: Grignano</h2>
-        <h2 data-lang="ru">Золото поэтов: Гриньяно</h2>
-        <img src="linee-olio.png" alt="Linee Olio Nicoli" class="story-img">
-        <div class="grid olive-grid">
+            <p>Abbiamo ripreso una vecchia tradizione di famiglia: la passata di pomodoro fatta secondo la tradizione veronese dei Conti Nicoli, come la preparavano le nostre mamme, le nostre nonne e le nostre bisnonne. I pomodori sono coltivati in piena aria al sole nelle nostre tenute di Salizzole.</p>
+            <p>I pomodori sono raccolti a mano al giusto punto di maturazione sotto il sole di agosto. Solo pomodoro 100% italiano, niente altro: <strong>senza sale aggiunto, senza acido citrico, senza conservanti, senza coloranti, senza OGM e senza aggiunta di acqua</strong>. Lavorati freschissimi entro poche ore dalla raccolta, per conservare intatto il profumo del pomodoro appena colto.</p>
+            <p>Il risultato è una passata pura, artigianale, di altissima densità naturale grazie all’elevato grado Brix (concentrazione zuccherina naturale). Ricca di licopene, naturalmente dolce, dal gusto autentico e dal colore rosso vivido. Spremuta a freddo per preservare vitamine termolabili (come la Vitamina C), aromi e proprietà organolettiche.</p>
+            <p>Prodotta in piccole quantità, 100% di nostra produzione agricola. Pura poesia in bottiglia da 446 ml.</p>
             
-            <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Invaiatura</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">Ottenuto da olive raccolte precocemente. Un olio dal fruttato intenso, con note nette di erba appena tagliata e carciofo. Al palato è deciso e piccante, testimone dell'altissima presenza di polifenoli. È il condimento ideale per chi cerca carattere e la massima espressione della varietà Grignano. Qui siamo di fronte a un vero nutraceutico. La raccolta precoce garantisce il picco massimo di polifenoli (antiossidanti naturali). Dal punto di vista biologico, questo olio è una 'bomba' contro lo stress ossidativo e l'invecchiamento cellulare. L'alta concentrazione di oleocantale è testimoniata dal pizzicore in gola: ha un'azione antinfiammatoria simile a quella dell'ibuprofene. È un protettore formidabile per l'apparato cardiovascolare. Al naso è un'esplosione di freschezza: senti l'erba appena tagliata, il carciofo crudo e la foglia di pomodoro. In bocca è deciso, quasi arrogante nella sua giovinezza. L'amaro e il piccante sono intensi ma equilibrati, con una chiusura che ricorda la mandorla verde. È un olio 'muscolare', perfetto per esaltare una tagliata di manzo, una zuppa di legumi o semplicemente un pane bruscato che sappia reggere il confronto.</p>
-                    <p data-lang="en">Obtained from early-harvested olives. An oil with intense fruitiness, featuring clear notes of freshly cut grass and artichoke. On the palate, it is firm and spicy, witnessing the very high presence of polyphenols. It is the ideal condiment for those seeking character and the maximum expression of the Grignano variety. Here we are facing a true nutraceutical. Early harvesting guarantees the maximum peak of polyphenols (natural antioxidants). From a biological point of view, this oil is a 'bomb' against oxidative stress and cellular aging. The high concentration of oleocanthal is evidenced by the sting in the throat: it has an anti-inflammatory action similar to that of ibuprofen. It is a formidable protector for the cardiovascular system. The nose is an explosion of freshness: you can smell freshly cut grass, raw artichoke, and tomato leaf. In the mouth, it is decisive, almost arrogant in its youth. The bitter and spicy notes are intense but balanced, with a finish reminiscent of green almond. It is a 'muscular' oil, perfect for enhancing a beef tagliata, a legume soup, or simply a toasted bread that can stand up to the comparison.</p>
-                    <p data-lang="de">Gewonnen aus früh geernteten Oliven. Ein intensiv fruchtiges Öl mit deutlichen Noten von frisch geschnittenem Gras und Artischocke. Am Gaumen ist es kräftig und pikant, was von dem sehr hohen Gehalt an Polyphenolen zeugt. Es ist die ideale Würze für alle, die Charakter und den maximalen Ausdruck der Sorte Grignano suchen. Hier handelt es sich um ein echtes Nutrazeutikum. Die frühe Ernte garantiert den Höchstwert an Polyphenolen (natürliche Antioxidantien). Aus biologischer Sicht ist dieses Öl eine "Bombe" gegen oxidativen Stress und Zellalterung. Die hohe Konzentration an Oleocanthal zeigt sich durch das Kratzen im Hals: Es hat eine entzündungshemmende Wirkung ähnlich wie Ibuprofen. Es ist ein hervorragender Schutz für das Herz-Kreislauf-System. In der Nase ist es eine Explosion der Frische: Man riechт frisch gemähtes Gras, rohe Artischocke und Tomatenblätter. Im Mund ist es entschlossen, fast arrogant in seiner Jugend. Bitterkeit und Schärfe sind intensiv, aber ausgewogen, mit einem Abgang, der an grüne Mandeln erinnert. Es ist ein "muskulöses" Öl, perfekt zur Verfeinerung einer Tagliata vom Rind, einer Hülsenfruchtsuppe oder einfach auf geröstetem Brot.</p>
-                    <p data-lang="ru">Произведено из оливок раннего сбора. Масло с интенсивным фруктовым ароматом, отчетливыми нотками свежескошенной травы и артишока. На вкус решительное и пикантное, что свидетельствует о высочайшем содержании полифенолов. Это идеальная приправа для тех, кто ищет характер и максимальное выражение сорта Гриньяно. Это настоящее «нутрицевтическое» средство. Ранний сбор гарантирует пик содержания полифенолов (природных антиоксидантов). С биологической точки зрения это масло — «бомба» против окислительного стресса и клеточного старения. Высокая концентрация олеокантала подтверждается першением в горле: он обладает противовоспалительным действием, схожим с ибупрофеном. Это мощный защитник сердечно-сосудистой системы. В аромате — взрыв свежести: вы чувствуете свежую траву, сырой артишок и лист томата. Во вкусе оно решительное, почти дерзкое в своей молодости. Горечь и острота интенсивны, но сбалансированы, с послевкусием, напоминающим зеленый миндаль. Это «мускулистое» масло, идеально подходящее для подчеркивания вкуса говяжьей тальяты, бобового супа или просто поджаренного хлеба.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
+            <div class="card-content collapsed">
+                <p><strong>Note di Degustazione:</strong> Gusto autentico e denso, con note di pomodoro maturo al sole che evocano l'estate veronese. Al naso, profumi erbacei e fruttati freschi, senza alcuna acidità artificiale. In bocca è equilibrata, naturalmente dolce e vellutata, perfetta per sughi tradizionali o come base per piatti gourmet.</p>
+                <p><strong>Proprietà e Benessere:</strong> È un tesoro nutrizionale ricco di licopene (potente antiossidante che supporta la salute cardiovascolare e protegge la pelle dai danni UV), vitamine C e K per il sistema immunitario, e potassio per il controllo della pressione. Senza additivi, è ideale per diete sane e anti-infiammatorie.</p>
             </div>
-
-            <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Maturità</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">Olive raccolte a piena maturazione per un olio di straordinaria eleganza. Il profumo è delicato, con richiami di fiori bianchi e mela. In bocca è fluido, morbido e armonioso, perfetto per piatti delicati o pesce, accompagnando il cibo senza mai sovrastarne il sapore originale. In questa fase, la composizione chimica cambia. Sebbene i polifenoli siano leggermente diminuuiti rispetto all'invaiatura, l'olio diventa estremamente digeribile e ricco di acidi grassi monoinsaturi di alta qualità. È un grasso 'buono' che aiuta a regolare il colesterolo senza irritare le mucose gastriche più sensibili. Lo definirei un olio 'gentile', ideale per la dieta quotidiana, anche per i bambini o gli anziani, perché nutre il sistema nervoso con estrema delicatezza. Dimenticate l'irruenza del precedente. Qui cerchiamo la seta. I profumi virano verso la mela Golden matura, la camomilla e i fiori bianchi. La sensazione tattile in bocca è avvolgente, quasi burrosa. L'amaro è appena accennato e il piccante è un sussurro finale, molto elegante. È l'olio della discrezione: non copre i sapori, li accompagna. Splendido su un pesce al forno, su una maionese fatta in casa o addirittura su un dolce leggero.</p>
-                    <p data-lang="en">Olives harvested at full maturity for an oil of extraordinary elegance. The scent is delicate, with hints of white flowers and apple. In the mouth, it is fluid, soft, and harmonious, perfect for delicate dishes or fish, accompanying the food without ever overpowering its original flavor. In this phase, the chemical composition changes. Although the polyphenols have slightly decreased compared to the early harvest, the oil becomes extremely digestible and rich in high-quality monounsaturated fatty acids. It is a 'good' fat that helps regulate cholesterol without irritating the most sensitive gastric mucosa. I would define it as a 'gentle' oil, ideal for the daily diet, even for children or the elderly, because it nourishes the nervous system with extreme delicacy. Forget the impetuousness of the previous one. Here we seek silk. The scents shift towards ripe Golden apple, chamomile, and white flowers. The tactile sensation in the mouth is enveloping, almost buttery. The bitterness is just hinted at and the spiciness is a final whisper, very elegant. It is the oil of discretion: it does not cover flavors, it accompanies them. Splendid on baked fish, on homemade mayonnaise, or even on a light dessert.</p>
-                    <p data-lang="de">Oliven, die bei voller Reife geerntet werden, für ein Öl von außergewöhnlicher Eleganz. Der Duft ist zart, mit Anklängen an weiße Blüten und Apfel. Im Mund ist es flüssig, weich und harmonisch, perfekt für feine Gerichte oder Fisch, da es die Speisen begleitet, ohne jemals ihren ursprünglichen Geschmack zu überlagern. In dieser Phase ändert sich die chemische Zusammensetzung. Obwohl die Polyphenole im Vergleich zur frühen Ernte leicht abgenommen haben, wird das Öl extrem leicht verdaulich und reich an hochwertigen einfach ungesättigten Fettsäuren. Es ist ein "gestes" Fett, das hilft, den Cholesterinspiegel zu regulieren, ohne die empfindlichsten Magenschleimhäute zu reizen. Ich würde es als ein "sanftes" Öl bezeichnen, ideal für die tägliche Ernährung, auch für Kinder oder ältere Menschen, da es das Nervensystem mit äußerster Zartheit nährt. Vergessen Sie die Ungestümheit des vorherigen Öls. Hier suchen wir Seide. Die Düfte wandeln sich zu reifem Golden Delicious Apfel, Kamille und weißen Blüten. Das Gefühl im Mund ist einhüllend, casi butterartig. Die Bitterkeit ist nur angedeutet und die Schärfe ist ein abschließendes Flüstern, sehr elegant. Es ist das Öl der Diskretion: Es überdeckt die Aromen nicht, es begleitet sie. Herrlich zu gebackenem Fisch, einer hausgemachten Mayonnaise oder sogar zu einem leichten Dessert.</p>
-                    <p data-lang="ru">Оливки, собранные при полной зрелости, дают масло необычайной элегантности. Аромат деликатный, с оттенками белых цветов и яблок. Во вкусе оно текучее, мягкое и гармоничное, идеально подходит для изысканных блюд или рыбы, сопровождая пищу и не перекрывая ее первоначальный вкус. На этом этапе химический состав меняется. Хотя содержание полифенолов немного снижается по сравнению с ранним сбором, масло становится чрезвычайно легкоусвояемым и богатым высококачественными мононенасыщенными жирными кислотами. Это «хороший» жир, который помогает регулировать уровень холестерина, не раздражая чувствительную слизистую желудка. Я бы назвал его «нежным» маслом, идеальным для ежедневного рациона, в том числе для детей и пожилых людей. Забудьте о напористости предыдущего масла. Здесь мы ищем шелк. Ароматы смещаются в сторону спелого яблока Голден, ромашки и белых цветов. Ощущение во рту обволакивающее, почти маслянистое. Горечь едва уловима, а острота — лишь финальный шепот. Это масло скромности: оно не перекрывает вкусы, а сопровождает их. Великолепно с запеченной рыбой, домашним майонезом или даже легким десертом.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-            </div>
-
-            <div class="card" style="border-top-color: var(--olive);">
-                <h3>Linea Famiglia</h3>
-                <div class="card-content collapsed">
-                    <p data-lang="it" class="active-lang">La selezione pensata per l'uso quotidiano: un olio genuino che porta l’anima degli oliveti eroici sulla tavola di ogni giorno. Equilibrato e versatile, questo prodotto garantisce freschezza e costanza organolettica dal primo all’ultimo utilizzo. Dal punto di vista scientifico, il Grignano è un caso di studio per la sua eccezionale stabilità ossidativa, che preserva vitamina E e fitosteroli molto più a lungo rispetto ad altre varietà. La sua struttura lipidica bilanciata aiuta a proteggere le arterie, rendendolo un presidio naturale per il benessere del metabolismo. La genetica rustica di questa pianta, cresciuta tra le "marogne", si traduce in un profilo molecolare robusto e resistente. La parola chiave è Pulizia: a differenza di prodotti più pesanti, si distingue per note aromatiche di agrumi e fiori bianchi. Al palato è un olio di "luce", fluido e limpidissimo, capace di detergere il palato lasciando una freschezza impeccabile. È il jolly indispensabile in dispensa, perfetto a crudo sulle minestre dei bambini o per cotture leggere e salutari. Rappresenta l'olio della convivialità, ideale per chi cerca la sicurezza di un prodotto artigianale nel consumo quotidiano.</p>
-                    <p data-lang="en">The selection designed for daily use: a genuine oil that brings the soul of heroic olive groves to the everyday table. Balanced and versatile, this product guarantees freshness and organoleptic consistency from the first to the last use. From a scientific point of view, Grignano is a case study for its exceptional oxidative stability, which preserves vitamin E and phytosterols much longer than other varieties. Its balanced lipid structure helps protect the arteries, making it a natural safeguard for the well-being of metabolism. The rustic genetics of this plant, grown among the "marogne", translates into a robust and resistant molecular profile. The keyword is Cleanliness: unlike heavier products, it stands out for its aromatic notes of citrus and white flowers. On the palate, it is an oil of "light", fluid and very clear, capable of cleansing the palate leaving an impeccable freshness. It is the indispensable wildcard in the pantry, perfect raw on children's soups or for light and healthy cooking. It represents the oil of conviviality, ideal for those seeking the security of an artisanal product in daily consumption.</p>
-                    <p data-lang="de">Die Auswahl für den täglichen Gebrauch: ein echtes Öl, das die Seele heroischer Olivenhaine auf den täglichen Tisch bringt. Ausgewogen und vielseitig garantiert dieses Produkt Frische und organoleptische Beständigkeit vom ersten bis zum letzten Gebrauch. Wissenschaftlich gesehen ist Grignano ein Fallbeispiel für seine außergewöhnliche oxidative Stabilität, die Vitamin E und Phytosterine viel länger bewahrt als andere Sorten. Seine ausgewogene Lipidstruktur hilft, die Arterien zu schützen, was es zu einem natürlichen Schutz für das Wohlbefinden des Stoffwechsels macht. Die rustikale Genetik dieser Pflanze, die zwischen den "Marogne" gewachsen ist, übersetzt sich in ein robustes und resistentes Molekularprofil. Das Schlüsselwort ist Reinheit: Im Gegensatz zu schwereren Produkten zeichnet es sich durch aromatische Noten von Zitrusfrüchten und weißen Blüten aus. Am Gaumen ist es ein Öl des "Lichts", flüssig und sehr klar, fähig, den Gaumen zu reinigen und eine tadellose Frische zu hinterlassen. Es ist der unverzichtbare Joker in der Speisekammer, perfekt roh auf Kindersuppen oder für leichtes und gesundes Kochen. Es repräsentat das Öl der Geselligkeit, ideal für diejenigen, die die Sicherheit eines handwerklichen Produkts im täglichen Konsum suchen.</p>
-                    <p data-lang="ru">Выбор для ежедневного использования: натуральное масло, приносящее душу героических оливковых рощ на ваш стол каждый день. Сбалансированный и универсальный продукт, гарантирующий свежесть от первого до последнего использования. С научной точки зрения Гриньяно — объект исследований из-за его исключительной окислительной стабильности, сохраняющей витамин Е гораздо дольше других сортов. Его сбалансированная липидная структура помогает защитить артерии. Рустикальная генетика этого растения, выросшего среди «marogne», выражается в устойчивом молекулярном профиле. Ключевое слово — Чистота: оно отличается ароматическими нотами цитрусовых и белых цветов. На вкус это масло «света», текучее и прозрачное, способное очистить небо. Это незаменимый помощник на кухне, идеальный в сыром виде для детских супов или для легкой и здоровой термической обработки. Это масло для общения, идеально подходящее для тех, кто ищет надежность ремесленного продукта в повседневном потреблении.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-            </div>
-        </div>
+            <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
+            
+            <img src="passata-pomodoro-artigianale-veronese-conti-nicoli-446ml.jpg" alt="Passata di Pomodoro Artigianale Tradizione Veronese Conti Nicoli 446ml" style="max-width: 180px; height: auto; display: block; margin: 30px auto;">
+        </article>
     </section>
 
-<section style="margin-top: 80px; background: #fdfaf5; padding: 60px 0;">
-    <div class="container">
-        <article class="story-block">
-            <div data-lang="it" class="active-lang">
-                <h2>La Passata di Pomodoro: Tradizione di Famiglia</h2>
-                <p class="subtitle">Come la facevano le nostre mamme, nonne e bisnonne</p>
-                <div class="highlight-box">
-                    "Una bottiglia che profuma di agosto, di sole veronese e di mani che hanno sempre saputo aspettare il momento giusto."
-                </div>
-                <p>Abbiamo ripreso una vecchia tradizione di famiglia: la passata di pomodoro fatta secondo la tradizione veronese dei Conti Nicoli, come la preparavano le nostre mamme, le nostre nonne e le nostre bisnonne. I pomodori sono coltivati in piena aria al sole nelle nostre tenute di Salizzole.</p>
-                <p>I pomodori sono raccolti a mano al giusto punto di maturazione sotto il sole di agosto. Solo pomodoro 100% italiano, niente altro: <strong>senza sale aggiunto, senza acido citrico, senza conservanti, senza coloranti, senza OGM e senza aggiunta di acqua</strong>. Lavorati freschissimi entro poche ore dalla raccolta, per conservare intatto il profumo del pomodoro appena colto.</p>
-                <p>Il risultato è una passata pura, artigianale, di altissima densità naturale grazie all’elevato grado Brix (concentrazione zuccherina naturale). Ricca di licopene, naturalmente dolce, dal gusto autentico e dal colore rosso vivido. Spremuta a freddo per preservare vitamine termolabili (come la Vitamina C), aromi e proprietà organolettiche. Il licopene si assorbe meglio dopo la cottura, che il consumatore farà quando preparerà il soffritto o la pasta, magari abbinando il nostro olio extravergine di oliva Grignano come esaltatore naturale di sapori.</p>
-                <p>Prodotta in piccole quantità, 100% di nostra produzione agricola. Pura poesia in bottiglia da 446 ml.</p>
-                
-                <!-- Commento da degustatore con read-more -->
-                <div class="card-content collapsed">
-                    <p>Come degustatore, apprezzo il gusto autentico e denso di questa passata, con note di pomodoro maturo al sole che evocano l'estate veronese. Al naso, profumi erbacei e fruttati freschi, senza alcuna acidità artificiale. In bocca, è equilibrata, naturalmente dolce e vellutata, perfetta per sughi tradizionali o come base per piatti gourmet.</p>
-                    <p>Dal punto di vista medico, è un tesoro nutrizionale: ricca di licopene (potente antiossidante che supporta la salute cardiovascolare e protegge la pelle dai danni UV), vitamine C e K per il sistema immunitario e la coagulazione, e potassio per il controllo della pressione. Senza additivi, è ideale per diete sane, anti-infiammatorie e per chi cerca alimenti naturali contro lo stress ossidativo.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Leggi tutto...</button>
-                
-                <img src="passata-pomodoro-artigianale-veronese-conti-nicoli-446ml.jpg" alt="Passata di Pomodoro Artigianale Tradizione Veronese Conti Nicoli 446ml" style="max-width: 150px; height: auto; display: block; margin: 30px auto;">
-            </div>
-
-            <div data-lang="en">
-                <h2>Tomato Passata: Family Tradition</h2>
-                <p class="subtitle">Just as our mothers, grandmothers, and great-grandmothers made it</p>
-                <div class="highlight-box">
-                    "A bottle that smells of August, Veronese sun, and hands that have always known how to wait for the perfect moment."
-                </div>
-                <p>We have revived an old family tradition: tomato passata made according to the Veronese tradition of the Conti Nicoli, as our mothers, grandmothers, and great-grandmothers prepared it. The tomatoes are grown in open air under the sun in our estates in Salizzole.</p>
-                <p>The tomatoes are hand-harvested at the perfect ripeness under the August sun. Pure 100% Italian tomatoes, nothing else: <strong>no added salt, no citric acid, no preservatives, no colorants, no GMOs, and no added water</strong>. Processed fresh within hours of harvest to preserve the full aroma of just-picked tomatoes.</p>
-                <p>The result is a pure, artisanal passata with high natural density thanks to elevated natural Brix (natural sugar concentration). Rich in lycopene, naturally sweet, with an authentic taste and vivid red color. Cold-pressed to maintain heat-sensitive vitamins (like Vitamin C), aromas, and organoleptic properties. The lycopene is better absorbed after cooking, which the consumer will do when preparing the soffritto or pasta, perhaps pairing it with our Grignano extra virgin olive oil as a natural flavor enhancer.</p>
-                <p>Produced in small quantities, 100% from our own farm. Pure poetry in a 446 ml bottle.</p>
-                
-                <!-- Commento da degustatore con read-more -->
-                <div class="card-content collapsed">
-                    <p>As a taster, I appreciate the authentic and dense taste of this passata, with notes of sun-ripened tomato that evoke Veronese summer. On the nose, fresh herbaceous and fruity aromas, without any artificial acidity. In the mouth, it is balanced, naturally sweet and velvety, perfect for traditional sauces or as a base for gourmet dishes.</p>
-                    <p>From a medical point of view, it is a nutritional treasure: rich in lycopene (a powerful antioxidant that supports cardiovascular health and protects the skin from UV damage), vitamins C and K for the immune system and coagulation, and potassium for blood pressure control. Without additives, it is ideal for healthy, anti-inflammatory diets and for those seeking natural foods against oxidative stress.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Read more...</button>
-                
-                <img src="passata-pomodoro-artigianale-veronese-conti-nicoli-446ml.jpg" alt="Artisanal Veronese Tomato Passata Conti Nicoli 446ml" style="max-width: 150px; height: auto; display: block; margin: 30px auto;">
-            </div>
-
-            <div data-lang="de">
-                <h2>Tomatenpassata: Familientradition</h2>
-                <p class="subtitle">So wie es unsere Mütter, Großmütter und Urgroßmütter zubereitet haben</p>
-                <div class="highlight-box">
-                    "Eine Flasche, die nach August, veronesischer Sonne und Händen duftet, die immer den richtigen Moment abzuwarten wussten."
-                </div>
-                <p>Wir haben eine alte Familientradition wiederbelebt: Tomatenpassata, zubereitet nach der veronesischen Tradition der Conti Nicoli, so wie es unsere Mütter, Großmütter und Urgroßmütter gemacht haben. Die Tomaten wachsen im Freien unter der Sonne in unseren Gütern in Salizzole.</p>
-                <p>Die Tomaten werden von Hand geerntet im perfekten Reifegrad unter der Augustsonne. Nur 100% italienische Tomaten, sonst nichts: <strong>kein zugesetztes Salz, keine Zitronensäure, keine Konservierungsstoffe, keine Farbstoffe, keine GVO und kein zugesetztes Wasser</strong>. Frisch innerhalb weniger Stunden nach der Ernte verarbeitet, um das volle Aroma frisch gepflückter Tomaten zu bewahren.</p>
-                <p>Das Ergebnis ist eine reine, handwerkliche Passata mit hoher natürlicher Dichte dank hohem natürlichem Brix-Wert (natürliche Zuckerkonzentration). Reich an Lycopin, natürlich süß, mit authentischem Geschmack und lebendigem Rot. Kalt gepresst, um hitzeempfindliche Vitamine (wie Vitamin C), Aromen und organoleptische Eigenschaften zu erhalten. Das Lycopin entfaltet sich besser nach dem Kochen, das der Verbraucher tun wird, wenn er das Soffritto oder die Pasta zubereitet, vielleicht in Kombination mit unserem Grignano extra vergine Olivenöl als natürlicher Geschmacksverstärker.</p>
-                <p>In kleinen Mengen produziert, 100% aus eigenem landwirtschaftlichem Betrieb. Reine Poesie in der 446-ml-Flasche.</p>
-                
-                <!-- Commento da degustatore con read-more -->
-                <div class="card-content collapsed">
-                    <p>Als Verkoster schätze ich den authentischen und dichten Geschmack dieser Passata, mit Noten von sonnengereiften Tomaten, die den veronesischen Sommer evocieren. In der Nase frische kräuterige und fruchtige Aromen, ohne künstliche Säure. Im Mund ist sie ausgewogen, natürlich süß und samtig, perfekt für traditionelle Saucen oder als Basis für Gourmet-Gerichte.</p>
-                    <p>Aus medizinischer Sicht ist sie ein nährstoffreicher Schatz: reich an Lycopin (ein starkes Antioxidans, das die Herzgesundheit unterstützt und die Haut vor UV-Schäden schützt), Vitaminen C und K für das Immunsystem und die Gerinnung, sowie Kalium für die Blutdruckkontrolle. Ohne Zusatzstoffe ist sie ideal für gesunde, entzündungshemmende Diäten und für diejenigen, die natürliche Lebensmittel gegen oxidativen Stress suchen.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Weiterlesen...</button>
-                
-                <img src="passata-pomodoro-artigianale-veronese-conti-nicoli-446ml.jpg" alt="Handwerkliche Veronesische Tomatenpassata Conti Nicoli 446ml" style="max-width: 150px; height: auto; display: block; margin: 30px auto;">
-            </div>
-
-            <div data-lang="ru">
-                <h2>Пюре из помидоров: Семейная традиция</h2>
-                <p class="subtitle">Так, как готовили наши мамы, бабушки и прабабушки</p>
-                <div class="highlight-box">
-                    "Бутылка, пахнущая августом, веронским солнцем и руками, которые всегда умели ждать нужного момента."
-                </div>
-                <p>Мы возродили старую семейную традицию: пюре из помидоров, приготовленное по веронской традиции Conti Nicoli, так, как делали наши мамы, бабушки и прабабушки. Помидоры выращиваются на открытом воздухе под солнцем в наших поместьях в Салиццоле.</p>
-                <p>Помидоры собираются вручную в момент идеальной зрелости под августовским солнцем. Только 100% итальянские помидоры, ничего больше: <strong>без добавленной соли, без лимонной кислоты, без консервантов, без красителей, без ГМО и без добавленной воды</strong>. Обрабатываются свежими в течение нескольких часов после сбора, чтобы сохранить полный аромат только что сорванных помидоров.</p>
-                <p>Результат — чистое, ремесленное пюре с высокой естественной плотностью благодаря высокому натуральному Brix (натуральная концентрация сахара). Богато ликопином, естественно сладкое, с аутентичным вкусом и ярким красным цветом. Холодный отжим для сохранения термолабильных витаминов (таких как витамин C), ароматов и органолептических свойств. Ликопин лучше усваивается после приготовления, которое потребитель сделает при приготовлении соффритто или пасты, возможно, сочетая с нашим экстра верджин оливковым маслом Grignano как естественным усилителем вкуса.</p>
-                <p>Производится в малых количествах, 100% с нашего сельскохозяйственного хозяйства. Чистая поэзия в бутылке 446 мл.</p>
-                
-                <!-- Commento da degustatore con read-more -->
-                <div class="card-content collapsed">
-                    <p>Как дегустатор, я ценю аутентичный и плотный вкус этого пюре, с нотами созревших на солнце помидоров, вызывающими веронское лето. В аромате свежие травяные и фруктовые ноты, без искусственной кислотности. Во рту оно сбалансированное, естественно сладкое и бархатистое, идеально для традиционных соусов или как основа для гурманских блюд.</p>
-                    <p>С медицинской точки зрения, это питательное сокровище: богато ликопином (мощный антиоксидант, поддерживающий здоровье сердца и защищающий кожу от УФ-повреждений), витаминами C и K для иммунной системы и свертываемости, и калием для контроля давления. Без добавок, идеально для здоровых, противовоспалительных диет и для тех, кто ищет натуральные продукты против окислительного стресса.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleReadMore(this)">Читать далее...</button>
-                
-                <img src="passata-pomodoro-artigianale-veronese-conti-nicoli-446ml.jpg" alt="Ремесленное Веронское Пюре из Помидоров Conti Nicoli 446 мл" style="max-width: 200px; height: auto; display: block; margin: 30px auto;">
-            </div>
-        </article>
-    </div>
-</section>
-
-
-
-
     <section class="unesco-badge">
-        <div data-lang="it" class="active-lang">
-            <h3>L'Eroicità delle Marogne UNESCO</h3>
-            <p>I nostri terreni si estendono tra <strong>Negrar, Grezzana, Verona e Salizzole</strong>, con il cuore pulsante ai piedi della <strong>Sengia Sbusa</strong> (400-700m s.l.m.). Coltiviamo su "marogne", i muretti a secco Patrimonio dell'Umanità. In un'esposizione totale a sud, il lavoro meccanico è quasi nullo: tutto è frutto del duro lavoro manuale, l'unico modo per onorare il nostro motto: <em>Per Ardua Ad Honorem</em>.</p>
-            <p style="font-size: 0.9rem; margin-top: 20px; color: var(--wine-red); border-top: 1px solid var(--gold); padding-top: 15px;">
-                <em>Classificata come <strong>"Agricoltura Eroica"</strong> ai sensi dell'Art. 7 Legge n. 238/2016.</em>
-            </p>
-        </div>
-        <div data-lang="en">
-            <h3>The Heroism of UNESCO Marogne</h3>
-            <p>Our lands extend between <strong>Negrar, Grezzana, Verona and Salizzole</strong>, with the pulsing heart at the foot of the <strong>Sengia Sbusa</strong> (400-700m a.s.l.). We cultivate on "marogne", the dry-stone walls a World Heritage site. In a total southern exposure, mechanical work is almost zero: everything is the fruit of hard manual labor, the only way to honor our motto: <em>Per Ardua Ad Honorem</em>.</p>
-            <p style="font-size: 0.9rem; margin-top: 20px; color: var(--wine-red); border-top: 1px solid var(--gold); padding-top: 15px;">
-                <em>Classified as <strong>"Heroic Agriculture"</strong> under Art. 7 Law n. 238/2016.</em>
-            </p>
-        </div>
-        <div data-lang="de">
-            <h3>Die Heroik der UNESCO Marogne</h3>
-            <p>Unsere Ländereien erstrecken sich zwischen <strong>Negrar, Grezzana, Verona und Salizzole</strong>, mit dem pulsierenden Herzen am Fuße der <strong>Sengia Sbusa</strong> (400-700 m ü. d. M.). Wir bewirtschaften "Marogne", die Trockenmauern, die zum Weltkulturerbe gehören. Bei einer totalen Südlage ist mechanische Arbeit fast unmöglich: Alles ist das Ergebnis harter manueller Arbeit, der einzige Weg, um unser Motto zu ehren: <em>Per Ardua Ad Honorem</em>.</p>
-            <p style="font-size: 0.9rem; margin-top: 20px; color: var(--wine-red); border-top: 1px solid var(--gold); padding-top: 15px;">
-                <em>Klassifiziert als <strong>"Heroische Landwirtschaft"</strong> gemäß Art. 7 Gesetz Nr. 238/2016.</em>
-            </p>
-        </div>
-        <div data-lang="ru">
-            <h3>Героизм Маронье ЮНЕСКО</h3>
-            <p>Наши земли простираются между <strong>Неграр, Греццана, Верона и Салиццоле.</strong>, а их сердце бьется у подножия <strong>Сенджа Сбуза</strong> (400–700 м над уровнем моря). Мы ведем хозяйство на «маронье» — сухих каменных стенах, являющихся объектом Всемирного наследия. При полной южной экспозиции механический труд почти невозможен: все является результатом тяжелого ручного труда, единственного способа почтить наш девиз: <em>Per Ardua Ad Honorem</em>.</p>
-            <p style="font-size: 0.9rem; margin-top: 20px; color: var(--wine-red); border-top: 1px solid var(--gold); padding-top: 15px;">
-                <em>Классифицируется как <strong>«Героическое сельское хозяйство»</strong> в соответствии со ст. 7 Закона № 238/2016.</em>
-            </p>
-        </div>
+        <h3>L'Eroicità delle Marogne UNESCO</h3>
+        <p>I nostri terreni si estendono tra <strong>Negrar, Grezzana, Verona e Salizzole</strong>, con il cuore pulsante ai piedi della <strong>Sengia Sbusa</strong> (400-700m s.l.m.). Coltiviamo su "marogne", i muretti a secco Patrimonio dell'Umanità. In un'esposizione totale a sud, il lavoro meccanico è quasi nullo: tutto è frutto del duro lavoro manuale, l'unico modo per onorare il nostro motto: <em>Per Ardua Ad Honorem</em>.</p>
+        <p style="font-size: 0.9rem; margin-top: 20px; color: var(--tomato-red); border-top: 1px solid var(--gold); padding-top: 15px;">
+            <em>Classificata come <strong>"Agricoltura Eroica"</strong> ai sensi dell'Art. 7 Legge n. 238/2016.</em>
+        </p>
     </section>
 
     <section class="where-we-are">
-        <h2 style="margin-top: 0;" data-lang="it" class="active-lang">Dove Siamo</h2>
-        <h2 style="margin-top: 0;" data-lang="en">Where We Are</h2>
-        <h2 style="margin-top: 0;" data-lang="de">Wo wir sind</h2>
-        <h2 style="margin-top: 0;" data-lang="ru">Где мы находимся</h2>
-        
-        <p data-lang="it" class="active-lang">Vieni a scoprire la nostra storia di persona.</p>
-        <p data-lang="en">Come and discover our history in person.</p>
-        <p data-lang="de">Kommen Sie vorbei und entdecken Sie unsere Geschichte persönlich.</p>
-        <p data-lang="ru">Приезжайте и откройте для себя нашу историю лично.</p>
+        <h2 style="margin-top: 0;">Dove Siamo</h2>
+        <p>Vieni a scoprire la nostra storia di persona.</p>
         
         <div style="margin: 20px 0;">
             <p><strong>Antiche Tenute dei Conti Nicoli</strong></p>
-            <p>Via Cà Berna, 2</p>
+            <p>Strada vicinale dei Merli</p>
             <p>37024 Negrar di Valpolicella (VR)</p>
         </div>
         
-        <a href="https://maps.google.com/?q=Via+Cà+Berna+2+Negrar+di+Valpolicella" target="_blank" class="nav-btn" data-lang="it" class="active-lang">Apri il Navigatore</a>
-        <a href="https://maps.google.com/?q=Via+Cà+Berna+2+Negrar+di+Valpolicella" target="_blank" class="nav-btn" data-lang="en">Open Navigator</a>
-        <a href="https://maps.google.com/?q=Via+Cà+Berna+2+Negrar+di+Valpolicella" target="_blank" class="nav-btn" data-lang="de">Navigation öffnen</a>
-        <a href="https://maps.google.com/?q=Via+Cà+Berna+2+Negrar+di+Valpolicella" target="_blank" class="nav-btn" data-lang="ru">Открыть навигатор</a>
+        <a href="https://maps.google.com/?q=Via+Cà+Berna+2+Negrar+di+Valpolicella" target="_blank" class="nav-btn">Apri il Navigatore</a>
     </section>
 
 </div>
 
-<section style="background: linear-gradient(rgba(74, 4, 4, 0.8), rgba(74, 4, 4, 0.8)), url('vigneto-sfocato.jpg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 80px 20px; border-top: 3px solid var(--gold);">
-
+<section style="background: linear-gradient(rgba(192, 57, 43, 0.85), rgba(192, 57, 43, 0.85)), url('campo-pomodori-sfocato.jpg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 80px 20px; border-top: 3px solid var(--gold);">
     <div style="max-width: 800px; margin: auto;">
-        <h2 style="color: white; margin-top: 0;" data-lang="it" class="active-lang">Porta la Poesia sulla tua Tavola</h2>
-        <h2 style="color: white; margin-top: 0;" data-lang="en">Bring Poetry to Your Table</h2>
-        <h2 style="color: white; margin-top: 0;" data-lang="de">Bringen Sie Poesie auf Ihren Tisch</h2>
-        <h2 style="color: white; margin-top: 0;" data-lang="ru">Принесите поэзию на свой стол</h2>
+        <h2 style="color: white; margin-top: 0;">Porta la Poesia sulla tua Tavola</h2>
         
-        <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);" data-lang="it" class="active-lang">
+        <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);">
             "Ogni bottiglia è una storia,<br>
             ogni assaggio un verso.<br>
             Scriviamo insieme il prossimo capitolo."
         </p>
-        <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);" data-lang="en">
-            "Every bottle is a story,<br>
-            every taste a verse.<br>
-            Let's write the next chapter together."
-        </p>
-        <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);" data-lang="de">
-            "Jede Flasche ist eine Geschichte,<br>
-            jeder Schluck ein Vers.<br>
-            Lassen Sie uns gemeinsam das nächste Kapitel schreiben."
-        </p>
-        <p style="font-style: italic; font-size: 1.2rem; margin-bottom: 30px; color: var(--cream);" data-lang="ru">
-            "Каждая бутылка — это история,<br>
-            каждый глоток — это стих.<br>
-            Давайте вместе напишем следующую главу."
-        </p>
-        
 
         <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 40px; gap: 20px;">
             <div style="flex: 1; min-width: 200px;">
-                <span style="font-size: 1.5rem;">🍷</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="it" class="active-lang">Direttamente dalle <br>nostre Tenute</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="en">Directly from <br>our Estates</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="de">Direkt von <br>unseren Gütern</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="ru">Напрямую из <br>наших поместий</p>
+                <span style="font-size: 1.5rem;">🍅</span>
+                <p style="font-size: 0.9rem; margin-top: 5px;">Direttamente dalle <br>nostre Tenute</p>
             </div>
             <div style="flex: 1; min-width: 200px;">
                 <span style="font-size: 1.5rem;">📦</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="it" class="active-lang">Spedizioni sicure <br>in tutta Italia</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="en">Secure shipping <br>worldwide</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="de">Sicherer Versand <br>weltweit</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="ru">Надежная доставка <br>по всему миру</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">Spedizioni sicure <br>in tutta Italia</p>
             </div>
             <div style="flex: 1; min-width: 200px;">
                 <span style="font-size: 1.5rem;">💬</span>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="it" class="active-lang">Consulenza diretta <br>con il produttore</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="en">Direct consultation <br>with the producer</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="de">Direkte Beratung <br>mit dem Erzeuger</p>
-                <p style="font-size: 0.9rem; margin-top: 5px;" data-lang="ru">Прямая консультация <br>с производителем</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">Consulenza diretta <br>con il produttore</p>
             </div>
         </div>
 
-        <a href="https://wa.me/393400988077" target="_blank" class="whatsapp-btn active-lang" style="box-shadow: 0 10px 20px rgba(0,0,0,0.3);" data-lang="it">
-    ORDINA ORA SU WHATSAPP
-</a>
-        <a href="https://wa.me/393400988077" target="_blank" class="whatsapp-btn" style="box-shadow: 0 10px 20px rgba(0,0,0,0.3);" data-lang="en">
-            ORDER NOW ON WHATSAPP
-        </a>
-        <a href="https://wa.me/393400988077" target="_blank" class="whatsapp-btn" style="box-shadow: 0 10px 20px rgba(0,0,0,0.3);" data-lang="de">
-            JETZT ÜBER WHATSAPP BESTELLEN
-        </a>
-        <a href="https://wa.me/393400988077" target="_blank" class="whatsapp-btn" style="box-shadow: 0 10px 20px rgba(0,0,0,0.3);" data-lang="ru">
-            ЗАКАЗАТЬ ЧЕРЕЗ WHATSAPP
+        <a href="https://wa.me/393400988077?text=Ciao!%20Vorrei%20informazioni%20e%20ordinare%20la%20Passata%20di%20Pomodoro%20Conti%20Nicoli" target="_blank" class="whatsapp-btn" style="box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+            ORDINA ORA SU WHATSAPP
         </a>
         
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px;" data-lang="it" class="active-lang">
-            CONTATTACI PER IL CATALOGO COMPLETO
-        </p>
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px;" data-lang="en">
-            CONTACT US FOR THE COMPLETE CATALOG
-        </p>
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px;" data-lang="de">
-            KONTAKTIEREN SIE UNS FÜR DEN VOLLSTÄNDIGEN KATALOG
-        </p>
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7; letter-spacing: 1px;" data-lang="ru">
-            СВЯЖИТЕСЬ С НАМИ ДЛЯ ПОЛУЧЕНИЯ ПОЛНОГО КАТАЛОГА
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.8; letter-spacing: 1px;">
+            CONTATTACI PER INFORMAZIONI E PRENOTAZIONI
         </p>
     </div>
-footer</section>
+</section>
 
 <footer>
-   
-<div style="margin-bottom: 20px;">
+    <div style="margin-bottom: 20px;">
         <a href="https://www.instagram.com/continicoli/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#777" viewBox="0 0 16 16" style="transition: 0.3s;" onmouseover="this.style.fill='#b8860b'" onmouseout="this.style.fill='#777'">
                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
@@ -744,95 +336,13 @@ footer</section>
         </a>
     </div>
     <p>© 2026 Antiche Tenute dei Conti Nicoli | P.IVA 03585990231</p>
-	<div style="border-top: 1px solid var(--gold); margin-top: 20px; padding-top: 15px; font-size: 0.85em; opacity: 0.9;">
-    <p data-lang="it" class="active-lang">
-        Rispettiamo la tua privacy: questo sito <strong>non utilizza cookie di tracciamento</strong> e non effettua profilazione. 
-        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Leggi l'informativa completa</a>.
-    </p>
-    <p data-lang="en">
-        We respect your privacy: this website <strong>does not use tracking cookies</strong> and does not profile visitors. 
-        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Read the full policy</a>.
-    </p>
-    <p data-lang="de">
-        Wir respektieren Ihre Privatsphäre: Diese Website <strong>verwendet keine Tracking-Cookies</strong> e erstellt keine Nutzerprofile. 
-        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Vollständige Informationen lesen</a>.
-    </p>
-    <p data-lang="ru">
-        Мы уважаем вашу конфиденциальность: этот сайт <strong>не использует файлы cookie для отслеживания</strong> и не осуществляет профилирование. 
-        <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Читать полную информацию</a>.
-    </p>
-</div>
+    <div style="border-top: 1px solid var(--gold); margin-top: 20px; padding-top: 15px; font-size: 0.85em; opacity: 0.9;">
+        <p>Rispettiamo la tua privacy: questo sito <strong>non utilizza cookie di tracciamento</strong> e non effettua profilazione. <a href="privacy.html" style="color:var(--gold); text-decoration: underline;">Leggi l'informativa completa</a>.</p>
+    </div>
 </footer>
 
-
-<script>
-function setLang(lang) {
-    // 1. Salva la lingua scelta
-    localStorage.setItem('selectedLang', lang);
-
-    // 2. Mostra solo i testi della lingua scelta
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        if (el.getAttribute('data-lang') === lang) {
-            el.style.display = 'block';
-            el.classList.add('active-lang');
-        } else {
-            el.style.display = 'none';
-            el.classList.remove('active-lang');
-        }
-    });
-
-    // 3. Gestisce i bottoni della lingua (it, en, de, ru)
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
-    });
-
-    // 4. Ripristina i testi dei bottoni "Leggi tutto" nella lingua corretta
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
-        const content = btn.previousElementSibling;
-        if (content && content.classList.contains('collapsed')) {
-            if (lang === 'it') btn.innerText = "Leggi tutto...";
-            else if (lang === 'en') btn.innerText = "Read more...";
-            else if (lang === 'de') btn.innerText = "Weiterlesen...";
-            else if (lang === 'ru') btn.innerText = "Читать далее...";
-        }
-    });
-}
-
-function toggleReadMore(btn) {
-    const content = btn.previousElementSibling;
-    const currentLang = localStorage.getItem('selectedLang') || 'it';
-    
-    if (content.classList.contains('collapsed')) {
-        content.classList.remove('collapsed');
-        content.style.maxHeight = content.scrollHeight + "px";
-        
-        // Testo quando è aperto
-        if (currentLang === 'it') btn.innerText = "Leggi meno";
-        else if (currentLang === 'en') btn.innerText = "Read less";
-        else if (currentLang === 'de') btn.innerText = "Weniger lesen";
-        else if (currentLang === 'ru') btn.innerText = "Свернуть";
-    } else {
-        content.classList.add('collapsed');
-        content.style.maxHeight = "160px";
-        
-        // Testo quando è chiuso
-        if (currentLang === 'it') btn.innerText = "Leggi tutto...";
-        else if (currentLang === 'en') btn.innerText = "Read more...";
-        else if (currentLang === 'de') btn.innerText = "Weiterlesen...";
-        else if (currentLang === 'ru') btn.innerText = "Читать далее...";
-    }
-}
-
-// Inizializza il sito all'avvio
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLang') || 'it';
-    setLang(savedLang);
-});
-</script>
-
-<!-- Pulsante WhatsApp flottante multilingua -->
 <a id="wa-float-btn" 
-   href="https://wa.me/393400988077?text=Ciao!%20Vorrei%20info%20su%20prenotazione%20vini%20e%20olio%202026/2027" 
+   href="https://wa.me/393400988077?text=Ciao!%20Vorrei%20informazioni%20e%20ordinare%20la%20Passata%20di%20Pomodoro%20Conti%20Nicoli" 
    class="wa-float" 
    target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
@@ -862,91 +372,36 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 <script>
-function updateWhatsAppMessage(lang) {
-    const btn = document.getElementById('wa-float-btn');
-    if (!btn) return;
-
-    let message = '';
-    switch(lang) {
-        case 'it':
-            message = 'Ciao! Vorrei info su prenotazione vini e olio 2026/2027';
-            break;
-        case 'en':
-            message = 'Hello! Interested in pre-ordering wines and Grignano oil for 2026/2027';
-            break;
-        case 'de':
-            message = 'Hallo! Interessiert an Vorbestellung von Weinen und Grignano-Öl für 2026/2027';
-            break;
-        case 'ru':
-            message = 'Привет! Интересуюсь предзаказом вин и масла Гриньяно на 2026/2027';
-            break;
-        default:
-            message = 'Ciao! Vorrei info su prenotazione vini e olio 2026/2027';
+function toggleReadMore(btn) {
+    const content = btn.previousElementSibling;
+    if (content.classList.contains('collapsed')) {
+        content.classList.remove('collapsed');
+        content.style.maxHeight = content.scrollHeight + "px";
+        btn.innerText = "Leggi meno";
+    } else {
+        content.classList.add('collapsed');
+        content.style.maxHeight = "180px";
+        btn.innerText = "Leggi tutto...";
     }
-
-    const encoded = encodeURIComponent(message);
-    btn.href = 'https://wa.me/393400988077?text=' + encoded;
 }
 
-// MODIFICA la tua funzione setLang esistente aggiungendo questa riga alla FINE:
-function setLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.remove('active-lang');
-        if (el.getAttribute('data-lang') === lang) el.classList.add('active-lang');
-    });
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.remove('active');
-    // Questa riga illumina il bottone giusto confrontando il testo (it, en...)
-    if (btn.innerText.toLowerCase() === lang) {
-        btn.classList.add('active');
+function toggleMenu() {
+    const menu = document.getElementById('side-menu');
+    if (menu.style.left === '0px') {
+        menu.style.left = '-250px';
+    } else {
+        menu.style.left = '0px';
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('side-menu');
+    const icon = document.getElementById('menu-icon');
+    if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
+        toggleMenu();
     }
 });
-    
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
-        const currentTxt = btn.innerText;
-        const isClosing = (currentTxt === "Leggi meno" || currentTxt === "Read less" || currentTxt === "Weniger lesen" || currentTxt === "Свернуть");
-        
-        if (!isClosing) {
-            if (lang === 'it') btn.innerText = "Leggi tutto...";
-            else if (lang === 'en') btn.innerText = "Read more...";
-            else if (lang === 'de') btn.innerText = "Weiterlesen...";
-            else if (lang === 'ru') btn.innerText = "Читать далее...";
-        }
-    });
-
-    updateWhatsAppMessage(lang);  // ← AGGIUNGI QUESTA RIGA QUI
-}
-
-// Inizializza con la lingua di default (italiano)
-updateWhatsAppMessage(localStorage.getItem('selectedLang') || 'it');
 </script>
-
-<script>
-    // Funzione per aprire e chiudere il menù laterale
-    function toggleMenu() {
-        const menu = document.getElementById('side-menu');
-        // Se il menù è posizionato a 0px (aperto), lo sposta a -250px (chiuso)
-        if (menu.style.left === '0px') {
-            menu.style.left = '-250px';
-        } else {
-            // Altrimenti lo porta a 0px per farlo vedere
-            menu.style.left = '0px';
-        }
-    }
-	
-	// --- NUOVO PEZZO DA AGGIUNGERE ---
-    document.addEventListener('click', function(event) {
-        const menu = document.getElementById('side-menu');
-        const icon = document.getElementById('menu-icon');
-        // Se il menù è aperto E il clic è avvenuto fuori dal menù E fuori dall'icona delle tre lineette
-        if (menu.style.left === '0px' && !menu.contains(event.target) && !icon.contains(event.target)) {
-            toggleMenu();
-        }
-    });
-    // --- FINE NUOVO PEZZO ---
-	
-</script>
-
 
 </body>
 </html>
